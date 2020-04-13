@@ -5,13 +5,14 @@ import './App.css';
 
 // AppWrapper protects Admin Panel from non sessioned access
 import { AppWrapper } from './AppWrapper';
-import { Landing } from './components/Landing';
-
+import { Home } from './components/Home';
+import { Login } from './components/Login';
+import { Loading } from './components/Loading';
 class App extends Component {
    render() {
       const LoginContainer = () => (
          <div className='container'>
-            <Route path='/' component={Landing} />
+            <Route path='/login' component={Login} />
          </div>
       );
 
@@ -19,8 +20,11 @@ class App extends Component {
          <div className='App'>
             <Router>
                <Switch>
-                  <Route exact path='/admin' component={LoginContainer} />
-                  <Route path='/' component={AppWrapper} />
+                  <Route exact path='/login' component={LoginContainer} />
+                  <Route exact path='/home' component={Home} />
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/loading' component={Loading} />
+                  <Route path='/admin' component={AppWrapper} />
                </Switch>
             </Router>
          </div>

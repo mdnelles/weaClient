@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getLogs } from './LogFunctions';
 import localForage from 'localforage';
 
-import { cubeMsgNext, obj } from './_sharedFunctions';
+import { cl, cubeMsgNext, obj } from './_sharedFunctions';
 import { CubeMsg } from './3d/CubeMsg';
 
 import PropTypes from 'prop-types';
@@ -250,6 +250,7 @@ export const Cities = () => {
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
    useEffect(() => {
+      cl('Cities.js.useEffect');
       localForage
          .getItem('token')
          .then(function (startToken) {
@@ -261,7 +262,7 @@ export const Cities = () => {
             // This code runs if there were any errors
             console.log(err);
             alert('no token found');
-            window.location.href = '/';
+            window.location.href = '/login';
          });
    }, []);
 
@@ -329,7 +330,7 @@ export const Cities = () => {
 
    return (
       <div id='main' className='body'>
-         <h3>Log Views</h3>
+         <h3>Cities</h3>
          <div style={{ padding: 25, display: 'block' }}></div>
          <div className='contain' style={{ marginLeft: 10 }}>
             <div className={'cubeWrapperFluid ' + cubeWrapperAnim} id='stage'>

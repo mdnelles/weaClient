@@ -38,6 +38,6 @@ export const login = async (user) => {
 export const logout = () => {
    localForage.removeItem('token').then(() => {
       console.log('token cleared');
-      window.location.href = '/';
+      window.location.href = '/login';
    });
 };

@@ -82,6 +82,10 @@ export const cubeMsgNext = (msg, alertColor, msgArr) => {
    return tempArr;
 };
 
+export const cl = (msg) => {
+   console.log('*' + msg);
+};
+
 export const obj = [
    {
       msg: 'Ready For use',

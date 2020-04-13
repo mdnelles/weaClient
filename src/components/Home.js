@@ -56,11 +56,7 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-function ListItemLink(props) {
-   return <ListItem button component='a' {...props} />;
-}
-
-export const Login = () => {
+export const Home = () => {
    const classes = useStyles();
 
    const [email, setEmail] = useState('demo'),
@@ -132,7 +128,7 @@ export const Login = () => {
                   localForage.setItem('token', res);
 
                   setTimeout(() => {
-                     window.location.href = '/admin';
+                     window.location.href = '/employees';
                   }, 350);
                } else {
                   console.log('+++ unhandled error here: ' + __filename);
@@ -171,7 +167,7 @@ export const Login = () => {
    // end popover
 
    useEffect(() => {
-      console.log('Login - useEffect');
+      console.log('Landing.js use Effect');
       setMsgArr(
          cubeMsgNext('Enter valid credentials to proceed', 'Info', msgArr)
       );
@@ -194,94 +190,7 @@ export const Login = () => {
 
    return (
       <div className='vertical-center center-outer'>
-         <div className='center-inner'>
-            <div className={spinnerClass}>
-               <CircularProgress />
-            </div>
-            <div className='contain '>
-               <div className={'cubeWrapper ' + cubeWrapperAnim} id='stage'>
-                  <CubeMsg
-                     msgArr={msgArr}
-                     width={'100%'}
-                     height={78}
-                     marginT={-60}
-                  />
-               </div>
-            </div>
-            <div style={{ padding: 10, display: 'block' }}></div>
-            <a.div style={aprops}>
-               <Card className={classes.root}>
-                  <CardContent>
-                     <form>
-                        <div className='center-inner' style={{ padding: 10 }}>
-                           <TextField
-                              label='email / username'
-                              ariant='outlined'
-                              defaultValue={email}
-                              onChange={(event) => setEmail(event.target.value)}
-                           />
-                           <TextField
-                              label='Password'
-                              ariant='outlined'
-                              defaultValue={password}
-                              onChange={(event) =>
-                                 setPassword(event.target.value)
-                              }
-                           />
-                           <br />
-                           <br />
-                           <Button
-                              variant='contained'
-                              color='secondary'
-                              onClick={butClick}
-                           >
-                              Login
-                           </Button>
-                        </div>
-                     </form>
-                     <Typography
-                        variant='body2'
-                        color='textSecondary'
-                        component='p'
-                     ></Typography>
-                  </CardContent>
-                  <CardActions disableSpacing>
-                     <IconButton aria-label='Help' onClick={helpClick}>
-                        <HelpOutlineIcon />
-                     </IconButton>
-                     <Popover
-                        id={popId}
-                        open={popOpen}
-                        anchorEl={popAnchorEl}
-                        onClose={popHandleClose}
-                        anchorOrigin={{
-                           vertical: 'bottom',
-                           horizontal: 'center',
-                        }}
-                        transformOrigin={{
-                           vertical: 'top',
-                           horizontal: 'center',
-                        }}
-                     >
-                        <Typography className={classes.typography}>
-                           This is a live weather app - with demo credentials it
-                           will limit your ability to make permanent change in
-                           the database.
-                        </Typography>
-                     </Popover>
-
-                     <IconButton
-                        className={clsx(classes.expand, {
-                           [classes.expandOpen]: expanded,
-                        })}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}
-                        aria-label='show more'
-                     ></IconButton>
-                  </CardActions>
-               </Card>
-            </a.div>
-         </div>
+         <div className='center-inner'>welcome home</div>
       </div>
    );
 };

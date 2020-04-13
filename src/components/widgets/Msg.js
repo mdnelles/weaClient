@@ -7,7 +7,7 @@ export const Msg = (props) => {
    return (
       <div style={{ width: props.width }}>
          <div style={{ width: props.width }}>
-            <Alert severity={props.alertColor} variant='outlined'>
+            <Alert severity={props.alertColor} variant='filled'>
                <AlertTitle>{alertTitle}</AlertTitle>
                {props.msg}
             </Alert>
