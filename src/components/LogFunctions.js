@@ -7,10 +7,11 @@ if (thisServer.includes('3000')) serverPath = global.config.devPath;
 
 ////// playlists
 export const getLogs = async (theToken) => {
+   console.log('getLogs');
    try {
       const res = await axios.post(serverPath + '/logs/get_logs', {
          token: theToken,
-         caller: 'logFunctions.getLogs'
+         caller: 'logFunctions.getLogs',
       });
       return res.data;
    } catch (err) {
@@ -24,7 +25,7 @@ export const getLogsCount = async (theToken, code) => {
       const res = await axios.post(serverPath + '/logs/get_logcount', {
          token: theToken,
          code,
-         caller: 'logFunctions.getLogsCount'
+         caller: 'logFunctions.getLogsCount',
       });
       return res.data;
    } catch (err) {

@@ -44,7 +44,6 @@ export const AppWrapper = () => {
 
    useEffect(() => {
       // pnl
-      cl('AppWrapper useEffect');
       localForage
          .getItem('token', function (err, theToken) {
             if (err) {
@@ -52,7 +51,6 @@ export const AppWrapper = () => {
             } else {
                userIsLoggedIn(theToken)
                   .then((data) => {
-                     cl('AppWrapper: Token');
                      data === true || data === 'true'
                         ? setActiveSession('ok')
                         : goHome();

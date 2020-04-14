@@ -161,7 +161,7 @@ const useToolbarStyles = makeStyles((theme) => ({
 const EnhancedTableToolbar = (props) => {
    const classes = useToolbarStyles();
    const { numSelected } = props;
-
+   const wrapper = React.createRef();
    return (
       <Toolbar
          className={clsx(classes.root, {
@@ -189,20 +189,24 @@ const EnhancedTableToolbar = (props) => {
          )}
 
          {numSelected > 0 ? (
-            <Tooltip title='Delete'>
-               <IconButton
-                  aria-label='delete'
-                  onClick={() => props.deleteHandler()}
-               >
-                  <DeleteIcon />
-               </IconButton>
-            </Tooltip>
+            <div ref={wrapper}>
+               <Tooltip title='Delete'>
+                  <IconButton
+                     aria-label='delete'
+                     onClick={() => props.deleteHandler()}
+                  >
+                     <DeleteIcon />
+                  </IconButton>
+               </Tooltip>
+            </div>
          ) : (
-            <Tooltip title='Filter list'>
-               <IconButton aria-label='filter list'>
-                  <FilterListIcon />
-               </IconButton>
-            </Tooltip>
+            <div ref={wrapper}>
+               <Tooltip title='Filter list'>
+                  <IconButton aria-label='filter list'>
+                     <FilterListIcon />
+                  </IconButton>
+               </Tooltip>
+            </div>
          )}
       </Toolbar>
    );

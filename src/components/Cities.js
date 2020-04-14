@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getLogs } from './LogFunctions';
+import { getCities } from './CityFunctions';
 import localForage from 'localforage';
 
 import { cl, cubeMsgNext, obj } from './_sharedFunctions';
@@ -8,22 +8,16 @@ import { CubeMsg } from './3d/CubeMsg';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { lighten, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
+import MaterialTable from 'material-table';
 import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
@@ -239,13 +233,7 @@ const useStyles = makeStyles((theme) => ({
 export const Cities = () => {
    const classes = useStyles();
 
-   const [rows, setRows] = useState([]),
-      [order, setOrder] = React.useState('asc'),
-      [orderBy, setOrderBy] = React.useState('tdate'),
-      [selected, setSelected] = React.useState([]),
-      [page, setPage] = React.useState(0),
-      [dense, setDense] = React.useState(false),
-      [rowsPerPage, setRowsPerPage] = React.useState(5),
+   const [state, setState] = React.useState({}),
       [msgArr, setMsgArr] = useState(obj),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
@@ -254,8 +242,18 @@ export const Cities = () => {
       localForage
          .getItem('token')
          .then(function (startToken) {
-            getLogs(startToken).then((data) => {
-               setRows(data);
+            getCities(startToken).then((data) => {
+               setState({
+                  columns: [
+                     { title: 'ID', field: 'id' },
+                     { title: 'City', field: 'city' },
+                     { title: 'Country', field: 'Country' },
+                     { title: 'Population', field: 'population' },
+                     { title: 'Flag', field: 'iso2' },
+                     { title: 'ISO3', field: 'iso3' },
+                  ],
+                  data: data,
+               });
             });
          })
          .catch(function (err) {
@@ -265,68 +263,6 @@ export const Cities = () => {
             window.location.href = '/login';
          });
    }, []);
-
-   const deleteHandler = () => {
-      setMsgArr(cubeMsgNext('Delete Logs not enabled', 'warning', msgArr));
-      setCubeWrapperAnim(
-         msgArr[msgArr.findIndex((el) => el.current === true)].anim
-      );
-   };
-
-   const handleRequestSort = (event, property) => {
-      const isAsc = orderBy === property && order === 'asc';
-      setOrder(isAsc ? 'desc' : 'asc');
-      setOrderBy(property);
-   };
-
-   const handleSelectAllClick = (event) => {
-      if (event.target.checked) {
-         const newSelecteds = rows.map((n) => n.name);
-         setSelected(newSelecteds);
-         return;
-      }
-      setSelected([]);
-   };
-
-   const handleClick = (id) => {
-      console.log('id: ' + id);
-      //console.log('event.target.id: ' + event.target.id);
-      const selectedIndex = selected.indexOf(id);
-      let newSelected = [];
-
-      if (selectedIndex === -1) {
-         newSelected = newSelected.concat(selected, id);
-      } else if (selectedIndex === 0) {
-         newSelected = newSelected.concat(selected.slice(1));
-      } else if (selectedIndex === selected.length - 1) {
-         newSelected = newSelected.concat(selected.slice(0, -1));
-      } else if (selectedIndex > 0) {
-         newSelected = newSelected.concat(
-            selected.slice(0, selectedIndex),
-            selected.slice(selectedIndex + 1)
-         );
-      }
-      setSelected(newSelected);
-   };
-
-   const handleChangePage = (event, newPage) => {
-      setPage(newPage);
-   };
-
-   const handleChangeRowsPerPage = (event) => {
-      setRowsPerPage(parseInt(event.target.value, 10));
-      setPage(0);
-   };
-
-   const handleChangeDense = (event) => {
-      setDense(event.target.checked);
-   };
-
-   //const isSelected = (name) => selected.indexOf(name) !== -1;
-   const isSelected = (id) => selected.indexOf(id) !== -1;
-
-   const emptyRows =
-      rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
    return (
       <div id='main' className='body'>
@@ -343,111 +279,49 @@ export const Cities = () => {
             </div>
          </div>
          <div style={{ padding: 15, display: 'block' }}></div>
-         <div className={classes.root}>
-            <Paper className={classes.paper}>
-               <EnhancedTableToolbar
-                  numSelected={selected.length}
-                  deleteHandler={deleteHandler}
-               />
-               <TableContainer>
-                  <Table
-                     className={classes.table}
-                     aria-labelledby='tableTitle'
-                     size={dense ? 'small' : 'medium'}
-                     aria-label='enhanced table'
-                  >
-                     <EnhancedTableHead
-                        classes={classes}
-                        numSelected={selected.length}
-                        order={order}
-                        orderBy={orderBy}
-                        onSelectAllClick={handleSelectAllClick}
-                        onRequestSort={handleRequestSort}
-                        rowCount={rows.length}
-                     />
-                     <TableBody>
-                        {stableSort(rows, getComparator(order, orderBy))
-                           .slice(
-                              page * rowsPerPage,
-                              page * rowsPerPage + rowsPerPage
-                           )
-                           .map((row, index) => {
-                              const isItemSelected = isSelected(row.id);
-                              const labelId = `enhanced-table-checkbox-${index}`;
 
-                              return (
-                                 <TableRow
-                                    hover
-                                    onClick={() => handleClick(row.id)}
-                                    role='checkbox'
-                                    aria-checked={isItemSelected}
-                                    tabIndex={-1}
-                                    key={row.id}
-                                    id={row.id}
-                                    selected={isItemSelected}
-                                 >
-                                    <TableCell padding='checkbox'>
-                                       <Checkbox
-                                          checked={isItemSelected}
-                                          inputProps={{
-                                             'aria-labelledby': labelId,
-                                          }}
-                                       />
-                                    </TableCell>
-                                    <TableCell
-                                       component='th'
-                                       id={labelId}
-                                       scope='row'
-                                       padding='none'
-                                    >
-                                       {row.id}
-                                    </TableCell>
-                                    <TableCell align='right'>
-                                       {row.code}
-                                    </TableCell>
-                                    <TableCell align='right'>
-                                       {row.filename}
-                                    </TableCell>
-                                    <TableCell align='right'>
-                                       {row.msg_programmer}
-                                    </TableCell>
-                                    <TableCell align='right'>
-                                       {row.msg_app}
-                                    </TableCell>
-                                    <TableCell align='right'>
-                                       {row.refer}
-                                    </TableCell>
-                                    <TableCell align='right'>
-                                       {row.tdate}
-                                    </TableCell>
-                                 </TableRow>
-                              );
-                           })}
-                        {emptyRows > 0 && (
-                           <TableRow
-                              style={{ height: (dense ? 33 : 53) * emptyRows }}
-                           >
-                              <TableCell colSpan={6} />
-                           </TableRow>
-                        )}
-                     </TableBody>
-                  </Table>
-               </TableContainer>
-               <TablePagination
-                  rowsPerPageOptions={[5, 10, 25]}
-                  component='div'
-                  count={rows.length}
-                  rowsPerPage={rowsPerPage}
-                  page={page}
-                  onChangePage={handleChangePage}
-                  onChangeRowsPerPage={handleChangeRowsPerPage}
-               />
-            </Paper>
-            <FormControlLabel
-               control={<Switch checked={dense} onChange={handleChangeDense} />}
-               label='Dense padding'
-            />
-         </div>
+         <MaterialTable
+            title='Editable Example'
+            columns={state.columns}
+            data={state.data}
+            editable={{
+               onRowAdd: (newData) =>
+                  new Promise((resolve) => {
+                     setTimeout(() => {
+                        resolve();
+                        setState((prevState) => {
+                           const data = [...prevState.data];
+                           data.push(newData);
+                           return { ...prevState, data };
+                        });
+                     }, 600);
+                  }),
+               onRowUpdate: (newData, oldData) =>
+                  new Promise((resolve) => {
+                     setTimeout(() => {
+                        resolve();
+                        if (oldData) {
+                           setState((prevState) => {
+                              const data = [...prevState.data];
+                              data[data.indexOf(oldData)] = newData;
+                              return { ...prevState, data };
+                           });
+                        }
+                     }, 600);
+                  }),
+               onRowDelete: (oldData) =>
+                  new Promise((resolve) => {
+                     setTimeout(() => {
+                        resolve();
+                        setState((prevState) => {
+                           const data = [...prevState.data];
+                           data.splice(data.indexOf(oldData), 1);
+                           return { ...prevState, data };
+                        });
+                     }, 600);
+                  }),
+            }}
+         />
       </div>
    );
 };
