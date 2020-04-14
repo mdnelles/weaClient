@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { getCities } from './CityFunctions';
 import localForage from 'localforage';
+import _ from 'lodash';
 
 import { cl, cubeMsgNext, obj } from './_sharedFunctions';
 import { CubeMsg } from './3d/CubeMsg';
 
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { lighten, makeStyles } from '@material-ui/core/styles';
 import MaterialTable from 'material-table';
 import TableCell from '@material-ui/core/TableCell';
@@ -29,22 +31,6 @@ function descendingComparator(a, b, orderBy) {
       return 1;
    }
    return 0;
-}
-
-function getComparator(order, orderBy) {
-   return order === 'desc'
-      ? (a, b) => descendingComparator(a, b, orderBy)
-      : (a, b) => -descendingComparator(a, b, orderBy);
-}
-
-function stableSort(array, comparator) {
-   const stabilizedThis = array.map((el, index) => [el, index]);
-   stabilizedThis.sort((a, b) => {
-      const order = comparator(a[0], b[0]);
-      if (order !== 0) return order;
-      return a[1] - b[1];
-   });
-   return stabilizedThis.map((el) => el[0]);
 }
 
 const headCells = [
@@ -235,34 +221,45 @@ export const Cities = () => {
 
    const [state, setState] = React.useState({}),
       [msgArr, setMsgArr] = useState(obj),
+      [gotCities, setGotCities] = useState(false),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
    useEffect(() => {
-      cl('Cities.js.useEffect');
-      localForage
-         .getItem('token')
-         .then(function (startToken) {
-            getCities(startToken).then((data) => {
-               setState({
-                  columns: [
-                     { title: 'ID', field: 'id' },
-                     { title: 'City', field: 'city' },
-                     { title: 'Country', field: 'Country' },
-                     { title: 'Population', field: 'population' },
-                     { title: 'Flag', field: 'iso2' },
-                     { title: 'ISO3', field: 'iso3' },
-                  ],
-                  data: data,
+      setMsgArr(cubeMsgNext('Loading Cities', 'info', msgArr));
+      setCubeWrapperAnim(
+         msgArr[msgArr.findIndex((el) => el.current === true)].anim
+      );
+      if (gotCities === false) {
+         localForage
+            .getItem('token')
+            .then(function (startToken) {
+               getCities(startToken).then((data) => {
+                  setState({
+                     columns: [
+                        { title: 'ID', field: 'id' },
+                        { title: 'City', field: 'city' },
+                        { title: 'Country', field: 'country' },
+                        { title: 'Population', field: 'population' },
+                        { title: 'Flag', field: 'iso2' },
+                        { title: 'ISO3', field: 'iso3' },
+                     ],
+                     data: data,
+                  });
+                  setGotCities(true);
+                  setMsgArr(cubeMsgNext('Cities Loaded', 'success', msgArr));
+                  setCubeWrapperAnim(
+                     msgArr[msgArr.findIndex((el) => el.current === true)].anim
+                  );
                });
+            })
+            .catch(function (err) {
+               // This code runs if there were any errors
+               console.log(err);
+               alert('no token found');
+               window.location.href = '/login';
             });
-         })
-         .catch(function (err) {
-            // This code runs if there were any errors
-            console.log(err);
-            alert('no token found');
-            window.location.href = '/login';
-         });
-   }, []);
+      }
+   }, [state]);
 
    return (
       <div id='main' className='body'>
@@ -279,49 +276,88 @@ export const Cities = () => {
             </div>
          </div>
          <div style={{ padding: 15, display: 'block' }}></div>
-
-         <MaterialTable
-            title='Editable Example'
-            columns={state.columns}
-            data={state.data}
-            editable={{
-               onRowAdd: (newData) =>
-                  new Promise((resolve) => {
-                     setTimeout(() => {
-                        resolve();
-                        setState((prevState) => {
-                           const data = [...prevState.data];
-                           data.push(newData);
-                           return { ...prevState, data };
-                        });
-                     }, 600);
-                  }),
-               onRowUpdate: (newData, oldData) =>
-                  new Promise((resolve) => {
-                     setTimeout(() => {
-                        resolve();
-                        if (oldData) {
+         {_.isEmpty(state) ? (
+            <CircularProgress />
+         ) : (
+            <MaterialTable
+               title='Editable Example'
+               columns={state.columns}
+               data={state.data}
+               editable={{
+                  onRowAdd: (newData) =>
+                     new Promise((resolve) => {
+                        setTimeout(() => {
+                           resolve();
                            setState((prevState) => {
                               const data = [...prevState.data];
-                              data[data.indexOf(oldData)] = newData;
+                              data.push(newData);
                               return { ...prevState, data };
                            });
-                        }
-                     }, 600);
-                  }),
-               onRowDelete: (oldData) =>
-                  new Promise((resolve) => {
-                     setTimeout(() => {
-                        resolve();
-                        setState((prevState) => {
-                           const data = [...prevState.data];
-                           data.splice(data.indexOf(oldData), 1);
-                           return { ...prevState, data };
-                        });
-                     }, 600);
-                  }),
-            }}
-         />
+                           setMsgArr(
+                              cubeMsgNext('City addded.', 'success', msgArr)
+                           );
+                           setCubeWrapperAnim(
+                              msgArr[
+                                 msgArr.findIndex((el) => el.current === true)
+                              ].anim
+                           );
+                        }, 600);
+                     }),
+                  onRowUpdate: (newData, oldData) =>
+                     new Promise((resolve) => {
+                        setTimeout(() => {
+                           resolve();
+                           if (oldData) {
+                              setState((prevState) => {
+                                 const data = [...prevState.data];
+                                 data[data.indexOf(oldData)] = newData;
+                                 return { ...prevState, data };
+                              });
+                              setMsgArr(
+                                 cubeMsgNext('City updated.', 'success', msgArr)
+                              );
+                              setCubeWrapperAnim(
+                                 msgArr[
+                                    msgArr.findIndex(
+                                       (el) => el.current === true
+                                    )
+                                 ].anim
+                              );
+                           }
+                        }, 600);
+                     }),
+                  onRowDelete: (oldData) =>
+                     new Promise((resolve) => {
+                        setTimeout(() => {
+                           resolve();
+                           setState((prevState) => {
+                              setMsgArr(
+                                 cubeMsgNext('City removed.', 'success', msgArr)
+                              );
+                              setCubeWrapperAnim(
+                                 msgArr[
+                                    msgArr.findIndex(
+                                       (el) => el.current === true
+                                    )
+                                 ].anim
+                              );
+                              const data = [...prevState.data];
+                              data.splice(data.indexOf(oldData), 1);
+                              return { ...prevState, data };
+                           });
+                           setMsgArr(
+                              cubeMsgNext('City addded.', 'success', msgArr)
+                           );
+                           setCubeWrapperAnim(
+                              msgArr[
+                                 msgArr.findIndex((el) => el.current === true)
+                              ].anim
+                           );
+                        }, 600);
+                     }),
+               }}
+            />
+         )}
       </div>
    );
 };
