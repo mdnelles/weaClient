@@ -17,6 +17,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -217,20 +218,27 @@ export const Countries = () => {
    const [rows, setRows] = useState([]),
       [isLoaded, setIsLoaded] = React.useState(false),
       [msgArr, setMsgArr] = useState(obj),
+      [page, setPage] = React.useState(0),
+      [rowsPerPage, setRowsPerPage] = React.useState(10),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
-   const demoMsg = (msg) => {
+   const demoMsg = (msg, severity) => {
       console.log('msg = ' + msg);
       setMsgArr(
-         cubeMsgNext(
-            'Can not ' + msg + 'Countries with demo credentials',
-            'error',
-            msgArr
-         )
+         cubeMsgNext('Can not ' + msg + ' Countries as demo ', severity, msgArr)
       );
       setCubeWrapperAnim(
          msgArr[msgArr.findIndex((el) => el.current === true)].anim
       );
+   };
+
+   const handleChangePage = (event, newPage) => {
+      setPage(newPage);
+   };
+
+   const handleChangeRowsPerPage = (event) => {
+      setRowsPerPage(+event.target.value);
+      setPage(0);
    };
 
    useEffect(() => {
@@ -271,7 +279,7 @@ export const Countries = () => {
                <img
                   onError={(event) => addDefaultSrc(event)}
                   src={'/img/flags/' + props.cc + '.png'}
-                  style={{ height: 25, width: 40 }}
+                  style={{ height: 25, width: 45 }}
                ></img>
             </a>
          </span>
@@ -296,63 +304,90 @@ export const Countries = () => {
          {isLoaded === false ? (
             <CircularProgress />
          ) : (
-            <TableContainer component={Paper}>
-               <Table className={classes.table} aria-label='simple table'>
-                  <TableHead>
-                     <TableRow>
-                        <TableCell>Flag</TableCell>
-                        <TableCell>ISO</TableCell>
-                        <TableCell>.tld</TableCell>
-                        <TableCell>Country</TableCell>
-                        <TableCell>Cities</TableCell>
-                     </TableRow>
-                  </TableHead>
-                  <TableBody>
-                     {rows.map((row) => (
-                        <TableRow key={uuid()}>
-                           <TableCell component='th' scope='row'>
-                              <TheFlag
-                                 cc={
-                                    row.cc_iso !== undefined
-                                       ? row.cc_iso.toString().toLowerCase()
-                                       : null
-                                 }
-                              />
-                           </TableCell>
-                           <TableCell>{row.cc_iso}</TableCell>
-                           <TableCell>{row.tld}</TableCell>
-                           <TableCell>{row.country_name}</TableCell>
-
-                           <TableCell>
-                              <ButtonGroup
-                                 size='small'
-                                 color='primary'
-                                 variant='contained'
-                                 aria-label='small primary button group'
-                              >
-                                 <Button
-                                    id={
-                                       'c-' +
-                                       row.country_name
-                                          .toString()
-                                          .replace(/ /g, '~')
-                                    }
-                                 >
-                                    View
-                                 </Button>
-                                 <Button onClick={() => demoMsg('Add')}>
-                                    Add
-                                 </Button>
-                                 <Button onClick={() => demoMsg('Delete')}>
-                                    Delete
-                                 </Button>
-                              </ButtonGroup>
-                           </TableCell>
+            <Paper>
+               <TableContainer component={Paper}>
+                  <Table className={classes.table} aria-label='simple table'>
+                     <TableHead>
+                        <TableRow>
+                           <TableCell>Flag</TableCell>
+                           <TableCell>ISO</TableCell>
+                           <TableCell>.tld</TableCell>
+                           <TableCell>Country</TableCell>
+                           <TableCell>Cities</TableCell>
                         </TableRow>
-                     ))}
-                  </TableBody>
-               </Table>
-            </TableContainer>
+                     </TableHead>
+                     <TableBody>
+                        {rows
+                           .slice(
+                              page * rowsPerPage,
+                              page * rowsPerPage + rowsPerPage
+                           )
+                           .map((row) => {
+                              return (
+                                 <TableRow key={uuid()}>
+                                    <TableCell component='th' scope='row'>
+                                       <TheFlag
+                                          cc={
+                                             row.cc_iso !== undefined
+                                                ? row.cc_iso
+                                                     .toString()
+                                                     .toLowerCase()
+                                                : null
+                                          }
+                                       />
+                                    </TableCell>
+                                    <TableCell>{row.cc_iso}</TableCell>
+                                    <TableCell>{row.tld}</TableCell>
+                                    <TableCell>{row.country_name}</TableCell>
+                                    <TableCell>
+                                       <ButtonGroup
+                                          size='small'
+                                          color='primary'
+                                          variant='contained'
+                                          aria-label='small primary button group'
+                                       >
+                                          <Button
+                                             id={
+                                                'c-' +
+                                                row.country_name
+                                                   .toString()
+                                                   .replace(/ /g, '~')
+                                             }
+                                          >
+                                             View
+                                          </Button>
+                                          <Button
+                                             onClick={() =>
+                                                demoMsg('Add', 'warning')
+                                             }
+                                          >
+                                             Add
+                                          </Button>
+                                          <Button
+                                             onClick={() =>
+                                                demoMsg('Delete', 'error')
+                                             }
+                                          >
+                                             Delete
+                                          </Button>
+                                       </ButtonGroup>
+                                    </TableCell>
+                                 </TableRow>
+                              );
+                           })}
+                     </TableBody>
+                  </Table>
+               </TableContainer>
+               <TablePagination
+                  rowsPerPageOptions={[10, 25, 100]}
+                  component='div'
+                  count={rows.length}
+                  rowsPerPage={rowsPerPage}
+                  page={page}
+                  onChangePage={handleChangePage}
+                  onChangeRowsPerPage={handleChangeRowsPerPage}
+               />
+            </Paper>
          )}
       </div>
    );

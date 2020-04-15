@@ -13,24 +13,19 @@ import Divider from '@material-ui/core/Divider';
 import { logout } from '../UserFunctions';
 
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import AccountTreeRoundedIcon from '@material-ui/icons/AccountTreeRounded';
-import AssignmentIndRoundedIcon from '@material-ui/icons/AssignmentIndRounded';
+import BuildIcon from '@material-ui/icons/Build';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import EqualizerRoundedIcon from '@material-ui/icons/EqualizerRounded';
 import Grid from '@material-ui/core/Grid';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import LocalAtmRoundedIcon from '@material-ui/icons/LocalAtmRounded';
 import MapIcon from '@material-ui/icons/Map';
 import MenuIcon from '@material-ui/icons/Menu';
-import PersonRoundedIcon from '@material-ui/icons/PersonRounded';
 import RoomIcon from '@material-ui/icons/Room';
 import StarsRoundedIcon from '@material-ui/icons/StarsRounded';
 import StorageIcon from '@material-ui/icons/Storage';
-import SupervisorAccountRoundedIcon from '@material-ui/icons/SupervisorAccountRounded';
 
 const drawerWidth = 240;
 
@@ -196,6 +191,13 @@ export default function MiniDrawer() {
                </ListItem>
 
                <Divider />
+
+               <ListItem button onClick={() => bClick('utils')}>
+                  <ListItemAvatar>
+                     <BuildIcon style={{ fontSize: fs, fill: icolor }} />
+                  </ListItemAvatar>
+                  <ListItemText primary='App Utilities' />
+               </ListItem>
                <ListItem button onClick={() => bClick('users')}>
                   <ListItemAvatar>
                      <StarsRoundedIcon style={{ fontSize: fs, fill: icolor }} />
