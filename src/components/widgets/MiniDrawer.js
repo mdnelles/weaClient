@@ -2,10 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import cyan from '@material-ui/core/colors/cyan';
-import deepOrange from '@material-ui/core/colors/deepOrange';
-
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -35,7 +31,6 @@ import RoomIcon from '@material-ui/icons/Room';
 import StarsRoundedIcon from '@material-ui/icons/StarsRounded';
 import StorageIcon from '@material-ui/icons/Storage';
 import SupervisorAccountRoundedIcon from '@material-ui/icons/SupervisorAccountRounded';
-import { ThemeProvider } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 
@@ -102,13 +97,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MiniDrawer() {
-   const theme = createMuiTheme({
-      palette: {
-         primary: cyan,
-         secondary: deepOrange,
-      },
-   });
-
+   const theme = useTheme();
    const classes = useStyles();
    //const theme = useTheme();
    const [open, setOpen] = React.useState(false);
@@ -129,102 +118,98 @@ export default function MiniDrawer() {
    const fs = '30px';
 
    return (
-      <ThemeProvider theme={theme}>
-         <div className={classes.root}>
-            <CssBaseline />
-            <AppBar
-               position='fixed'
-               className={clsx(classes.appBar, {
-                  [classes.appBarShift]: open,
-               })}
-            >
-               <Toolbar>
-                  <Grid item xs={1}>
-                     <IconButton
-                        color='inherit'
-                        aria-label='open drawer'
-                        onClick={handleDrawerOpen}
-                        edge='start'
-                        className={clsx(classes.menuButton, {
-                           [classes.hide]: open,
-                        })}
-                     >
-                        <MenuIcon />
-                     </IconButton>
-                  </Grid>
-                  <Grid item xs={5}>
-                     <Typography variant='h6' noWrap>
-                        Live Weather &nbsp;
-                        <span style={{ fontSize: '.8em', color: '#555555' }}>
-                           by @mdnelles
-                        </span>
-                     </Typography>
-                  </Grid>
+      <div className={classes.root}>
+         <CssBaseline />
+         <AppBar
+            position='fixed'
+            className={clsx(classes.appBar, {
+               [classes.appBarShift]: open,
+            })}
+         >
+            <Toolbar>
+               <Grid item xs={1}>
+                  <IconButton
+                     color='inherit'
+                     aria-label='open drawer'
+                     onClick={handleDrawerOpen}
+                     edge='start'
+                     className={clsx(classes.menuButton, {
+                        [classes.hide]: open,
+                     })}
+                  >
+                     <MenuIcon />
+                  </IconButton>
+               </Grid>
+               <Grid item xs={5}>
+                  <Typography variant='h6' noWrap>
+                     Live Weather &nbsp;
+                     <span style={{ fontSize: '.8em', color: '#555555' }}>
+                        by @mdnelles
+                     </span>
+                  </Typography>
+               </Grid>
 
-                  <Grid item xs={6}>
-                     <p align='right' style={{ padding: '0px', margin: '0px' }}>
-                        <IconButton aria-label='delete' onClick={logout}>
-                           <AccountCircleIcon style={{ fill: 'black' }} />
-                        </IconButton>
-                     </p>
-                  </Grid>
-               </Toolbar>
-            </AppBar>
-            <Drawer
-               variant='permanent'
-               className={clsx(classes.drawer, {
+               <Grid item xs={6}>
+                  <p align='right' style={{ padding: '0px', margin: '0px' }}>
+                     <IconButton aria-label='delete' onClick={logout}>
+                        <AccountCircleIcon style={{ fill: 'black' }} />
+                     </IconButton>
+                  </p>
+               </Grid>
+            </Toolbar>
+         </AppBar>
+         <Drawer
+            variant='permanent'
+            className={clsx(classes.drawer, {
+               [classes.drawerOpen]: open,
+               [classes.drawerClose]: !open,
+            })}
+            classes={{
+               paper: clsx({
                   [classes.drawerOpen]: open,
                   [classes.drawerClose]: !open,
-               })}
-               classes={{
-                  paper: clsx({
-                     [classes.drawerOpen]: open,
-                     [classes.drawerClose]: !open,
-                  }),
-               }}
-            >
-               <div className={classes.toolbar}>
-                  <IconButton onClick={handleDrawerClose}>
-                     {theme.direction === 'rtl' ? (
-                        <ChevronRightIcon />
-                     ) : (
-                        <ChevronLeftIcon />
-                     )}
-                  </IconButton>
-               </div>
-               <Divider />
-               <List component='nav' aria-label='application stack'>
-                  <ListItem button onClick={() => bClick('cities')}>
-                     <ListItemAvatar>
-                        <RoomIcon style={{ fontSize: fs, fill: icolor }} />
-                     </ListItemAvatar>
-                     <ListItemText primary='Cities' />
-                  </ListItem>
-                  <ListItem button onClick={() => bClick('countries')}>
-                     <ListItemAvatar>
-                        <MapIcon style={{ fontSize: fs, fill: icolor }} />
-                     </ListItemAvatar>
-                     <ListItemText primary='Countries' />
-                  </ListItem>
+               }),
+            }}
+         >
+            <div className={classes.toolbar}>
+               <IconButton onClick={handleDrawerClose}>
+                  {theme.direction === 'rtl' ? (
+                     <ChevronRightIcon />
+                  ) : (
+                     <ChevronLeftIcon />
+                  )}
+               </IconButton>
+            </div>
+            <Divider />
+            <List component='nav' aria-label='application stack'>
+               <ListItem button onClick={() => bClick('cities')}>
+                  <ListItemAvatar>
+                     <RoomIcon style={{ fontSize: fs, fill: icolor }} />
+                  </ListItemAvatar>
+                  <ListItemText primary='Cities' />
+               </ListItem>
+               <ListItem button onClick={() => bClick('countries')}>
+                  <ListItemAvatar>
+                     <MapIcon style={{ fontSize: fs, fill: icolor }} />
+                  </ListItemAvatar>
+                  <ListItemText primary='Countries' />
+               </ListItem>
 
-                  <Divider />
-                  <ListItem button onClick={() => bClick('users')}>
-                     <ListItemAvatar>
-                        <StarsRoundedIcon
-                           style={{ fontSize: fs, fill: icolor }}
-                        />
-                     </ListItemAvatar>
-                     <ListItemText primary='Admin Users' />
-                  </ListItem>
-                  <ListItem button onClick={() => bClick('logs')}>
-                     <ListItemAvatar>
-                        <StorageIcon style={{ fontSize: fs, fill: icolor }} />
-                     </ListItemAvatar>
-                     <ListItemText primary='App Logs' />
-                  </ListItem>
-               </List>
-            </Drawer>
-         </div>
-      </ThemeProvider>
+               <Divider />
+               <ListItem button onClick={() => bClick('users')}>
+                  <ListItemAvatar>
+                     <StarsRoundedIcon style={{ fontSize: fs, fill: icolor }} />
+                  </ListItemAvatar>
+                  <ListItemText primary='Admin Users' />
+               </ListItem>
+               <ListItem button onClick={() => bClick('logs')}>
+                  <ListItemAvatar>
+                     <StorageIcon style={{ fontSize: fs, fill: icolor }} />
+                  </ListItemAvatar>
+                  <ListItemText primary='App Logs' />
+               </ListItem>
+            </List>
+         </Drawer>
+      </div>
    );
 }

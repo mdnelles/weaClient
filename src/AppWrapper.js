@@ -74,7 +74,7 @@ export const AppWrapper = () => {
    } else {
       cl('AppWrapper.js active session found');
       ret = (
-         <div>
+         <div className='adminClass'>
             <MiniDrawer
                drawerState={drawerState}
                key={drawerState}

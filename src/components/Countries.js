@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { lighten, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -218,15 +219,36 @@ export const Countries = () => {
       [msgArr, setMsgArr] = useState(obj),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
+   const demoMsg = (msg) => {
+      console.log('msg = ' + msg);
+      setMsgArr(
+         cubeMsgNext(
+            'Can not ' + msg + 'Countries with demo credentials',
+            'error',
+            msgArr
+         )
+      );
+      setCubeWrapperAnim(
+         msgArr[msgArr.findIndex((el) => el.current === true)].anim
+      );
+   };
+
    useEffect(() => {
+      setMsgArr(cubeMsgNext('loading countries database', 'info', msgArr));
+      setCubeWrapperAnim(
+         msgArr[msgArr.findIndex((el) => el.current === true)].anim
+      );
       if (isLoaded === false) {
          localForage
             .getItem('token')
             .then(function (startToken) {
                getCountries(startToken).then((data) => {
-                  console.log(data);
                   setRows(data);
                   setIsLoaded(true);
+                  setMsgArr(cubeMsgNext('Countries loaded', 'success', msgArr));
+                  setCubeWrapperAnim(
+                     msgArr[msgArr.findIndex((el) => el.current === true)].anim
+                  );
                });
             })
             .catch(function (err) {
@@ -249,7 +271,7 @@ export const Countries = () => {
                <img
                   onError={(event) => addDefaultSrc(event)}
                   src={'/img/flags/' + props.cc + '.png'}
-                  style={{ maxHeight: 25, maxWidth: 40 }}
+                  style={{ height: 25, width: 40 }}
                ></img>
             </a>
          </span>
@@ -282,7 +304,7 @@ export const Countries = () => {
                         <TableCell>ISO</TableCell>
                         <TableCell>.tld</TableCell>
                         <TableCell>Country</TableCell>
-                        <TableCell></TableCell>
+                        <TableCell>Cities</TableCell>
                      </TableRow>
                   </TableHead>
                   <TableBody>
@@ -300,21 +322,31 @@ export const Countries = () => {
                            <TableCell>{row.cc_iso}</TableCell>
                            <TableCell>{row.tld}</TableCell>
                            <TableCell>{row.country_name}</TableCell>
-                           <TableCell>{row.protein}</TableCell>
 
                            <TableCell>
-                              <Button
-                                 variant='contained'
+                              <ButtonGroup
+                                 size='small'
                                  color='primary'
-                                 id={
-                                    'c-' +
-                                    row.country_name
-                                       .toString()
-                                       .replace(/ /g, '~')
-                                 }
+                                 variant='contained'
+                                 aria-label='small primary button group'
                               >
-                                 View Weather Cities
-                              </Button>
+                                 <Button
+                                    id={
+                                       'c-' +
+                                       row.country_name
+                                          .toString()
+                                          .replace(/ /g, '~')
+                                    }
+                                 >
+                                    View
+                                 </Button>
+                                 <Button onClick={() => demoMsg('Add')}>
+                                    Add
+                                 </Button>
+                                 <Button onClick={() => demoMsg('Delete')}>
+                                    Delete
+                                 </Button>
+                              </ButtonGroup>
                            </TableCell>
                         </TableRow>
                      ))}

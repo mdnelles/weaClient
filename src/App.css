@@ -29,6 +29,9 @@ body {
 .App-link {
    color: #61dafb;
 }
+.adminClass {
+   background-color: #e0f7ff;
+}
 
 @keyframes App-logo-spin {
    from {
