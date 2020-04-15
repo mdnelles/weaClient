@@ -12,6 +12,7 @@ import { Statistics } from './components/Statistics';
 import { Admin } from './components/Admin';
 import { Countries } from './components/Countries';
 import { Cities } from './components/Cities';
+import { Utils } from './components/Utils';
 
 const goHome = () => {
    // putting this in to stop repaid reloading of page on '/'
@@ -85,6 +86,7 @@ export const AppWrapper = () => {
                <Route exact path='/cities' component={Cities} />
                <Route exact path='/countries' component={Countries} />
                <Route exact path='/logs' component={LogView} />
+               <Route exact path='/utils' component={Utils} />
                <Route exact path='/stats' component={Statistics} />
             </div>
          </div>
