@@ -103,7 +103,7 @@ function EnhancedTableHead(props) {
             {headCells.map((headCell) => (
                <TableCell
                   key={headCell.id}
-                  align={headCell.numeric ? 'right' : 'left'}
+                  align='left'
                   padding={headCell.disablePadding ? 'none' : 'default'}
                   sortDirection={orderBy === headCell.id ? order : false}
                >
@@ -405,22 +405,22 @@ export const LogView = () => {
                                     >
                                        {row.id}
                                     </TableCell>
-                                    <TableCell align='right'>
+                                    <TableCell align='left'>
                                        {row.code}
                                     </TableCell>
-                                    <TableCell align='right'>
+                                    <TableCell align='left'>
                                        {row.filename}
                                     </TableCell>
-                                    <TableCell align='right'>
+                                    <TableCell align='left'>
                                        {row.msg_programmer}
                                     </TableCell>
-                                    <TableCell align='right'>
+                                    <TableCell align='left'>
                                        {row.msg_app}
                                     </TableCell>
-                                    <TableCell align='right'>
+                                    <TableCell align='left'>
                                        {row.refer}
                                     </TableCell>
-                                    <TableCell align='right'>
+                                    <TableCell align='left'>
                                        {row.tdate}
                                     </TableCell>
                                  </TableRow>
