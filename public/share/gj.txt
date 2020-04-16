@@ -1,0 +1,1 @@
+[{"city":"Gjirokastër","country":"Albania"},{"city":"Gjoa Haven","country":"Canada"},{"city":"Gjakovë","country":"Kosovo"},{"city":"Gjilan","country":"Kosovo"},{"city":"Gjøvik","country":"Norway"}]

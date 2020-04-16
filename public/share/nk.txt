@@ -1,0 +1,1 @@
+[{"city":"Nkongsamba","country":"Cameroon"},{"city":"Nkawkaw","country":"Ghana"},{"city":"Nkhata Bay","country":"Malawi"},{"city":"Nkhotakota","country":"Malawi"},{"city":"Nkurenkuru","country":"Namibia"}]

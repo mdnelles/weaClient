@@ -1,0 +1,1 @@
+[{"city":"Eger","country":"Hungary"},{"city":"Egilsstaðir","country":"Iceland"},{"city":"Egvekinot","country":"Russia"},{"city":"Egg Harbor","country":"United States"},{"city":"Eggertsville","country":"United States"},{"city":"Egypt Lake-Leto","country":"United States"}]

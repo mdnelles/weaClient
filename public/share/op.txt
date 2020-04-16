@@ -1,0 +1,1 @@
+[{"city":"Opuwo","country":"Namibia"},{"city":"Opole","country":"Poland"},{"city":"Opovo","country":"Serbia"},{"city":"Oplotnica","country":"Slovenia"},{"city":"Opa-locka","country":"United States"},{"city":"Opelika","country":"United States"},{"city":"Opelousas","country":"United States"}]

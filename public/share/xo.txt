@@ -1,0 +1,1 @@
+[{"city":"Xocalı","country":"Azerbaijan"},{"city":"Xocavənd","country":"Azerbaijan"},{"city":"Xo‘jayli Shahri","country":"Uzbekistan"}]

@@ -1,0 +1,1 @@
+[{"city":"Szeged","country":"Hungary"},{"city":"Székesfehérvár","country":"Hungary"},{"city":"Szekszárd","country":"Hungary"},{"city":"Szolnok","country":"Hungary"},{"city":"Szombathely","country":"Hungary"},{"city":"Szczecin","country":"Poland"}]

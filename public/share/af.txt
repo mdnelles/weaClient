@@ -1,0 +1,1 @@
+[{"city":"Afega","country":"Samoa"},{"city":"Afyonkarahisar","country":"Turkey"},{"city":"Affton","country":"United States"}]

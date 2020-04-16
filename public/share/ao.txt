@@ -1,0 +1,1 @@
+[{"city":"Aosta","country":"Italy"},{"city":"Aomori","country":"Japan"}]

@@ -1,0 +1,1 @@
+[{"city":"Gwalior","country":"India"},{"city":"Gwangju","country":"Korea, South"},{"city":"Gwadar","country":"Pakistan"},{"city":"Gwanda","country":"Zimbabwe"},{"city":"Gweru","country":"Zimbabwe"}]

@@ -1,0 +1,1 @@
+[{"city":"Gdańsk","country":"Poland"},{"city":"Gdynia","country":"Poland"}]

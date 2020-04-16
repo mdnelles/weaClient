@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-import { genJSON } from "./UtilFunctions";
+import { genJSON, genJSON2 } from "./UtilFunctions";
 
 import { cl, cubeMsgNext, obj } from "./_sharedFunctions";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import FileCopyIcon from "@material-ui/icons/FileCopy";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 import localForage from "localforage";
@@ -19,8 +20,6 @@ import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 import Paper from "@material-ui/core/Paper";
 import { CubeMsg } from "./3d/CubeMsg";
 
-import PropTypes from "prop-types";
-
 export const Utils = () => {
    //const isSelected = (name) => selected.indexOf(name) !== -1;
 
@@ -34,6 +33,20 @@ export const Utils = () => {
 
    const startGenJSON = () => {
       genJSON(token).then(() => {
+         setMsgArr(cubeMsgNext("JSON file updated", "info", msgArr));
+         setCubeWrapperAnim(
+            msgArr[msgArr.findIndex((el) => el.current === true)].anim
+         );
+      });
+   };
+   const startGenJSON2 = () => {
+      setSpinnerDisplay("displayBlock");
+      setMsgArr(cubeMsgNext("Building alpha City files", "info", msgArr));
+      setCubeWrapperAnim(
+         msgArr[msgArr.findIndex((el) => el.current === true)].anim
+      );
+      genJSON2(token).then(() => {
+         setSpinnerDisplay("displayNone");
          setMsgArr(cubeMsgNext("JSON file updated", "info", msgArr));
          setCubeWrapperAnim(
             msgArr[msgArr.findIndex((el) => el.current === true)].anim
@@ -139,7 +152,13 @@ export const Utils = () => {
                   <ListItemIcon>
                      <InsertDriveFileIcon />
                   </ListItemIcon>
-                  <ListItemText primary='Generate City JSON File' />
+                  <ListItemText primary='Generate Single Cities File' />
+               </ListItem>
+               <ListItem button onClick={() => startGenJSON2()}>
+                  <ListItemIcon>
+                     <FileCopyIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Generate Alpha City Files' />
                </ListItem>
                <ListItem button onClick={() => displayCityJson()}>
                   <ListItemIcon>

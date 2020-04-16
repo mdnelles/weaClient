@@ -1,0 +1,1 @@
+[{"city":"Oyrarbakki","country":"Faroe Islands"},{"city":"Oyem","country":"Gabon"},{"city":"Oytal","country":"Kazakhstan"},{"city":"Oyo","country":"Nigeria"},{"city":"Oyam","country":"Uganda"},{"city":"Oyster Bay","country":"United States"}]

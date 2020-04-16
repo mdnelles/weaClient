@@ -1,0 +1,1 @@
+[{"city":"Ngozi","country":"Burundi"},{"city":"Ngaoundéré","country":"Cameroon"},{"city":"Nguigmi","country":"Niger"},{"city":"Nguru","country":"Nigeria"},{"city":"Ngerulmud","country":"Palau"},{"city":"Ngara","country":"Tanzania"},{"city":"Ngorongoro","country":"Tanzania"},{"city":"Ngora","country":"Uganda"}]

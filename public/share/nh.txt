@@ -1,0 +1,1 @@
+[{"city":"Nhlangano","country":"Swaziland"},{"city":"Nha Trang","country":"Vietnam"}]

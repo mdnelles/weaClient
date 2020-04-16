@@ -1,0 +1,1 @@
+[{"city":"Qobustan","country":"Azerbaijan"},{"city":"Qom","country":"Iran"},{"city":"Qostanay","country":"Kazakhstan"},{"city":"Qormi","country":"Malta"},{"city":"Qo‘qon","country":"Uzbekistan"}]

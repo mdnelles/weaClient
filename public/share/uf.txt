@@ -1,0 +1,1 @@
+[{"city":"Ufa","country":"Russia"}]

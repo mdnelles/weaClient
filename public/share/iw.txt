@@ -1,0 +1,1 @@
+[{"city":"Iwaki","country":"Japan"},{"city":"Iwo","country":"Nigeria"}]

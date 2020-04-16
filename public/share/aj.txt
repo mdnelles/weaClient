@@ -1,0 +1,1 @@
+[{"city":"Ajaccio","country":"France"},{"city":"Ajmer","country":"India"},{"city":"Ajdābiyā","country":"Libya"},{"city":"Ajdovščina","country":"Slovenia"}]

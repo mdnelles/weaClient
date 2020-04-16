@@ -1,0 +1,1 @@
+[{"city":"Gyumri","country":"Armenia"},{"city":"Gympie","country":"Australia"},{"city":"Gyangzê","country":"China"},{"city":"Gyêgu","country":"China"},{"city":"Győr","country":"Hungary"},{"city":"Gyda","country":"Russia"},{"city":"Gypsum","country":"United States"}]

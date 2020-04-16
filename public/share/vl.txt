@@ -1,0 +1,1 @@
+[{"city":"Vlorë","country":"Albania"},{"city":"Vladikavkaz","country":"Russia"},{"city":"Vladimir","country":"Russia"},{"city":"Vladivostok","country":"Russia"},{"city":"Vladičin Han","country":"Serbia"},{"city":"Vladimirci","country":"Serbia"},{"city":"Vlasotince","country":"Serbia"}]

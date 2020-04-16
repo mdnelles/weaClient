@@ -1,0 +1,1 @@
+[{"city":"Zlín","country":"Czechia"},{"city":"Zlatoust","country":"Russia"}]

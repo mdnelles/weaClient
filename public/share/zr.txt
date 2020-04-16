@@ -1,0 +1,1 @@
+[{"city":"Zrnovci","country":"Macedonia"},{"city":"Zrenjanin","country":"Serbia"},{"city":"Zreče","country":"Slovenia"}]

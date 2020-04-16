@@ -1,0 +1,1 @@
+[{"city":"Āwasa","country":"Ethiopia"},{"city":"Awbārī","country":"Libya"},{"city":"Awjilah","country":"Libya"},{"city":"Awka","country":"Nigeria"},{"city":"Aweil","country":"South Sudan"}]
