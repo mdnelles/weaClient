@@ -132,7 +132,7 @@ export const Login = () => {
                   localForage.setItem('token', res);
 
                   setTimeout(() => {
-                     window.location.href = '/admin';
+                     window.location.href = '/countries';
                   }, 350);
                } else {
                   console.log('+++ unhandled error here: ' + __filename);

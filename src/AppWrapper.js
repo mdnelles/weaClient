@@ -73,7 +73,6 @@ export const AppWrapper = () => {
       cl('AppWRapper.js.no active session routing to login page');
       ret = <Redirect to='/login' />;
    } else {
-      cl('AppWrapper.js active session found');
       ret = (
          <div className='adminClass'>
             <MiniDrawer

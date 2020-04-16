@@ -190,7 +190,11 @@ export const Home = () => {
 
    return (
       <div className='vertical-center center-outer'>
-         <div className='center-inner'>welcome home</div>
+         <div className='center-inner'>
+            welcome home
+            <br />
+            <a href='/login'>login</a>
+         </div>
       </div>
    );
 };
