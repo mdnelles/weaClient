@@ -1,55 +1,63 @@
-import React, { useState, useEffect } from 'react';
-import { getCountries } from './CountryFunctions';
-import localForage from 'localforage';
-import uuid from 'uuid';
+import React, { useState, useEffect } from "react";
+import { getCountries } from "./CountryFunctions";
+import { getCitysByCountry } from "./CityFunctions";
+import localForage from "localforage";
+import uuid from "uuid";
 
-import { cubeMsgNext, obj } from './_sharedFunctions';
-import { CubeMsg } from './3d/CubeMsg';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { cubeMsgNext, obj } from "./_sharedFunctions";
+import { CubeMsg } from "./3d/CubeMsg";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { lighten, makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
-import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import { lighten, makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TablePagination from "@material-ui/core/TablePagination";
+import TableRow from "@material-ui/core/TableRow";
+import TableSortLabel from "@material-ui/core/TableSortLabel";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import Checkbox from "@material-ui/core/Checkbox";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
+import DeleteIcon from "@material-ui/icons/Delete";
+import FilterListIcon from "@material-ui/icons/FilterList";
 
 const headCells = [
-   { id: 'id', numeric: true, disablePadding: true, label: 'ID' },
-   { id: 'code', numeric: true, disablePadding: true, label: 'Code' },
+   { id: "id", numeric: true, disablePadding: true, label: "ID" },
+   { id: "code", numeric: true, disablePadding: true, label: "Code" },
    {
-      id: 'filename',
+      id: "filename",
       numeric: false,
       disablePadding: false,
-      label: 'Filename',
+      label: "Filename",
    },
    {
-      id: 'msg_programmer',
+      id: "msg_programmer",
       numeric: false,
       disablePadding: false,
-      label: 'Msg',
+      label: "Msg",
    },
-   { id: 'msg_app', numeric: false, disablePadding: false, label: 'Msg(a)' },
-   { id: 'refer', numeric: false, disablePadding: false, label: 'Refer' },
-   { id: 'tdate', numeric: false, disablePadding: false, label: 'Date' },
+   { id: "msg_app", numeric: false, disablePadding: false, label: "Msg(a)" },
+   { id: "refer", numeric: false, disablePadding: false, label: "Refer" },
+   { id: "tdate", numeric: false, disablePadding: false, label: "Date" },
 ];
-
-/* -- */
 
 function EnhancedTableHead(props) {
    const {
@@ -73,27 +81,27 @@ function EnhancedTableHead(props) {
                   indeterminate={numSelected > 0 && numSelected < rowCount}
                   checked={rowCount > 0 && numSelected === rowCount}
                   onChange={onSelectAllClick}
-                  inputProps={{ 'aria-label': 'select all desserts' }}
+                  inputProps={{ "aria-label": "select all desserts" }}
                />
             </TableCell>
             {headCells.map((headCell) => (
                <TableCell
                   key={headCell.id}
-                  align={headCell.numeric ? 'right' : 'left'}
-                  padding={headCell.disablePadding ? 'none' : 'default'}
+                  align={headCell.numeric ? "right" : "left"}
+                  padding={headCell.disablePadding ? "none" : "default"}
                   sortDirection={orderBy === headCell.id ? order : false}
                >
                   <TableSortLabel
                      active={orderBy === headCell.id}
-                     direction={orderBy === headCell.id ? order : 'desc'}
+                     direction={orderBy === headCell.id ? order : "desc"}
                      onClick={createSortHandler(headCell.id)}
                   >
                      {headCell.label}
                      {orderBy === headCell.id ? (
                         <span className={classes.visuallyHidden}>
-                           {order === 'desc'
-                              ? 'sorted descending'
-                              : 'sorted ascending'}
+                           {order === "desc"
+                              ? "sorted descending"
+                              : "sorted ascending"}
                         </span>
                      ) : null}
                   </TableSortLabel>
@@ -109,7 +117,7 @@ EnhancedTableHead.propTypes = {
    numSelected: PropTypes.number.isRequired,
    onRequestSort: PropTypes.func.isRequired,
    onSelectAllClick: PropTypes.func.isRequired,
-   order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+   order: PropTypes.oneOf(["asc", "desc"]).isRequired,
    orderBy: PropTypes.string.isRequired,
    rowCount: PropTypes.number.isRequired,
 };
@@ -120,7 +128,7 @@ const useToolbarStyles = makeStyles((theme) => ({
       paddingRight: theme.spacing(1),
    },
    highlight:
-      theme.palette.type === 'light'
+      theme.palette.type === "light"
          ? {
               color: theme.palette.secondary.main,
               backgroundColor: lighten(theme.palette.secondary.light, 0.85),
@@ -130,7 +138,7 @@ const useToolbarStyles = makeStyles((theme) => ({
               backgroundColor: theme.palette.secondary.dark,
            },
    title: {
-      flex: '1 1 100%',
+      flex: "1 1 100%",
    },
 }));
 
@@ -190,10 +198,10 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles((theme) => ({
    root: {
-      width: '100%',
+      width: "100%",
    },
    paper: {
-      width: '100%',
+      width: "100%",
       marginBottom: theme.spacing(2),
    },
    table: {
@@ -201,12 +209,12 @@ const useStyles = makeStyles((theme) => ({
    },
    visuallyHidden: {
       border: 0,
-      clip: 'rect(0 0 0 0)',
+      clip: "rect(0 0 0 0)",
       height: 1,
       margin: -1,
-      overflow: 'hidden',
+      overflow: "hidden",
       padding: 0,
-      position: 'absolute',
+      position: "absolute",
       top: 20,
       width: 1,
    },
@@ -219,13 +227,41 @@ export const Countries = () => {
       [isLoaded, setIsLoaded] = React.useState(false),
       [msgArr, setMsgArr] = useState(obj),
       [page, setPage] = React.useState(0),
+      [token, setToken] = useState("na"),
+      [open, setOpen] = React.useState(false),
+      [dialogProgress, setDialogProgress] = useState("displayNone"),
+      [dialogTitle, setDialogTitle] = useState(""),
+      [dialogContent, setDialogContent] = useState(""),
       [rowsPerPage, setRowsPerPage] = React.useState(10),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
+   const startGetCitysByCountry = (event) => {
+      event.preventDefault();
+      let country = event.target.id.toString().split("-");
+      setDialogProgress("displayBlock");
+      setOpen(true);
+      let countryReadable = country[1].replace(/__/g, " ");
+      setDialogTitle("Cities in " + countryReadable);
+      getCitysByCountry(token, country[1]).then((data) => {
+         console.log(data);
+         var displayCities;
+         data.forEach((e) => {
+            if (e.city !== undefined && e.city !== "undefined")
+               displayCities += e.city + "\n";
+         });
+         displayCities = displayCities.replace(/undefined/g, "");
+         setDialogContent(displayCities);
+         setDialogProgress("displayNone");
+      });
+   };
+
+   const handleClose = () => {
+      setOpen(false);
+   };
    const demoMsg = (msg, severity) => {
-      console.log('msg = ' + msg);
+      console.log("msg = " + msg);
       setMsgArr(
-         cubeMsgNext('Can not ' + msg + ' Countries as demo ', severity, msgArr)
+         cubeMsgNext("Can not " + msg + " Countries as demo ", severity, msgArr)
       );
       setCubeWrapperAnim(
          msgArr[msgArr.findIndex((el) => el.current === true)].anim
@@ -242,18 +278,19 @@ export const Countries = () => {
    };
 
    useEffect(() => {
-      setMsgArr(cubeMsgNext('loading countries database', 'info', msgArr));
+      setMsgArr(cubeMsgNext("loading countries database", "info", msgArr));
       setCubeWrapperAnim(
          msgArr[msgArr.findIndex((el) => el.current === true)].anim
       );
       if (isLoaded === false) {
          localForage
-            .getItem('token')
+            .getItem("token")
             .then(function (startToken) {
+               setToken(startToken);
                getCountries(startToken).then((data) => {
                   setRows(data);
                   setIsLoaded(true);
-                  setMsgArr(cubeMsgNext('Countries loaded', 'success', msgArr));
+                  setMsgArr(cubeMsgNext("Countries loaded", "success", msgArr));
                   setCubeWrapperAnim(
                      msgArr[msgArr.findIndex((el) => el.current === true)].anim
                   );
@@ -262,23 +299,23 @@ export const Countries = () => {
             .catch(function (err) {
                // This code runs if there were any errors
                console.log(err);
-               alert('no token found');
-               window.location.href = '/';
+               alert("no token found");
+               window.location.href = "/";
             });
       }
    }, [isLoaded]);
 
    const addDefaultSrc = (ev) => {
-      ev.target.src = '/img/flags/_noimg.png';
+      ev.target.src = "/img/flags/_noimg.png";
    };
 
    const TheFlag = (props) => {
       return (
          <span>
-            <a href={'/img/flags/' + props.cc + '.png'} target='_blank'>
+            <a href={"/img/flags/" + props.cc + ".png"} target='_blank'>
                <img
                   onError={(event) => addDefaultSrc(event)}
-                  src={'/img/flags/' + props.cc + '.png'}
+                  src={"/img/flags/" + props.cc + ".png"}
                   style={{ height: 25, width: 45 }}
                ></img>
             </a>
@@ -289,18 +326,18 @@ export const Countries = () => {
    return (
       <div id='main' className='body'>
          <h3>Countries</h3>
-         <div style={{ padding: 25, display: 'block' }}></div>
+         <div style={{ padding: 25, display: "block" }}></div>
          <div className='contain' style={{ marginLeft: 10 }}>
-            <div className={'cubeWrapperFluid ' + cubeWrapperAnim} id='stage'>
+            <div className={"cubeWrapperFluid " + cubeWrapperAnim} id='stage'>
                <CubeMsg
                   msgArr={msgArr}
-                  width={'100%'}
+                  width={"100%"}
                   height={78}
                   marginT={-60}
                />
             </div>
          </div>
-         <div style={{ padding: 15, display: 'block' }}></div>
+         <div style={{ padding: 15, display: "block" }}></div>
          {isLoaded === false ? (
             <CircularProgress />
          ) : (
@@ -346,26 +383,31 @@ export const Countries = () => {
                                           variant='contained'
                                           aria-label='small primary button group'
                                        >
-                                          <Button
-                                             id={
-                                                'c-' +
-                                                row.country_name
-                                                   .toString()
-                                                   .replace(/ /g, '~')
-                                             }
-                                          >
-                                             View
+                                          <Button>
+                                             <span
+                                                onClick={(event) =>
+                                                   startGetCitysByCountry(event)
+                                                }
+                                                id={
+                                                   "c-" +
+                                                   row.country_name
+                                                      .toString()
+                                                      .replace(/ /g, "__")
+                                                }
+                                             >
+                                                View
+                                             </span>
                                           </Button>
                                           <Button
                                              onClick={() =>
-                                                demoMsg('Add', 'warning')
+                                                demoMsg("Add", "warning")
                                              }
                                           >
                                              Add
                                           </Button>
                                           <Button
                                              onClick={() =>
-                                                demoMsg('Delete', 'error')
+                                                demoMsg("Delete", "error")
                                              }
                                           >
                                              Delete
@@ -389,6 +431,21 @@ export const Countries = () => {
                />
             </Paper>
          )}
+         <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby='alert-dialog-title'
+            aria-describedby='alert-dialog-description'
+         >
+            <DialogTitle id='alert-dialog-title'>{dialogTitle}</DialogTitle>
+            <DialogContent>
+               <span className={dialogProgress}>
+                  <CircularProgress />
+               </span>
+
+               <pre>{dialogContent}</pre>
+            </DialogContent>
+         </Dialog>
       </div>
    );
 };

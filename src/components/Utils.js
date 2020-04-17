@@ -164,13 +164,14 @@ export const Utils = () => {
                   <ListItemIcon>
                      <VisibilityIcon />
                   </ListItemIcon>
-                  <ListItemText primary='Display Weather City JSON File' />
+                  <ListItemText primary='Display All Weather City JSON File' />
                </ListItem>
+
                <ListItem button onClick={() => downloadCityJson()}>
                   <ListItemIcon>
                      <CloudDownloadIcon />
                   </ListItemIcon>
-                  <ListItemText primary='Download Weather City JSON File' />
+                  <ListItemText primary='Download Weather City (text)' />
                </ListItem>
                <ListItem button onClick={() => checkAppStats()}>
                   <ListItemIcon>
