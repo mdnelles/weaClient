@@ -1,1 +1,1 @@
-[{"city":"Zgornja Kungota","country":"Slovenia"},{"city":"Zgornje Gorje","country":"Slovenia"},{"city":"Zgornje Jezersko","country":"Slovenia"}]
+[{"city":"Zgornja Kungota","admin_name":"Kungota","country":"Slovenia"},{"city":"Zgornje Gorje","admin_name":"Gorje","country":"Slovenia"},{"city":"Zgornje Jezersko","admin_name":"Jezersko","country":"Slovenia"}]

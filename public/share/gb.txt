@@ -1,1 +1,1 @@
-[{"city":"Gbadolite","country":"Congo (Kinshasa)"},{"city":"Gbarnga","country":"Liberia"}]
+[{"city":"Gbadolite","admin_name":"Nord-Ubangi","country":"Congo (Kinshasa)"},{"city":"Gbarnga","admin_name":"Bong","country":"Liberia"}]

@@ -1,1 +1,1 @@
-[{"city":"Mmabatho","country":"South Africa"}]
+[{"city":"Mmabatho","admin_name":"North West","country":"South Africa"}]

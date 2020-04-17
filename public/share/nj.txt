@@ -1,1 +1,1 @@
-[{"city":"Njombe","country":"Tanzania"}]
+[{"city":"Njombe","admin_name":"Njombe","country":"Tanzania"}]

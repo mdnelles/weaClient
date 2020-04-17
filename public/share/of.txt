@@ -1,1 +1,1 @@
-[{"city":"Oficina María Elena","country":"Chile"},{"city":"Offutt AFB","country":"United States"}]
+[{"city":"Oficina María Elena","admin_name":"Antofagasta","country":"Chile"},{"city":"Offutt AFB","admin_name":"Nebraska","country":"United States"}]

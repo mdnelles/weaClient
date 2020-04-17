@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { login } from './UserFunctions';
-import localForage from 'localforage';
-import { CubeMsg } from './3d/CubeMsg';
-import { cubeMsgNext, obj } from './_sharedFunctions';
+import React, { useState, useEffect } from "react";
+import { login } from "./UserFunctions";
+import localForage from "localforage";
+import { CubeMsg } from "./3d/CubeMsg";
+import { cubeMsgNext, obj } from "./_sharedFunctions";
 
-import { useSpring, animated as a } from 'react-spring';
+import { useSpring, animated as a } from "react-spring";
 
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
-import Avatar from '@material-ui/core/Avatar';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import IconButton from '@material-ui/core/IconButton';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Popover from '@material-ui/core/Popover';
+import Avatar from "@material-ui/core/Avatar";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import IconButton from "@material-ui/core/IconButton";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import ListItemText from "@material-ui/core/ListItemText";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Typography from "@material-ui/core/Typography";
+import { red } from "@material-ui/core/colors";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Popover from "@material-ui/core/Popover";
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -36,17 +36,17 @@ const useStyles = makeStyles((theme) => ({
    },
    media: {
       height: 0,
-      paddingTop: '56.25%', // 16:9
+      paddingTop: "56.25%", // 16:9
    },
    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
+      transform: "rotate(0deg)",
+      marginLeft: "auto",
+      transition: theme.transitions.create("transform", {
          duration: theme.transitions.duration.shortest,
       }),
    },
    expandOpen: {
-      transform: 'rotate(180deg)',
+      transform: "rotate(180deg)",
    },
    avatar: {
       backgroundColor: red[500],
@@ -59,12 +59,12 @@ const useStyles = makeStyles((theme) => ({
 export const Home = () => {
    const classes = useStyles();
 
-   const [email, setEmail] = useState('demo'),
-      [password, setPassword] = useState('demo'),
-      [spinnerClass, setSpinnerClass] = useState('displayNone'),
+   const [email, setEmail] = useState("demo"),
+      [password, setPassword] = useState("demo"),
+      [spinnerClass, setSpinnerClass] = useState("displayNone"),
       [expanded, setExpanded] = React.useState(false),
       [msgArr, setMsgArr] = useState(obj),
-      [cubeWrapperAnim, setCubeWrapperAnim] = useState(''),
+      [cubeWrapperAnim, setCubeWrapperAnim] = useState(""),
       [popAnchorEl, setPopAnchorEl] = React.useState(null);
 
    const handleExpandClick = () => {
@@ -75,8 +75,8 @@ export const Home = () => {
       setPopAnchorEl(event.currentTarget);
       setMsgArr(
          cubeMsgNext(
-            'Use the username/password `demo` to login',
-            'success',
+            "Use the username/password `demo` to login",
+            "success",
             msgArr
          )
       );
@@ -87,7 +87,7 @@ export const Home = () => {
    };
 
    function butClick(e) {
-      setMsgArr(cubeMsgNext('Checking credentials ...', 'info', msgArr));
+      setMsgArr(cubeMsgNext("Checking credentials ...", "info", msgArr));
       // find number of next up slide and then update state of Cube Wrapper to trigger roll
       setCubeWrapperAnim(
          msgArr[msgArr.findIndex((el) => el.current === true)].anim
@@ -101,17 +101,17 @@ export const Home = () => {
       if (
          email === null ||
          email === undefined ||
-         email === '' ||
+         email === "" ||
          password === null ||
          password === undefined ||
-         password === ''
+         password === ""
       ) {
          setTimeout(() => {
-            setSpinnerClass('displayNone');
+            setSpinnerClass("displayNone");
             setMsgArr(
                cubeMsgNext(
-                  'Login Failed using password: ' + password,
-                  'error',
+                  "Login Failed using password: " + password,
+                  "error",
                   msgArr
                )
             );
@@ -121,19 +121,19 @@ export const Home = () => {
          }, 500);
          // find number of next up slide and then update state of Cube Wrapper to trigger roll
       } else {
-         localForage.setItem('token', false); // clear old token if exists
+         localForage.setItem("token", false); // clear old token if exists
          login(user)
             .then((res) => {
                if (parseInt(res) !== null) {
-                  localForage.setItem('token', res);
+                  localForage.setItem("token", res);
 
                   setTimeout(() => {
-                     window.location.href = '/employees';
+                     window.location.href = "/employees";
                   }, 350);
                } else {
-                  console.log('+++ unhandled error here: ' + __filename);
-                  setSpinnerClass('displayNone');
-                  setMsgArr(cubeMsgNext('Login Failed ', 'error', msgArr));
+                  console.log("+++ unhandled error here: " + __filename);
+                  setSpinnerClass("displayNone");
+                  setMsgArr(cubeMsgNext("Login Failed ", "error", msgArr));
                   setCubeWrapperAnim(
                      msgArr[msgArr.findIndex((el) => el.current === true)].anim
                   );
@@ -144,15 +144,15 @@ export const Home = () => {
             .catch((err) => {
                setMsgArr(
                   cubeMsgNext(
-                     'Login Failed (catch err) please contact the admin',
-                     'error',
+                     "Login Failed (catch err) please contact the admin",
+                     "error",
                      msgArr
                   )
                );
                setCubeWrapperAnim(
                   msgArr[msgArr.findIndex((el) => el.current === true)].anim
                );
-               console.log('+++ error in file: ' + __filename + 'err=' + err);
+               console.log("+++ error in file: " + __filename + "err=" + err);
             });
       }
    }
@@ -163,13 +163,13 @@ export const Home = () => {
    };
 
    const popOpen = Boolean(popAnchorEl);
-   const popId = popOpen ? 'simple-popover' : undefined;
+   const popId = popOpen ? "simple-popover" : undefined;
    // end popover
 
    useEffect(() => {
-      console.log('Landing.js use Effect');
+      console.log("Landing.js use Effect");
       setMsgArr(
-         cubeMsgNext('Enter valid credentials to proceed', 'Info', msgArr)
+         cubeMsgNext("Enter valid credentials to proceed", "Info", msgArr)
       );
 
       setCubeWrapperAnim(
@@ -194,6 +194,7 @@ export const Home = () => {
             welcome home
             <br />
             <a href='/login'>login</a>
+            <br>https://simplemaps.com/data/us-cities.</br>
          </div>
       </div>
    );

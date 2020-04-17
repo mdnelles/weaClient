@@ -1,1 +1,1 @@
-[{"city":"Dzüünharaa","country":"Mongolia"},{"city":"Dzuunmod","country":"Mongolia"},{"city":"Dzerzhinsk","country":"Russia"}]
+[{"city":"Dzüünharaa","admin_name":"Selenge","country":"Mongolia"},{"city":"Dzuunmod","admin_name":"Töv","country":"Mongolia"},{"city":"Dzerzhinsk","admin_name":"Nizhegorodskaya Oblast’","country":"Russia"}]

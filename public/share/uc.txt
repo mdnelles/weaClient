@@ -1,1 +1,1 @@
-[{"city":"Ucar","country":"Azerbaijan"}]
+[{"city":"Ucar","admin_name":"Ucar","country":"Azerbaijan"}]

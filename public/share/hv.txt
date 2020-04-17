@@ -1,1 +1,1 @@
-[{"city":"Hvalba","country":"Faroe Islands"},{"city":"Hvannasund","country":"Faroe Islands"}]
+[{"city":"Hvalba","admin_name":"","country":"Faroe Islands"},{"city":"Hvannasund","admin_name":"","country":"Faroe Islands"}]

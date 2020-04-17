@@ -1,1 +1,1 @@
-[{"city":"Ifakara","country":"Tanzania"}]
+[{"city":"Ifakara","admin_name":"Morogoro","country":"Tanzania"}]

@@ -1,1 +1,1 @@
-[{"city":"Ptuj","country":"Slovenia"}]
+[{"city":"Ptuj","admin_name":"Ptuj","country":"Slovenia"}]

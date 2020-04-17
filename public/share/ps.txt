@@ -1,1 +1,1 @@
-[{"city":"Pskov","country":"Russia"}]
+[{"city":"Pskov","admin_name":"Pskovskaya Oblast’","country":"Russia"}]

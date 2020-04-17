@@ -1,1 +1,1 @@
-[{"city":"Ntcheu","country":"Malawi"},{"city":"Ntchisi","country":"Malawi"},{"city":"Ntoroko","country":"Uganda"},{"city":"Ntungamo","country":"Uganda"}]
+[{"city":"Ntcheu","admin_name":"Ntcheu","country":"Malawi"},{"city":"Ntchisi","admin_name":"Ntchisi","country":"Malawi"},{"city":"Ntoroko","admin_name":"Ntoroko","country":"Uganda"},{"city":"Ntungamo","admin_name":"Ntungamo","country":"Uganda"}]

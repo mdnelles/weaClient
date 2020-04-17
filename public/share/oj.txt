@@ -1,1 +1,1 @@
-[{"city":"Ojinaga","country":"Mexico"},{"city":"Ojai","country":"United States"},{"city":"Ojus","country":"United States"}]
+[{"city":"Ojinaga","admin_name":"Chihuahua","country":"Mexico"},{"city":"Ojai","admin_name":"California","country":"United States"},{"city":"Ojus","admin_name":"Florida","country":"United States"}]

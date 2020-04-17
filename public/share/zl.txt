@@ -1,1 +1,1 @@
-[{"city":"Zlín","country":"Czechia"},{"city":"Zlatoust","country":"Russia"}]
+[{"city":"Zlín","admin_name":"Zlínský Kraj","country":"Czechia"},{"city":"Zlatoust","admin_name":"Chelyabinskaya Oblast’","country":"Russia"}]

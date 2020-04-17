@@ -1,1 +1,1 @@
-[{"city":"Lwengo","country":"Uganda"}]
+[{"city":"Lwengo","admin_name":"Lwengo","country":"Uganda"}]

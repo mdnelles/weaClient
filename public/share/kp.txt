@@ -1,1 +1,1 @@
-[{"city":"Kpalimé","country":"Togo"}]
+[{"city":"Kpalimé","admin_name":"","country":"Togo"}]

@@ -1,1 +1,1 @@
-[{"city":"Zveçan","country":"Kosovo"},{"city":"Zvëzdnyy","country":"Russia"},{"city":"Zvolen","country":"Slovakia"},{"city":"Zvishavane","country":"Zimbabwe"}]
+[{"city":"Zveçan","admin_name":"Zveçan","country":"Kosovo"},{"city":"Zvëzdnyy","admin_name":"Chukotskiy Avtonomnyy Okrug","country":"Russia"},{"city":"Zvolen","admin_name":"Banskobystrický","country":"Slovakia"},{"city":"Zvishavane","admin_name":"Masvingo","country":"Zimbabwe"}]

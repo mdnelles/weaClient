@@ -1,1 +1,1 @@
-[{"city":"Icó","country":"Brazil"},{"city":"Ica","country":"Peru"}]
+[{"city":"Icó","admin_name":"Ceará","country":"Brazil"},{"city":"Ica","admin_name":"Ica","country":"Peru"}]

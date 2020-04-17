@@ -1,1 +1,1 @@
-[{"city":"Ajaccio","country":"France"},{"city":"Ajmer","country":"India"},{"city":"Ajdābiyā","country":"Libya"},{"city":"Ajdovščina","country":"Slovenia"}]
+[{"city":"Ajaccio","admin_name":"Corsica","country":"France"},{"city":"Ajmer","admin_name":"Rājasthān","country":"India"},{"city":"Ajdābiyā","admin_name":"Al Wāḩāt","country":"Libya"},{"city":"Ajdovščina","admin_name":"Ajdovščina","country":"Slovenia"}]

@@ -247,9 +247,10 @@ export const Countries = () => {
          var displayCities;
          data.forEach((e) => {
             if (e.city !== undefined && e.city !== "undefined")
-               displayCities += e.city + "\n";
+               displayCities += e.city + ", " + e.admin_name + "\n";
          });
          displayCities = displayCities.replace(/undefined/g, "");
+         displayCities = displayCities.replace(/admin_name/g, "");
          setDialogContent(displayCities);
          setDialogProgress("displayNone");
       });

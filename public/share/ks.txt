@@ -1,1 +1,1 @@
-[{"city":"Ksar El Kebir","country":"Morocco"}]
+[{"city":"Ksar El Kebir","admin_name":"Tanger-Tétouan-Al Hoceïma","country":"Morocco"}]

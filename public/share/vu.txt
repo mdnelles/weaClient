@@ -1,1 +1,1 @@
-[{"city":"Vukovar","country":"Croatia"},{"city":"Vushtrri","country":"Kosovo"},{"city":"Vuzenica","country":"Slovenia"},{"city":"Vũng Tàu","country":"Vietnam"}]
+[{"city":"Vukovar","admin_name":"Vukovarsko-Srijemska Županija","country":"Croatia"},{"city":"Vushtrri","admin_name":"Vushtrri","country":"Kosovo"},{"city":"Vuzenica","admin_name":"Vuzenica","country":"Slovenia"},{"city":"Vũng Tàu","admin_name":"Bà Rịa-Vũng Tàu","country":"Vietnam"}]

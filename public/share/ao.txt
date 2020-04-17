@@ -1,1 +1,1 @@
-[{"city":"Aosta","country":"Italy"},{"city":"Aomori","country":"Japan"}]
+[{"city":"Aosta","admin_name":"Valle d’Aosta","country":"Italy"},{"city":"Aomori","admin_name":"Aomori","country":"Japan"}]

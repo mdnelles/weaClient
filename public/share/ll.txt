@@ -1,1 +1,1 @@
-[{"city":"Llallagua","country":"Bolivia"},{"city":"Llica","country":"Bolivia"},{"city":"Llandrindod Wells","country":"United Kingdom"},{"city":"Llangefni","country":"United Kingdom"},{"city":"Lloyd","country":"United States"}]
+[{"city":"Llallagua","admin_name":"Potosí","country":"Bolivia"},{"city":"Llica","admin_name":"Potosí","country":"Bolivia"},{"city":"Llandrindod Wells","admin_name":"Powys","country":"United Kingdom"},{"city":"Llangefni","admin_name":"Isle of Anglesey","country":"United Kingdom"},{"city":"Lloyd","admin_name":"New York","country":"United States"}]

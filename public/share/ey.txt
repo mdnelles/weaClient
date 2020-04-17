@@ -1,1 +1,1 @@
-[{"city":"Eydhafushi","country":"Maldives"},{"city":"Eyl","country":"Somalia"}]
+[{"city":"Eydhafushi","admin_name":"","country":"Maldives"},{"city":"Eyl","admin_name":"Nugaal","country":"Somalia"}]

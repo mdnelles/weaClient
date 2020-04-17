@@ -1,1 +1,1 @@
-[{"city":"Ljig","country":"Serbia"},{"city":"Ljubovija","country":"Serbia"},{"city":"Ljubljana","country":"Slovenia"},{"city":"Ljubno","country":"Slovenia"},{"city":"Ljutomer","country":"Slovenia"}]
+[{"city":"Ljig","admin_name":"Ljig","country":"Serbia"},{"city":"Ljubovija","admin_name":"Ljubovija","country":"Serbia"},{"city":"Ljubljana","admin_name":"Ljubljana","country":"Slovenia"},{"city":"Ljubno","admin_name":"Ljubno","country":"Slovenia"},{"city":"Ljutomer","admin_name":"Ljutomer","country":"Slovenia"}]

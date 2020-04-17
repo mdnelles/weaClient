@@ -1,1 +1,1 @@
-[{"city":"Hrazdan","country":"Armenia"},{"city":"Hrodna","country":"Belarus"},{"city":"Hradec Králové","country":"Czechia"},{"city":"Hrastnik","country":"Slovenia"},{"city":"Hrib-Loški Potok","country":"Slovenia"}]
+[{"city":"Hrazdan","admin_name":"Kotayk’","country":"Armenia"},{"city":"Hrodna","admin_name":"Hrodzyenskaya Voblasts’","country":"Belarus"},{"city":"Hradec Králové","admin_name":"Královéhradecký Kraj","country":"Czechia"},{"city":"Hrastnik","admin_name":"Hrastnik","country":"Slovenia"},{"city":"Hrib-Loški Potok","admin_name":"Loški Potok","country":"Slovenia"}]

@@ -1,1 +1,1 @@
-[{"city":"Fdérik","country":"Mauritania"}]
+[{"city":"Fdérik","admin_name":"Tiris Zemmour","country":"Mauritania"}]

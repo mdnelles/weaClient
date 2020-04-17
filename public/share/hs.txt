@@ -1,1 +1,1 @@
-[{"city":"Hsinchu","country":"Taiwan"}]
+[{"city":"Hsinchu","admin_name":"Hsinchu","country":"Taiwan"}]

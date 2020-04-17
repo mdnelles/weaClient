@@ -1,1 +1,1 @@
-[{"city":"Vyaz’ma","country":"Russia"},{"city":"Vyazemskiy","country":"Russia"},{"city":"Vyborg","country":"Russia"},{"city":"Vyksa","country":"Russia"},{"city":"Vyshniy Volochëk","country":"Russia"}]
+[{"city":"Vyaz’ma","admin_name":"Smolenskaya Oblast’","country":"Russia"},{"city":"Vyazemskiy","admin_name":"Khabarovskiy Kray","country":"Russia"},{"city":"Vyborg","admin_name":"Leningradskaya Oblast’","country":"Russia"},{"city":"Vyksa","admin_name":"Nizhegorodskaya Oblast’","country":"Russia"},{"city":"Vyshniy Volochëk","admin_name":"Tverskaya Oblast’","country":"Russia"}]

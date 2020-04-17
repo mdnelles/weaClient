@@ -1,1 +1,1 @@
-[{"city":"Uglegorsk","country":"Russia"},{"city":"Uglich","country":"Russia"},{"city":"Ugol’nyye Kopi","country":"Russia"}]
+[{"city":"Uglegorsk","admin_name":"Sakhalinskaya Oblast’","country":"Russia"},{"city":"Uglich","admin_name":"Yaroslavskaya Oblast’","country":"Russia"},{"city":"Ugol’nyye Kopi","admin_name":"Chukotskiy Avtonomnyy Okrug","country":"Russia"}]

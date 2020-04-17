@@ -1,1 +1,1 @@
-[{"city":"Iwaki","country":"Japan"},{"city":"Iwo","country":"Nigeria"}]
+[{"city":"Iwaki","admin_name":"Fukushima","country":"Japan"},{"city":"Iwo","admin_name":"Osun","country":"Nigeria"}]

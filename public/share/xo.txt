@@ -1,1 +1,1 @@
-[{"city":"Xocalı","country":"Azerbaijan"},{"city":"Xocavənd","country":"Azerbaijan"},{"city":"Xo‘jayli Shahri","country":"Uzbekistan"}]
+[{"city":"Xocalı","admin_name":"Xocalı","country":"Azerbaijan"},{"city":"Xocavənd","admin_name":"Xocavənd","country":"Azerbaijan"},{"city":"Xo‘jayli Shahri","admin_name":"Qoraqalpog‘iston","country":"Uzbekistan"}]

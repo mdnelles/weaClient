@@ -1,1 +1,1 @@
-[{"city":"Kwinana","country":"Australia"},{"city":"Kwale","country":"Kenya"},{"city":"Kwekwe","country":"Zimbabwe"}]
+[{"city":"Kwinana","admin_name":"Western Australia","country":"Australia"},{"city":"Kwale","admin_name":"Kwale","country":"Kenya"},{"city":"Kwekwe","admin_name":"Midlands","country":"Zimbabwe"}]

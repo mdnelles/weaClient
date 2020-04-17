@@ -1,1 +1,1 @@
-[{"city":"Uvira","country":"Congo (Kinshasa)"},{"city":"Uvinza","country":"Tanzania"},{"city":"Uvalde","country":"United States"}]
+[{"city":"Uvira","admin_name":"Sud-Kivu","country":"Congo (Kinshasa)"},{"city":"Uvinza","admin_name":"Kigoma","country":"Tanzania"},{"city":"Uvalde","admin_name":"Texas","country":"United States"}]

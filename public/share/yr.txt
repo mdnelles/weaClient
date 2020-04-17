@@ -1,1 +1,1 @@
-[{"city":"Yreka","country":"United States"}]
+[{"city":"Yreka","admin_name":"California","country":"United States"}]

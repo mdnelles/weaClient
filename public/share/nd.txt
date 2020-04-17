@@ -1,1 +1,1 @@
-[{"city":"Ndélé","country":"Central African Republic"},{"city":"Ndendé","country":"Gabon"},{"city":"Ndola","country":"Zambia"}]
+[{"city":"Ndélé","admin_name":"Bamingui-Bangoran","country":"Central African Republic"},{"city":"Ndendé","admin_name":"Ngounié","country":"Gabon"},{"city":"Ndola","admin_name":"Copperbelt","country":"Zambia"}]

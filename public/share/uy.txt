@@ -1,1 +1,1 @@
-[{"city":"Uyuni","country":"Bolivia"},{"city":"Uyo","country":"Nigeria"},{"city":"Uyar","country":"Russia"}]
+[{"city":"Uyuni","admin_name":"Potosí","country":"Bolivia"},{"city":"Uyo","admin_name":"Akwa Ibom","country":"Nigeria"},{"city":"Uyar","admin_name":"Krasnoyarskiy Kray","country":"Russia"}]

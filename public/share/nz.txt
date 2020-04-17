@@ -1,1 +1,1 @@
-[{"city":"Nzeto","country":"Angola"},{"city":"Nzega","country":"Tanzania"}]
+[{"city":"Nzeto","admin_name":"Zaire","country":"Angola"},{"city":"Nzega","admin_name":"Tabora","country":"Tanzania"}]

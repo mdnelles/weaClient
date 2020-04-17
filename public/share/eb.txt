@@ -1,1 +1,1 @@
-[{"city":"Ébolowa","country":"Cameroon"},{"city":"Ebebiyín","country":"Equatorial Guinea"},{"city":"Ebbw Vale","country":"United Kingdom"}]
+[{"city":"Ébolowa","admin_name":"Sud","country":"Cameroon"},{"city":"Ebebiyín","admin_name":"Kié-Ntem","country":"Equatorial Guinea"},{"city":"Ebbw Vale","admin_name":"Blaenau Gwent","country":"United Kingdom"}]

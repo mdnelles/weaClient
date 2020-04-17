@@ -1,1 +1,1 @@
-[{"city":"Rwamagana","country":"Rwanda"}]
+[{"city":"Rwamagana","admin_name":"Eastern Province","country":"Rwanda"}]

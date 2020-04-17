@@ -1,1 +1,1 @@
-[{"city":"Ialoveni","country":"Moldova"},{"city":"Iaşi","country":"Romania"}]
+[{"city":"Ialoveni","admin_name":"Ialoveni","country":"Moldova"},{"city":"Iaşi","admin_name":"Iaşi","country":"Romania"}]

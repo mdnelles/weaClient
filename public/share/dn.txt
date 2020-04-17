@@ -1,1 +1,1 @@
-[{"city":"Dnipro","country":"Ukraine"}]
+[{"city":"Dnipro","admin_name":"Dnipropetrovs’ka Oblast’","country":"Ukraine"}]

@@ -1,1 +1,1 @@
-[{"city":"Mpanda","country":"Tanzania"},{"city":"Mpwapwa","country":"Tanzania"},{"city":"Mparo","country":"Uganda"},{"city":"Mpigi","country":"Uganda"},{"city":"Mpika","country":"Zambia"}]
+[{"city":"Mpanda","admin_name":"Katavi","country":"Tanzania"},{"city":"Mpwapwa","admin_name":"Dodoma","country":"Tanzania"},{"city":"Mparo","admin_name":"","country":"Uganda"},{"city":"Mpigi","admin_name":"Mpigi","country":"Uganda"},{"city":"Mpika","admin_name":"Muchinga","country":"Zambia"}]

@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { getCities } from './CityFunctions';
-import localForage from 'localforage';
-import _ from 'lodash';
+import React, { useState, useEffect } from "react";
+import { getCities } from "./CityFunctions";
+import localForage from "localforage";
+import _ from "lodash";
 
-import { cl, cubeMsgNext, obj } from './_sharedFunctions';
-import { CubeMsg } from './3d/CubeMsg';
+import { cl, cubeMsgNext, obj } from "./_sharedFunctions";
+import { CubeMsg } from "./3d/CubeMsg";
 
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { lighten, makeStyles } from '@material-ui/core/styles';
-import MaterialTable from 'material-table';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
-import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { lighten, makeStyles } from "@material-ui/core/styles";
+import MaterialTable from "material-table";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import TableSortLabel from "@material-ui/core/TableSortLabel";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Checkbox from "@material-ui/core/Checkbox";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
+import DeleteIcon from "@material-ui/icons/Delete";
+import FilterListIcon from "@material-ui/icons/FilterList";
 
 function descendingComparator(a, b, orderBy) {
    if (b[orderBy] < a[orderBy]) {
@@ -34,23 +34,23 @@ function descendingComparator(a, b, orderBy) {
 }
 
 const headCells = [
-   { id: 'id', numeric: true, disablePadding: true, label: 'ID' },
-   { id: 'code', numeric: true, disablePadding: true, label: 'Code' },
+   { id: "id", numeric: true, disablePadding: true, label: "ID" },
+   { id: "code", numeric: true, disablePadding: true, label: "Code" },
    {
-      id: 'filename',
+      id: "filename",
       numeric: false,
       disablePadding: false,
-      label: 'Filename',
+      label: "Filename",
    },
    {
-      id: 'msg_programmer',
+      id: "msg_programmer",
       numeric: false,
       disablePadding: false,
-      label: 'Msg',
+      label: "Msg",
    },
-   { id: 'msg_app', numeric: false, disablePadding: false, label: 'Msg(a)' },
-   { id: 'refer', numeric: false, disablePadding: false, label: 'Refer' },
-   { id: 'tdate', numeric: false, disablePadding: false, label: 'Date' },
+   { id: "msg_app", numeric: false, disablePadding: false, label: "Msg(a)" },
+   { id: "refer", numeric: false, disablePadding: false, label: "Refer" },
+   { id: "tdate", numeric: false, disablePadding: false, label: "Date" },
 ];
 
 /* -- */
@@ -77,27 +77,27 @@ function EnhancedTableHead(props) {
                   indeterminate={numSelected > 0 && numSelected < rowCount}
                   checked={rowCount > 0 && numSelected === rowCount}
                   onChange={onSelectAllClick}
-                  inputProps={{ 'aria-label': 'select all desserts' }}
+                  inputProps={{ "aria-label": "select all desserts" }}
                />
             </TableCell>
             {headCells.map((headCell) => (
                <TableCell
                   key={headCell.id}
-                  align={headCell.numeric ? 'right' : 'left'}
-                  padding={headCell.disablePadding ? 'none' : 'default'}
+                  align={headCell.numeric ? "right" : "left"}
+                  padding={headCell.disablePadding ? "none" : "default"}
                   sortDirection={orderBy === headCell.id ? order : false}
                >
                   <TableSortLabel
                      active={orderBy === headCell.id}
-                     direction={orderBy === headCell.id ? order : 'desc'}
+                     direction={orderBy === headCell.id ? order : "desc"}
                      onClick={createSortHandler(headCell.id)}
                   >
                      {headCell.label}
                      {orderBy === headCell.id ? (
                         <span className={classes.visuallyHidden}>
-                           {order === 'desc'
-                              ? 'sorted descending'
-                              : 'sorted ascending'}
+                           {order === "desc"
+                              ? "sorted descending"
+                              : "sorted ascending"}
                         </span>
                      ) : null}
                   </TableSortLabel>
@@ -113,7 +113,7 @@ EnhancedTableHead.propTypes = {
    numSelected: PropTypes.number.isRequired,
    onRequestSort: PropTypes.func.isRequired,
    onSelectAllClick: PropTypes.func.isRequired,
-   order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+   order: PropTypes.oneOf(["asc", "desc"]).isRequired,
    orderBy: PropTypes.string.isRequired,
    rowCount: PropTypes.number.isRequired,
 };
@@ -124,7 +124,7 @@ const useToolbarStyles = makeStyles((theme) => ({
       paddingRight: theme.spacing(1),
    },
    highlight:
-      theme.palette.type === 'light'
+      theme.palette.type === "light"
          ? {
               color: theme.palette.secondary.main,
               backgroundColor: lighten(theme.palette.secondary.light, 0.85),
@@ -134,7 +134,7 @@ const useToolbarStyles = makeStyles((theme) => ({
               backgroundColor: theme.palette.secondary.dark,
            },
    title: {
-      flex: '1 1 100%',
+      flex: "1 1 100%",
    },
 }));
 
@@ -194,10 +194,10 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles((theme) => ({
    root: {
-      width: '100%',
+      width: "100%",
    },
    paper: {
-      width: '100%',
+      width: "100%",
       marginBottom: theme.spacing(2),
    },
    table: {
@@ -205,12 +205,12 @@ const useStyles = makeStyles((theme) => ({
    },
    visuallyHidden: {
       border: 0,
-      clip: 'rect(0 0 0 0)',
+      clip: "rect(0 0 0 0)",
       height: 1,
       margin: -1,
-      overflow: 'hidden',
+      overflow: "hidden",
       padding: 0,
-      position: 'absolute',
+      position: "absolute",
       top: 20,
       width: 1,
    },
@@ -225,28 +225,29 @@ export const Cities = () => {
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
    useEffect(() => {
-      setMsgArr(cubeMsgNext('Loading Cities', 'info', msgArr));
+      setMsgArr(cubeMsgNext("Loading Cities", "info", msgArr));
       setCubeWrapperAnim(
          msgArr[msgArr.findIndex((el) => el.current === true)].anim
       );
       if (gotCities === false) {
          localForage
-            .getItem('token')
+            .getItem("token")
             .then(function (startToken) {
                getCities(startToken).then((data) => {
                   setState({
                      columns: [
-                        { title: 'ID', field: 'id' },
-                        { title: 'City', field: 'city' },
-                        { title: 'Country', field: 'country' },
-                        { title: 'Population', field: 'population' },
-                        { title: 'Flag', field: 'iso2' },
-                        { title: 'ISO3', field: 'iso3' },
+                        { title: "ID", field: "id" },
+                        { title: "City", field: "city" },
+                        { title: "State/Prov", field: "admin_name" },
+                        { title: "Country", field: "country" },
+                        { title: "Population", field: "population" },
+                        { title: "Flag", field: "iso2" },
+                        { title: "ISO3", field: "iso3" },
                      ],
                      data: data,
                   });
                   setGotCities(true);
-                  setMsgArr(cubeMsgNext('Cities Loaded', 'success', msgArr));
+                  setMsgArr(cubeMsgNext("Cities Loaded", "success", msgArr));
                   setCubeWrapperAnim(
                      msgArr[msgArr.findIndex((el) => el.current === true)].anim
                   );
@@ -255,8 +256,8 @@ export const Cities = () => {
             .catch(function (err) {
                // This code runs if there were any errors
                console.log(err);
-               alert('no token found');
-               window.location.href = '/login';
+               alert("no token found");
+               window.location.href = "/login";
             });
       }
    }, [state]);
@@ -264,23 +265,23 @@ export const Cities = () => {
    return (
       <div id='main' className='body'>
          <h3>Cities</h3>
-         <div style={{ padding: 25, display: 'block' }}></div>
+         <div style={{ padding: 25, display: "block" }}></div>
          <div className='contain' style={{ marginLeft: 10 }}>
-            <div className={'cubeWrapperFluid ' + cubeWrapperAnim} id='stage'>
+            <div className={"cubeWrapperFluid " + cubeWrapperAnim} id='stage'>
                <CubeMsg
                   msgArr={msgArr}
-                  width={'100%'}
+                  width={"100%"}
                   height={78}
                   marginT={-60}
                />
             </div>
          </div>
-         <div style={{ padding: 15, display: 'block' }}></div>
+         <div style={{ padding: 15, display: "block" }}></div>
          {_.isEmpty(state) ? (
             <CircularProgress />
          ) : (
             <MaterialTable
-               title='Editable Example'
+               title='Open Weather App Cities'
                columns={state.columns}
                data={state.data}
                editable={{
@@ -294,7 +295,7 @@ export const Cities = () => {
                               return { ...prevState, data };
                            });
                            setMsgArr(
-                              cubeMsgNext('City addded.', 'success', msgArr)
+                              cubeMsgNext("City addded.", "success", msgArr)
                            );
                            setCubeWrapperAnim(
                               msgArr[
@@ -314,7 +315,7 @@ export const Cities = () => {
                                  return { ...prevState, data };
                               });
                               setMsgArr(
-                                 cubeMsgNext('City updated.', 'success', msgArr)
+                                 cubeMsgNext("City updated.", "success", msgArr)
                               );
                               setCubeWrapperAnim(
                                  msgArr[
@@ -332,7 +333,7 @@ export const Cities = () => {
                            resolve();
                            setState((prevState) => {
                               setMsgArr(
-                                 cubeMsgNext('City removed.', 'success', msgArr)
+                                 cubeMsgNext("City removed.", "success", msgArr)
                               );
                               setCubeWrapperAnim(
                                  msgArr[
@@ -346,7 +347,7 @@ export const Cities = () => {
                               return { ...prevState, data };
                            });
                            setMsgArr(
-                              cubeMsgNext('City addded.', 'success', msgArr)
+                              cubeMsgNext("City addded.", "success", msgArr)
                            );
                            setCubeWrapperAnim(
                               msgArr[

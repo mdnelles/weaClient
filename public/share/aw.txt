@@ -1,1 +1,1 @@
-[{"city":"Āwasa","country":"Ethiopia"},{"city":"Awbārī","country":"Libya"},{"city":"Awjilah","country":"Libya"},{"city":"Awka","country":"Nigeria"},{"city":"Aweil","country":"South Sudan"}]
+[{"city":"Āwasa","admin_name":"YeDebub Bihēroch Bihēreseboch na Hizboch","country":"Ethiopia"},{"city":"Awbārī","admin_name":"Wādī al Ḩayāt","country":"Libya"},{"city":"Awjilah","admin_name":"Al Wāḩāt","country":"Libya"},{"city":"Awka","admin_name":"Anambra","country":"Nigeria"},{"city":"Aweil","admin_name":"Northern Bahr el Ghazal","country":"South Sudan"}]

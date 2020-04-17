@@ -82,11 +82,14 @@ export const Utils = () => {
                .replace(/\\/g, "")
                .replace("[", "")
                .replace("]", "")
-               .replace(/{"city":"/g, "\n")
-               .replace(/"},/g, "")
-               .replace(/","country":"/g, ",", () => {})
-               .replace(/\"/g, "")
-               .replace(/}/g, "");
+               .replace(/city/g, "\n")
+               .replace(/admin_name/g, "")
+               .replace(/:/g, "")
+               .replace(/,{/g, "")
+               .replace(/}/g, "")
+               .replace(/{/g, "")
+               .replace(/"/g, "")
+               .replace(/country/g, "");
             setCitiesValue(text);
          });
 

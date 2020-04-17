@@ -1,1 +1,1 @@
-[{"city":"Xuanzhou","country":"China"},{"city":"Xuddur","country":"Somalia"}]
+[{"city":"Xuanzhou","admin_name":"Anhui","country":"China"},{"city":"Xuddur","admin_name":"Bakool","country":"Somalia"}]

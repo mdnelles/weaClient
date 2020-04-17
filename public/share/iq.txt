@@ -1,1 +1,1 @@
-[{"city":"Iqaluit","country":"Canada"},{"city":"Iquique","country":"Chile"},{"city":"Iquitos","country":"Peru"}]
+[{"city":"Iqaluit","admin_name":"Nunavut","country":"Canada"},{"city":"Iquique","admin_name":"Tarapacá","country":"Chile"},{"city":"Iquitos","admin_name":"Loreto","country":"Peru"}]

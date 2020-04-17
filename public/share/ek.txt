@@ -1,1 +1,1 @@
-[{"city":"Ekibastuz","country":"Kazakhstan"}]
+[{"city":"Ekibastuz","admin_name":"Pavlodar","country":"Kazakhstan"}]

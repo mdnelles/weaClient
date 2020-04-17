@@ -1,1 +1,1 @@
-[{"city":"Tlemcen","country":"Algeria"},{"city":"Tlaxcala","country":"Mexico"}]
+[{"city":"Tlemcen","admin_name":"Tlemcen","country":"Algeria"},{"city":"Tlaxcala","admin_name":"Tlaxcala","country":"Mexico"}]

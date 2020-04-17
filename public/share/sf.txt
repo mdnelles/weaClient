@@ -1,1 +1,1 @@
-[{"city":"Sfântu-Gheorghe","country":"Romania"},{"city":"Sfax","country":"Tunisia"}]
+[{"city":"Sfântu-Gheorghe","admin_name":"Covasna","country":"Romania"},{"city":"Sfax","admin_name":"Sfax","country":"Tunisia"}]

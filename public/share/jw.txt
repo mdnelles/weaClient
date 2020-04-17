@@ -1,1 +1,1 @@
-[{"city":"Jwaneng","country":"Botswana"}]
+[{"city":"Jwaneng","admin_name":"Jwaneng","country":"Botswana"}]
