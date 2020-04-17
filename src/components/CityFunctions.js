@@ -48,3 +48,18 @@ export const getCitysByCountry = async (theToken, country) => {
       return false;
    }
 };
+export const addCity = async (theToken, data) => {
+   console.log("addCity");
+   console.log(data);
+   try {
+      const res = await axios.post(serverPath + "/city/add_city", {
+         token: theToken,
+         data,
+         caller: "cityFunctions.addCity",
+      });
+      return res.data;
+   } catch (err) {
+      cl("ClientSide Error @ cityFunctions.getCitysByCountry" + err);
+      return false;
+   }
+};

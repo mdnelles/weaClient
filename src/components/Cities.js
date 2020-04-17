@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCities } from "./CityFunctions";
+import { getCities, addCity } from "./CityFunctions";
 import localForage from "localforage";
 import _ from "lodash";
 
@@ -52,8 +52,6 @@ const headCells = [
    { id: "refer", numeric: false, disablePadding: false, label: "Refer" },
    { id: "tdate", numeric: false, disablePadding: false, label: "Date" },
 ];
-
-/* -- */
 
 function EnhancedTableHead(props) {
    const {
@@ -221,6 +219,7 @@ export const Cities = () => {
 
    const [state, setState] = React.useState({}),
       [msgArr, setMsgArr] = useState(obj),
+      [token, setToken] = useState("na"),
       [gotCities, setGotCities] = useState(false),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
@@ -233,6 +232,7 @@ export const Cities = () => {
          localForage
             .getItem("token")
             .then(function (startToken) {
+               setToken(startToken);
                getCities(startToken).then((data) => {
                   setState({
                      columns: [
@@ -241,7 +241,9 @@ export const Cities = () => {
                         { title: "State/Prov", field: "admin_name" },
                         { title: "Country", field: "country" },
                         { title: "Population", field: "population" },
-                        { title: "Flag", field: "iso2" },
+                        { title: "Lon", field: "lng" },
+                        { title: "Lat", field: "lat" },
+                        { title: "Country", field: "iso2" },
                         { title: "ISO3", field: "iso3" },
                      ],
                      data: data,
@@ -287,10 +289,12 @@ export const Cities = () => {
                editable={{
                   onRowAdd: (newData) =>
                      new Promise((resolve) => {
-                        setTimeout(() => {
+                        addCity(token, newData).then(() => {
+                           //setTimeout(() => {
                            resolve();
                            setState((prevState) => {
                               const data = [...prevState.data];
+                              console.log(newData);
                               data.push(newData);
                               return { ...prevState, data };
                            });
