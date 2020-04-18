@@ -1,1 +1,1 @@
-[{"city":"Qobustan","admin_name":"Qobustan","country":"Azerbaijan"},{"city":"Qom","admin_name":"Qom","country":"Iran"},{"city":"Qostanay","admin_name":"Qostanay","country":"Kazakhstan"},{"city":"Qormi","admin_name":"Qormi","country":"Malta"},{"city":"Qo‘qon","admin_name":"Farg‘ona","country":"Uzbekistan"}]
+[{"c":"Qobustan","p":"Qobustan","o":"AZ"},{"c":"Qom","p":"Qom","o":"IR"},{"c":"Qostanay","p":"Qostanay","o":"KZ"},{"c":"Qormi","p":"Qormi","o":"MT"},{"c":"Qo‘qon","p":"Farg‘ona","o":"UZ"}]

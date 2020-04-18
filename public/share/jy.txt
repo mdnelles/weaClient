@@ -1,1 +1,1 @@
-[{"city":"Jyväskylä","admin_name":"Keski-Suomi","country":"Finland"}]
+[{"c":"Jyväskylä","p":"Keski-Suomi","o":"FI"}]

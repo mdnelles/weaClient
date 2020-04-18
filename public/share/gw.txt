@@ -1,1 +1,1 @@
-[{"city":"Gwalior","admin_name":"Madhya Pradesh","country":"India"},{"city":"Gwangju","admin_name":"Gwangju","country":"Korea, South"},{"city":"Gwadar","admin_name":"Balochistān","country":"Pakistan"},{"city":"Gwanda","admin_name":"Matabeleland South","country":"Zimbabwe"},{"city":"Gweru","admin_name":"Midlands","country":"Zimbabwe"}]
+[{"c":"Gwalior","p":"Madhya Pradesh","o":"IN"},{"c":"Gwangju","p":"Gwangju","o":"KR"},{"c":"Gwadar","p":"Balochistān","o":"PK"},{"c":"Gwanda","p":"Matabeleland South","o":"ZW"},{"c":"Gweru","p":"Midlands","o":"ZW"}]

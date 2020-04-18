@@ -1,1 +1,1 @@
-[{"city":"Iecava","admin_name":"Iecavas Novads","country":"Latvia"}]
+[{"c":"Iecava","p":"Iecavas Novads","o":"LV"}]

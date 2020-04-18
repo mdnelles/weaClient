@@ -1,1 +1,1 @@
-[{"city":"Ijevan","admin_name":"Tavush","country":"Armenia"},{"city":"Ijevan","admin_name":"Tavush","country":"Armenia"},{"city":"Ijuí","admin_name":"Rio Grande do Sul","country":"Brazil"},{"city":"Ijebu-Ode","admin_name":"Ogun","country":"Nigeria"}]
+[{"c":"Ijevan","p":"Tavush","o":"AM"},{"c":"Ijuí","p":"Rio Grande do Sul","o":"BR"},{"c":"Ijebu-Ode","p":"Ogun","o":"NG"}]

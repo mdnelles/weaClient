@@ -1,1 +1,1 @@
-[{"city":"Uzhur","admin_name":"Krasnoyarskiy Kray","country":"Russia"},{"city":"Užice","admin_name":"Užice","country":"Serbia"},{"city":"Uzhhorod","admin_name":"Zakarpats’ka Oblast’","country":"Ukraine"}]
+[{"c":"Užice","p":"Užice","o":"RS"},{"c":"Uzhur","p":"Krasnoyarskiy Kray","o":"RU"},{"c":"Uzhhorod","p":"Zakarpats’ka Oblast’","o":"UA"}]

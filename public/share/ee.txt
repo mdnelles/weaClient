@@ -1,1 +1,1 @@
-[{"city":"Eenhana","admin_name":"Ohangwena","country":"Namibia"}]
+[{"c":"Eenhana","p":"Ohangwena","o":"NA"}]

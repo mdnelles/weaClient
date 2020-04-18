@@ -1,1 +1,1 @@
-[{"city":"Nhlangano","admin_name":"Shiselweni","country":"Swaziland"},{"city":"Nha Trang","admin_name":"Khánh Hòa","country":"Vietnam"}]
+[{"c":"Nhlangano","p":"Shiselweni","o":"SZ"},{"c":"Nha Trang","p":"Khánh Hòa","o":"VN"}]

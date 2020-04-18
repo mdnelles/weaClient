@@ -1,1 +1,1 @@
-[{"city":"Rzeszów","admin_name":"Podkarpackie","country":"Poland"},{"city":"Rzhev","admin_name":"Tverskaya Oblast’","country":"Russia"}]
+[{"c":"Rzeszów","p":"Podkarpackie","o":"PL"},{"c":"Rzhev","p":"Tverskaya Oblast’","o":"RU"}]

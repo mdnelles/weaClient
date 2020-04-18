@@ -1,1 +1,1 @@
-[{"city":"Ozurgeti","admin_name":"Guria","country":"Georgia"},{"city":"Ozolnieki","admin_name":"Ozolnieku Novads","country":"Latvia"},{"city":"Ozamiz City","admin_name":"Misamis Occidental","country":"Philippines"},{"city":"Ozark","admin_name":"Alabama","country":"United States"},{"city":"Ozark","admin_name":"Missouri","country":"United States"}]
+[{"c":"Ozurgeti","p":"Guria","o":"GE"},{"c":"Ozolnieki","p":"Ozolnieku Novads","o":"LV"},{"c":"Ozamiz City","p":"Misamis Occidental","o":"PH"},{"c":"Ozark","p":"Alabama","o":"US"},{"c":"Ozark","p":"Missouri","o":"US"}]

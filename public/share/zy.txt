@@ -1,1 +1,1 @@
-[{"city":"Zyryanovsk","admin_name":"Shyghys Qazaqstan","country":"Kazakhstan"},{"city":"Zyryanka","admin_name":"Sakha (Yakutiya)","country":"Russia"}]
+[{"c":"Zyryanovsk","p":"Shyghys Qazaqstan","o":"KZ"},{"c":"Zyryanka","p":"Sakha (Yakutiya)","o":"RU"}]

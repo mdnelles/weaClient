@@ -1,1 +1,1 @@
-[{"city":"Hwlffordd","admin_name":"Pembrokeshire","country":"United Kingdom"},{"city":"Hwange","admin_name":"","country":"Zimbabwe"}]
+[{"c":"Hwlffordd","p":"Pembrokeshire","o":"GB"},{"c":"Hwange","p":"","o":"ZW"}]

@@ -1,1 +1,1 @@
-[{"city":"Dyat’kovo","admin_name":"Bryanskaya Oblast’","country":"Russia"},{"city":"Dyer","admin_name":"Indiana","country":"United States"},{"city":"Dyersburg","admin_name":"Tennessee","country":"United States"}]
+[{"c":"Dyat’kovo","p":"Bryanskaya Oblast’","o":"RU"},{"c":"Dyer","p":"Indiana","o":"US"},{"c":"Dyersburg","p":"Tennessee","o":"US"}]

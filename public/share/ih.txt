@@ -1,1 +1,1 @@
-[{"city":"Ihosy","admin_name":"Fianarantsoa","country":"Madagascar"}]
+[{"c":"Ihosy","p":"Fianarantsoa","o":"MG"}]

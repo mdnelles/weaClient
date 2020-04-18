@@ -1,1 +1,1 @@
-[{"city":"Ypacarai","admin_name":"Central","country":"Paraguay"},{"city":"Ype Jhú","admin_name":"Canindeyú","country":"Paraguay"},{"city":"Ypsilanti","admin_name":"Michigan","country":"United States"}]
+[{"c":"Ype Jhú","p":"Canindeyú","o":"PY"},{"c":"Ypacarai","p":"Central","o":"PY"},{"c":"Ypsilanti","p":"Michigan","o":"US"}]

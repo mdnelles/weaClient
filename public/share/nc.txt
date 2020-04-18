@@ -1,1 +1,1 @@
-[{"city":"Nchelenge","admin_name":"Luapula","country":"Zambia"}]
+[{"c":"Nchelenge","p":"Luapula","o":"ZM"}]

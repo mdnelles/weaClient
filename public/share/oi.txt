@@ -1,1 +1,1 @@
-[{"city":"Ōita","admin_name":"Ōita","country":"Japan"},{"city":"Oil City","admin_name":"Pennsylvania","country":"United States"},{"city":"Oildale","admin_name":"California","country":"United States"}]
+[{"c":"Ōita","p":"Ōita","o":"JP"},{"c":"Oildale","p":"California","o":"US"},{"c":"Oil City","p":"Pennsylvania","o":"US"}]

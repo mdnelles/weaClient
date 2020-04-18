@@ -1,1 +1,1 @@
-[{"city":"Ystrad Mynach","admin_name":"Caerphilly","country":"United Kingdom"}]
+[{"c":"Ystrad Mynach","p":"Caerphilly","o":"GB"}]

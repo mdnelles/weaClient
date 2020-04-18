@@ -1,1 +1,1 @@
-[{"city":"Ephraim","admin_name":"Utah","country":"United States"},{"city":"Ephrata","admin_name":"Pennsylvania","country":"United States"},{"city":"Ephrata","admin_name":"Washington","country":"United States"},{"city":"Epping","admin_name":"New Hampshire","country":"United States"}]
+[{"c":"Epping","p":"New Hampshire","o":"US"},{"c":"Ephrata","p":"Pennsylvania","o":"US"},{"c":"Ephraim","p":"Utah","o":"US"},{"c":"Ephrata","p":"Washington","o":"US"}]

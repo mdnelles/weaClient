@@ -1,1 +1,1 @@
-[{"city":"Nsanje","admin_name":"Nsanje","country":"Malawi"},{"city":"Nsukka","admin_name":"Enugu","country":"Nigeria"}]
+[{"c":"Nsanje","p":"Nsanje","o":"MW"},{"c":"Nsukka","p":"Enugu","o":"NG"}]

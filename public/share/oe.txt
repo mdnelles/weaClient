@@ -1,1 +1,1 @@
-[{"city":"Oelwein","admin_name":"Iowa","country":"United States"}]
+[{"c":"Oelwein","p":"Iowa","o":"US"}]

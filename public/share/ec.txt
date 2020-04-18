@@ -1,1 +1,1 @@
-[{"city":"Echuca","admin_name":"Victoria","country":"Australia"},{"city":"Echternach","admin_name":"Echternach","country":"Luxembourg"},{"city":"Echelon","admin_name":"New Jersey","country":"United States"},{"city":"Economy","admin_name":"Pennsylvania","country":"United States"},{"city":"Ecorse","admin_name":"Michigan","country":"United States"}]
+[{"c":"Echuca","p":"Victoria","o":"AU"},{"c":"Echternach","p":"Echternach","o":"LU"},{"c":"Ecorse","p":"Michigan","o":"US"},{"c":"Echelon","p":"New Jersey","o":"US"},{"c":"Economy","p":"Pennsylvania","o":"US"}]

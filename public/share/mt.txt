@@ -1,1 +1,1 @@
-[{"city":"Mtskheta","admin_name":"Mtskheta Mtianeti","country":"Georgia"},{"city":"Mtsensk","admin_name":"Orlovskaya Oblast’","country":"Russia"},{"city":"Mtwara","admin_name":"Mtwara","country":"Tanzania"}]
+[{"c":"Mtskheta","p":"Mtskheta Mtianeti","o":"GE"},{"c":"Mtsensk","p":"Orlovskaya Oblast’","o":"RU"},{"c":"Mtwara","p":"Mtwara","o":"TZ"}]

@@ -1,1 +1,1 @@
-[{"city":"Uummannaq","admin_name":"Qaasuitsup","country":"Greenland"}]
+[{"c":"Uummannaq","p":"Qaasuitsup","o":"GL"}]

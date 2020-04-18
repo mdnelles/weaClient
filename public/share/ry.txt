@@ -1,1 +1,1 @@
-[{"city":"Ryazan’","admin_name":"Ryazanskaya Oblast’","country":"Russia"},{"city":"Rybinsk","admin_name":"Yaroslavskaya Oblast’","country":"Russia"},{"city":"Rye","admin_name":"New York","country":"United States"},{"city":"Rye","admin_name":"New Hampshire","country":"United States"},{"city":"Rye Brook","admin_name":"New York","country":"United States"}]
+[{"c":"Ryazan’","p":"Ryazanskaya Oblast’","o":"RU"},{"c":"Rybinsk","p":"Yaroslavskaya Oblast’","o":"RU"},{"c":"Rye","p":"New Hampshire","o":"US"},{"c":"Rye","p":"New York","o":"US"},{"c":"Rye Brook","p":"New York","o":"US"}]

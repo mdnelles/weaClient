@@ -1,1 +1,1 @@
-[{"city":"Aalborg","admin_name":"Nordjylland","country":"Denmark"},{"city":"Aarhus","admin_name":"Midtjylland","country":"Denmark"},{"city":"Aasiaat","admin_name":"","country":"Greenland"},{"city":"Aarau","admin_name":"Aargau","country":"Switzerland"},{"city":"Aarau","admin_name":"Aargau","country":"Switzerland"}]
+[{"c":"Aarau","p":"Aargau","o":"CH"},{"c":"Aarhus","p":"Midtjylland","o":"DK"},{"c":"Aalborg","p":"Nordjylland","o":"DK"},{"c":"Aasiaat","p":"","o":"GL"}]

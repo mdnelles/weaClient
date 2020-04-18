@@ -1,1 +1,1 @@
-[{"city":"Uíge","admin_name":"Uíge","country":"Angola"},{"city":"Uitenhage","admin_name":"Eastern Cape","country":"South Africa"}]
+[{"c":"Uíge","p":"Uíge","o":"AO"},{"c":"Uitenhage","p":"Eastern Cape","o":"ZA"}]

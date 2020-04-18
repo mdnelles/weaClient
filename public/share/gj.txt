@@ -1,1 +1,1 @@
-[{"city":"Gjirokastër","admin_name":"Gjirokastër","country":"Albania"},{"city":"Gjoa Haven","admin_name":"Nunavut","country":"Canada"},{"city":"Gjakovë","admin_name":"Gjakovë","country":"Kosovo"},{"city":"Gjilan","admin_name":"Gjilan","country":"Kosovo"},{"city":"Gjøvik","admin_name":"Oppland","country":"Norway"}]
+[{"c":"Gjirokastër","p":"Gjirokastër","o":"AL"},{"c":"Gjoa Haven","p":"Nunavut","o":"CA"},{"c":"Gjøvik","p":"Oppland","o":"NO"},{"c":"Gjakovë","p":"Gjakovë","o":"XK"},{"c":"Gjilan","p":"Gjilan","o":"XK"}]

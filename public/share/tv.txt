@@ -1,1 +1,1 @@
-[{"city":"Tvøroyri","admin_name":"","country":"Faroe Islands"},{"city":"Tver’","admin_name":"Tverskaya Oblast’","country":"Russia"}]
+[{"c":"Tvøroyri","p":"","o":"FO"},{"c":"Tver’","p":"Tverskaya Oblast’","o":"RU"}]

@@ -1,1 +1,1 @@
-[{"city":"Afega","admin_name":"Tuamasaga","country":"Samoa"},{"city":"Afyonkarahisar","admin_name":"Afyonkarahisar","country":"Turkey"},{"city":"Affton","admin_name":"Missouri","country":"United States"}]
+[{"c":"Afyonkarahisar","p":"Afyonkarahisar","o":"TR"},{"c":"Affton","p":"Missouri","o":"US"},{"c":"Afega","p":"Tuamasaga","o":"WS"}]

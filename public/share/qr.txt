@@ -1,1 +1,1 @@
-[{"city":"Qrendi","admin_name":"Qrendi","country":"Malta"}]
+[{"c":"Qrendi","p":"Qrendi","o":"MT"}]

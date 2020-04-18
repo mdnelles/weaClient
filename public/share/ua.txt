@@ -1,1 +1,1 @@
-[{"city":"Uacu Cungo","admin_name":"Kwanza Sul","country":"Angola"}]
+[{"c":"Uacu Cungo","p":"Kwanza Sul","o":"AO"}]

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { login } from "./UserFunctions";
 import localForage from "localforage";
 import { CubeMsg } from "./3d/CubeMsg";
-import { cubeMsgNext, obj } from "./_sharedFunctions";
+import { cl, cubeMsgNext, obj } from "./_sharedFunctions";
 
 import { useSpring, animated as a } from "react-spring";
 
@@ -35,180 +35,94 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 
-const useStyles = makeStyles((theme) => ({
-   root: {
-      maxWidth: 345,
-   },
-   media: {
-      height: 0,
-      paddingTop: "56.25%", // 16:9
-   },
-   expand: {
-      transform: "rotate(0deg)",
-      marginLeft: "auto",
-      transition: theme.transitions.create("transform", {
-         duration: theme.transitions.duration.shortest,
-      }),
-   },
-   expandOpen: {
-      transform: "rotate(180deg)",
-   },
-   avatar: {
-      backgroundColor: red[500],
-   },
-   typography: {
-      padding: theme.spacing(2),
-   },
-}));
+const Row = (props) => {
+   return (
+      <div key={"i" + props.key}>
+         {props.city}, {props.province}, {props.country}
+      </div>
+   );
+};
+
+const AllRows = (props) => {
+   if (props.suggestData !== undefined) {
+      return props.suggestData.map((a, i) => (
+         <Row key={i} city={a.c} province={a.p} country={a.o} />
+      ));
+   } else {
+      return <div></div>;
+   }
+};
 
 export const Home = () => {
-   const classes = useStyles();
+   const [currentText, setCurrentText] = useState(""),
+      [currentTextData, setCurrentTextData] = useState([]),
+      [suggestData, setSuggestData] = useState([]),
+      [country, setCountry] = useState("CA");
 
-   const [email, setEmail] = useState("demo"),
-      [password, setPassword] = useState("demo"),
-      [spinnerClass, setSpinnerClass] = useState("displayNone"),
-      [expanded, setExpanded] = React.useState(false),
-      [msgArr, setMsgArr] = useState(obj),
-      [cubeWrapperAnim, setCubeWrapperAnim] = useState(""),
-      [popAnchorEl, setPopAnchorEl] = React.useState(null);
-
-   const handleExpandClick = () => {
-      setExpanded(!expanded);
-   };
-
-   const helpClick = (event) => {
-      setPopAnchorEl(event.currentTarget);
-      setMsgArr(
-         cubeMsgNext(
-            "Use the username/password `demo` to login",
-            "success",
-            msgArr
-         )
-      );
-      // find number of next up slide and then update state of Cube Wrapper to trigger roll
-      setCubeWrapperAnim(
-         msgArr[msgArr.findIndex((el) => el.current === true)].anim
-      );
-   };
-
-   function butClick(e) {
-      setMsgArr(cubeMsgNext("Checking credentials ...", "info", msgArr));
-      // find number of next up slide and then update state of Cube Wrapper to trigger roll
-      setCubeWrapperAnim(
-         msgArr[msgArr.findIndex((el) => el.current === true)].anim
-      );
-
-      const user = {
-         email: email,
-         password: password,
-      };
-
-      if (
-         email === null ||
-         email === undefined ||
-         email === "" ||
-         password === null ||
-         password === undefined ||
-         password === ""
-      ) {
-         setTimeout(() => {
-            setSpinnerClass("displayNone");
-            setMsgArr(
-               cubeMsgNext(
-                  "Login Failed using password: " + password,
-                  "error",
-                  msgArr
-               )
-            );
-            setCubeWrapperAnim(
-               msgArr[msgArr.findIndex((el) => el.current === true)].anim
-            );
-         }, 500);
-         // find number of next up slide and then update state of Cube Wrapper to trigger roll
+   const prune = (partialText, arr) => {
+      cl("in prune partial = " + partialText);
+      console.log(arr);
+      if (arr.length > 10) {
+         setSuggestData(
+            arr.filter(
+               (a) =>
+                  a.o === country &&
+                  a.c.toLowerCase().includes(partialText.toLowerCase())
+            )
+         );
       } else {
-         localForage.setItem("token", false); // clear old token if exists
-         login(user)
-            .then((res) => {
-               if (parseInt(res) !== null) {
-                  localForage.setItem("token", res);
-
-                  setTimeout(() => {
-                     window.location.href = "/employees";
-                  }, 350);
-               } else {
-                  console.log("+++ unhandled error here: " + __filename);
-                  setSpinnerClass("displayNone");
-                  setMsgArr(cubeMsgNext("Login Failed ", "error", msgArr));
-                  setCubeWrapperAnim(
-                     msgArr[msgArr.findIndex((el) => el.current === true)].anim
-                  );
-                  //setSpinnerClass('displayNone');
-                  //       setMsg('Login Failed');
-               }
-            })
-            .catch((err) => {
-               setMsgArr(
-                  cubeMsgNext(
-                     "Login Failed (catch err) please contact the admin",
-                     "error",
-                     msgArr
-                  )
-               );
-               setCubeWrapperAnim(
-                  msgArr[msgArr.findIndex((el) => el.current === true)].anim
-               );
-               console.log("+++ error in file: " + __filename + "err=" + err);
-            });
+         cl("less than 10");
+         setSuggestData(
+            arr.filter((a) =>
+               a.c.toLowerCase().includes(partialText.toLowerCase())
+            )
+         );
       }
-   }
-
-   // begin popover
-   const popHandleClose = () => {
-      setPopAnchorEl(null);
    };
 
-   const popOpen = Boolean(popAnchorEl);
-   const popId = popOpen ? "simple-popover" : undefined;
-   // end popover
+   const pullText = (partialText) => {
+      let s = partialText.substring(0, 2).toLowerCase();
+      cl("partialText=" + partialText);
+      if (s !== currentText) {
+         console.log("new pull");
+         setCurrentText(s);
+         fetch("./share/" + s + ".txt")
+            .then((r) => r.text())
+            .then((text) => {
+               if (text !== undefined && text.length > 2) {
+                  var arr = JSON.parse(text);
+                  setCurrentTextData(arr);
+                  console.log(arr.length + " - " + s);
+                  prune(partialText, arr);
+               }
+            });
+      } else {
+         var arr = currentTextData;
+         prune(partialText, arr);
+      }
+   };
 
+   const locChange = (event) => {
+      let s = event.target.value;
+      if (s !== undefined && s.length > 1) {
+         pullText(s);
+      }
+   };
    useEffect(() => {
-      console.log("Landing.js use Effect");
-      setMsgArr(
-         cubeMsgNext("Enter valid credentials to proceed", "Info", msgArr)
-      );
-
-      setCubeWrapperAnim(
-         msgArr[msgArr.findIndex((el) => el.current === true)].anim
-      );
-   }, [msgArr]);
-
-   const aprops = useSpring({
-      config: { duration: 700 },
-      from: {
-         opacity: 0,
-      },
-      to: {
-         opacity: 1,
-      },
-      delay: 100,
-   });
+      cl("in useEffect");
+   }, [suggestData]);
 
    return (
-      <div className='vertical-center center-outer'>
-         <div className='center-inner'>
-            welcome home
-            <input
-               type='text'
-               className='locBox'
-               id='location'
-               onChange={locChange}
-            />
-            <FormControl className={classes.margin}>
+      <div>
+         <div className='header'>
+            <FormControl fullWidth={true}>
                <InputLabel htmlFor='input-with-icon-adornment'>
-                  With a start adornment
+                  Search City
                </InputLabel>
                <Input
+                  onChange={locChange}
                   id='input-with-icon-adornment'
+                  fullWidth={true}
                   startAdornment={
                      <InputAdornment position='start'>
                         <SearchIcon />
@@ -216,11 +130,14 @@ export const Home = () => {
                   }
                />
             </FormControl>
-            <br />
-            <a href='/login'>login</a>
-            <br />
-            https://simplemaps.com/data/us-cities.
          </div>
+         <AllRows suggestData={suggestData}></AllRows>
+         <br />
+         <br />
+         <br />
+         <a href='/login'>login</a>
+         <br />
+         {/*https://simplemaps.com/suggestData/us-cities.*/}
       </div>
    );
 };

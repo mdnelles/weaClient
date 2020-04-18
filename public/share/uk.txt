@@ -1,1 +1,1 @@
-[{"city":"Ukmergė","admin_name":"Ukmergė","country":"Lithuania"},{"city":"Ukhta","admin_name":"Komi","country":"Russia"},{"city":"Ukiah","admin_name":"California","country":"United States"}]
+[{"c":"Ukmergė","p":"Ukmergė","o":"LT"},{"c":"Ukhta","p":"Komi","o":"RU"},{"c":"Ukiah","p":"California","o":"US"}]

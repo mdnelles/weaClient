@@ -1,1 +1,1 @@
-[{"city":"Nkongsamba","admin_name":"Littoral","country":"Cameroon"},{"city":"Nkawkaw","admin_name":"","country":"Ghana"},{"city":"Nkhata Bay","admin_name":"Nkhata Bay","country":"Malawi"},{"city":"Nkhotakota","admin_name":"Nkhotakota","country":"Malawi"},{"city":"Nkurenkuru","admin_name":"Kavango West","country":"Namibia"}]
+[{"c":"Nkongsamba","p":"Littoral","o":"CM"},{"c":"Nkawkaw","p":"","o":"GH"},{"c":"Nkhata Bay","p":"Nkhata Bay","o":"MW"},{"c":"Nkhotakota","p":"Nkhotakota","o":"MW"},{"c":"Nkurenkuru","p":"Kavango West","o":"NA"}]

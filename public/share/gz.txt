@@ -1,1 +1,1 @@
-[{"city":"Gżira","admin_name":"Gżira","country":"Malta"}]
+[{"c":"Gżira","p":"Gżira","o":"MT"}]

@@ -1,1 +1,1 @@
-[{"city":"Ujjain","admin_name":"Madhya Pradesh","country":"India"}]
+[{"c":"Ujjain","p":"Madhya Pradesh","o":"IN"}]

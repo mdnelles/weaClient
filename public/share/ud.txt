@@ -1,1 +1,1 @@
-[{"city":"Udaipur","admin_name":"Rājasthān","country":"India"},{"city":"Udine","admin_name":"Friuli-Venezia Giulia","country":"Italy"},{"city":"Udachnyy","admin_name":"Sakha (Yakutiya)","country":"Russia"},{"city":"Udon Thani","admin_name":"Udon Thani","country":"Thailand"}]
+[{"c":"Udaipur","p":"Rājasthān","o":"IN"},{"c":"Udine","p":"Friuli-Venezia Giulia","o":"IT"},{"c":"Udachnyy","p":"Sakha (Yakutiya)","o":"RU"},{"c":"Udon Thani","p":"Udon Thani","o":"TH"}]

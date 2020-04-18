@@ -1,1 +1,1 @@
-[{"city":"Etāwah","admin_name":"Uttar Pradesh","country":"India"},{"city":"Etowah","admin_name":"North Carolina","country":"United States"},{"city":"Ettrick","admin_name":"Virginia","country":"United States"}]
+[{"c":"Etāwah","p":"Uttar Pradesh","o":"IN"},{"c":"Etowah","p":"North Carolina","o":"US"},{"c":"Ettrick","p":"Virginia","o":"US"}]

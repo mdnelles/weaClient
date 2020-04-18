@@ -1,1 +1,1 @@
-[{"city":"Rhuthun","admin_name":"Denbighshire","country":"United Kingdom"},{"city":"Rhinelander","admin_name":"Wisconsin","country":"United States"},{"city":"Rhome","admin_name":"Texas","country":"United States"}]
+[{"c":"Rhuthun","p":"Denbighshire","o":"GB"},{"c":"Rhome","p":"Texas","o":"US"},{"c":"Rhinelander","p":"Wisconsin","o":"US"}]

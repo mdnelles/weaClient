@@ -1,1 +1,1 @@
-[{"city":"Rrëshen","admin_name":"Lezhë","country":"Albania"}]
+[{"c":"Rrëshen","p":"Lezhë","o":"AL"}]

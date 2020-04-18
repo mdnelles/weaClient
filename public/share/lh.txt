@@ -1,1 +1,1 @@
-[{"city":"Lhuentse","admin_name":"Lhuentse","country":"Bhutan"},{"city":"Lhasa","admin_name":"Tibet","country":"China"},{"city":"Lhokseumawe","admin_name":"Aceh","country":"Indonesia"}]
+[{"c":"Lhuentse","p":"Lhuentse","o":"BT"},{"c":"Lhasa","p":"Tibet","o":"CN"},{"c":"Lhokseumawe","p":"Aceh","o":"ID"}]

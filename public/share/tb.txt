@@ -1,1 +1,1 @@
-[{"city":"Tbeng Meanchey","admin_name":"Preah Vihear","country":"Cambodia"},{"city":"Tbilisi","admin_name":"Tbilisi","country":"Georgia"}]
+[{"c":"Tbilisi","p":"Tbilisi","o":"GE"},{"c":"Tbeng Meanchey","p":"Preah Vihear","o":"KH"}]

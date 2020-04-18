@@ -1,1 +1,1 @@
-[{"city":"Zrnovci","admin_name":"Zrnovci","country":"Macedonia"},{"city":"Zrenjanin","admin_name":"Zrenjanin","country":"Serbia"},{"city":"Zreče","admin_name":"Zreče","country":"Slovenia"}]
+[{"c":"Zrnovci","p":"Zrnovci","o":"MK"},{"c":"Zrenjanin","p":"Zrenjanin","o":"RS"},{"c":"Zreče","p":"Zreče","o":"SI"}]

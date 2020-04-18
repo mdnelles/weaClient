@@ -1,1 +1,1 @@
-[{"city":"Zmeinogorsk","admin_name":"Altayskiy Kray","country":"Russia"}]
+[{"c":"Zmeinogorsk","p":"Altayskiy Kray","o":"RU"}]

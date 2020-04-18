@@ -1,1 +1,1 @@
-[{"city":"Mzimba","admin_name":"Mzimba","country":"Malawi"},{"city":"Mzuzu","admin_name":"","country":"Malawi"}]
+[{"c":"Mzuzu","p":"","o":"MW"},{"c":"Mzimba","p":"Mzimba","o":"MW"}]

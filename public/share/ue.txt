@@ -1,1 +1,1 @@
-[{"city":"Uelen","admin_name":"Chukotskiy Avtonomnyy Okrug","country":"Russia"}]
+[{"c":"Uelen","p":"Chukotskiy Avtonomnyy Okrug","o":"RU"}]

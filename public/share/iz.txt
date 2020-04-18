@@ -1,1 +1,1 @@
-[{"city":"Izamal","admin_name":"Yucatán","country":"Mexico"},{"city":"Izhevsk","admin_name":"Udmurtiya","country":"Russia"},{"city":"Izola","admin_name":"Izola","country":"Slovenia"},{"city":"İzmir","admin_name":"İzmir","country":"Turkey"},{"city":"Izmayil","admin_name":"Odes’ka Oblast’","country":"Ukraine"}]
+[{"c":"Izamal","p":"Yucatán","o":"MX"},{"c":"Izhevsk","p":"Udmurtiya","o":"RU"},{"c":"Izola","p":"Izola","o":"SI"},{"c":"İzmir","p":"İzmir","o":"TR"},{"c":"Izmayil","p":"Odes’ka Oblast’","o":"UA"}]

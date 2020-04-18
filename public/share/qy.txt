@@ -1,1 +1,1 @@
-[{"city":"Qyzylorda","admin_name":"Qyzylorda","country":"Kazakhstan"}]
+[{"c":"Qyzylorda","p":"Qyzylorda","o":"KZ"}]

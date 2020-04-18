@@ -1,1 +1,1 @@
-[{"city":"Ufa","admin_name":"Bashkortostan","country":"Russia"}]
+[{"c":"Ufa","p":"Bashkortostan","o":"RU"}]

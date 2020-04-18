@@ -1,1 +1,1 @@
-[{"city":"Mkokotoni","admin_name":"Zanzibar North","country":"Tanzania"}]
+[{"c":"Mkokotoni","p":"Zanzibar North","o":"TZ"}]

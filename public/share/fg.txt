@@ -1,1 +1,1 @@
-[{"city":"Fgura","admin_name":"Fgura","country":"Malta"}]
+[{"c":"Fgura","p":"Fgura","o":"MT"}]

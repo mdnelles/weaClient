@@ -1,1 +1,1 @@
-[{"city":"Ohrid","admin_name":"Ohrid","country":"Macedonia"}]
+[{"c":"Ohrid","p":"Ohrid","o":"MK"}]

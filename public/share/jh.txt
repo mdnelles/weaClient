@@ -1,1 +1,1 @@
-[{"city":"Jhānsi","admin_name":"Uttar Pradesh","country":"India"},{"city":"Jhang City","admin_name":"Punjab","country":"Pakistan"}]
+[{"c":"Jhānsi","p":"Uttar Pradesh","o":"IN"},{"c":"Jhang City","p":"Punjab","o":"PK"}]

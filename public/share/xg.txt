@@ -1,1 +1,1 @@
-[{"city":"Xgħajra","admin_name":"Xgħajra","country":"Malta"}]
+[{"c":"Xgħajra","p":"Xgħajra","o":"MT"}]

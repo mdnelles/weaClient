@@ -1,1 +1,1 @@
-[{"city":"Effingham","admin_name":"Illinois","country":"United States"}]
+[{"c":"Effingham","p":"Illinois","o":"US"}]

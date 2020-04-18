@@ -1,1 +1,1 @@
-[{"city":"Kvívík","admin_name":"","country":"Faroe Islands"}]
+[{"c":"Kvívík","p":"","o":"FO"}]

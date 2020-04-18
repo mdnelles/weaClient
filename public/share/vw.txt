@@ -1,1 +1,1 @@
-[{"city":"Vwawa","admin_name":"","country":"Tanzania"}]
+[{"c":"Vwawa","p":"","o":"TZ"}]

@@ -1,1 +1,1 @@
-[{"city":"Tzaneen","admin_name":"Limpopo","country":"South Africa"}]
+[{"c":"Tzaneen","p":"Limpopo","o":"ZA"}]

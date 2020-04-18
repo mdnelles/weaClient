@@ -1,1 +1,1 @@
-[{"city":"Fyzābād","admin_name":"Uttar Pradesh","country":"India"}]
+[{"c":"Fyzābād","p":"Uttar Pradesh","o":"IN"}]

@@ -1,1 +1,1 @@
-[{"city":"Zwedru","admin_name":"Grand Gedeh","country":"Liberia"},{"city":"Zwolle","admin_name":"Overijssel","country":"Netherlands"}]
+[{"c":"Zwedru","p":"Grand Gedeh","o":"LR"},{"c":"Zwolle","p":"Overijssel","o":"NL"}]

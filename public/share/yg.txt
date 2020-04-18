@@ -1,1 +1,1 @@
-[{"city":"Ygatimi","admin_name":"Canindeyú","country":"Paraguay"}]
+[{"c":"Ygatimi","p":"Canindeyú","o":"PY"}]

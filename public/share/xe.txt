@@ -1,1 +1,1 @@
-[{"city":"Xékong","admin_name":"Xékong","country":"Laos"},{"city":"Xewkija","admin_name":"Xewkija","country":"Malta"},{"city":"Xenia","admin_name":"Ohio","country":"United States"}]
+[{"c":"Xékong","p":"Xékong","o":"LA"},{"c":"Xewkija","p":"Xewkija","o":"MT"},{"c":"Xenia","p":"Ohio","o":"US"}]

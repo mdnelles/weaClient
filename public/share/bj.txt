@@ -1,1 +1,1 @@
-[{"city":"Bjelovar","admin_name":"Bjelovarsko-Bilogorska Županija","country":"Croatia"}]
+[{"c":"Bjelovar","p":"Bjelovarsko-Bilogorska Županija","o":"HR"}]

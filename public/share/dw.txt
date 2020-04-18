@@ -1,1 +1,1 @@
-[{"city":"Dwight","admin_name":"Illinois","country":"United States"}]
+[{"c":"Dwight","p":"Illinois","o":"US"}]

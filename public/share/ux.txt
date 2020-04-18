@@ -1,1 +1,1 @@
-[{"city":"Uxbridge","admin_name":"Hillingdon","country":"United Kingdom"},{"city":"Uxbridge","admin_name":"Massachusetts","country":"United States"}]
+[{"c":"Uxbridge","p":"Hillingdon","o":"GB"},{"c":"Uxbridge","p":"Massachusetts","o":"US"}]

@@ -1,1 +1,1 @@
-[{"city":"Tchibanga","admin_name":"Nyanga","country":"Gabon"}]
+[{"c":"Tchibanga","p":"Nyanga","o":"GA"}]
