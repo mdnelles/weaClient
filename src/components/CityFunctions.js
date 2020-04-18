@@ -49,8 +49,6 @@ export const getCitysByCountry = async (theToken, country) => {
    }
 };
 export const addCity = async (theToken, data) => {
-   console.log("addCity");
-   console.log(data);
    try {
       const res = await axios.post(serverPath + "/city/add_city", {
          token: theToken,
@@ -59,7 +57,21 @@ export const addCity = async (theToken, data) => {
       });
       return res.data;
    } catch (err) {
-      cl("ClientSide Error @ cityFunctions.getCitysByCountry" + err);
+      cl("ClientSide Error @ cityFunctions.addCity" + err);
+      return false;
+   }
+};
+
+export const editCity = async (theToken, data) => {
+   try {
+      const res = await axios.post(serverPath + "/city/edit_city", {
+         token: theToken,
+         data,
+         caller: "cityFunctions.editCity",
+      });
+      return res.data;
+   } catch (err) {
+      cl("ClientSide Error @ cityFunctions.editCity" + err);
       return false;
    }
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCities, addCity } from "./CityFunctions";
+import { getCities, addCity, editCity } from "./CityFunctions";
 import localForage from "localforage";
 import _ from "lodash";
 
@@ -241,9 +241,8 @@ export const Cities = () => {
                         { title: "State/Prov", field: "admin_name" },
                         { title: "Country", field: "country" },
                         { title: "Population", field: "population" },
-                        { title: "Lon", field: "lng" },
                         { title: "Lat", field: "lat" },
-                        { title: "Country", field: "iso2" },
+                        { title: "Lon", field: "lng" },
                         { title: "ISO3", field: "iso3" },
                      ],
                      data: data,
@@ -289,8 +288,8 @@ export const Cities = () => {
                editable={{
                   onRowAdd: (newData) =>
                      new Promise((resolve) => {
-                        addCity(token, newData).then(() => {
-                           //setTimeout(() => {
+                        addCity(token, newData).then((newUuid) => {
+                           newData.id = newUuid;
                            resolve();
                            setState((prevState) => {
                               const data = [...prevState.data];
@@ -310,7 +309,8 @@ export const Cities = () => {
                      }),
                   onRowUpdate: (newData, oldData) =>
                      new Promise((resolve) => {
-                        setTimeout(() => {
+                        //setTimeout(() => {
+                        editCity(token, newData).then(() => {
                            resolve();
                            if (oldData) {
                               setState((prevState) => {
@@ -351,7 +351,7 @@ export const Cities = () => {
                               return { ...prevState, data };
                            });
                            setMsgArr(
-                              cubeMsgNext("City addded.", "success", msgArr)
+                              cubeMsgNext("City removed.", "success", msgArr)
                            );
                            setCubeWrapperAnim(
                               msgArr[

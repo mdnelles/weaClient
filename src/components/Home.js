@@ -194,7 +194,8 @@ export const Home = () => {
             welcome home
             <br />
             <a href='/login'>login</a>
-            <br>https://simplemaps.com/data/us-cities.</br>
+            <br />
+            https://simplemaps.com/data/us-cities.
          </div>
       </div>
    );
