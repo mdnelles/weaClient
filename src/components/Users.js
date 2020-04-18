@@ -90,7 +90,7 @@ export const Users = () => {
    const removeAdd = () => {
       var node = document.querySelector('[title="Add"]');
       if (typeof node && node !== null && node !== undefined) {
-         node.remove();
+         //node.remove();
       }
    };
 
@@ -147,73 +147,7 @@ export const Users = () => {
             </div>
          </div>
          <div style={{ padding: 15, display: "block" }}></div>
-         <Button variant='contained' color='primary' onClick={handleClickOpen}>
-            Add New User
-         </Button>
-         <Dialog
-            open={open}
-            onClose={handleClose}
-            aria-labelledby='form-dialog-title'
-         >
-            <DialogTitle id='form-dialog-title'>Subscribe</DialogTitle>
-            <DialogContent>
-               <DialogContentText>Add New User</DialogContentText>
-               <TextField
-                  autoFocus
-                  margin='dense'
-                  defaultValue={email}
-                  id='email'
-                  label='Email Address'
-                  type='email'
-                  fullWidth
-                  onChange={(event) => setEmail(event.target.value)}
-               />
-               <TextField
-                  margin='dense'
-                  id='password'
-                  label='password'
-                  type='password'
-                  defaultValue={password}
-                  fullWidth
-                  onChange={(event) => setPassword(event.target.value)}
-               />
-               <TextField
-                  margin='dense'
-                  id='firstName'
-                  label='First Name'
-                  type='text'
-                  defaultValue={firstName}
-                  fullWidth
-                  onChange={(event) => setFirstName(event.target.value)}
-               />
-               <TextField
-                  margin='dense'
-                  id='lastName'
-                  label='Last Name'
-                  defaultValue={lastName}
-                  type='text'
-                  fullWidth
-                  onChange={(event) => setLastName(event.target.value)}
-               />
-            </DialogContent>
-            <DialogActions>
-               <Button
-                  onClick={handleClose}
-                  color='primary'
-                  variant='contained'
-               >
-                  Cancel
-               </Button>
-               <Button
-                  onClick={addUserStart}
-                  color='primary'
-                  variant='contained'
-               >
-                  Save New User
-               </Button>
-            </DialogActions>
-         </Dialog>
-         <br />
+
          <br />
 
          <MaterialTable

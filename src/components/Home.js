@@ -28,7 +28,12 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import SearchIcon from "@material-ui/icons/Search";
 import Popover from "@material-ui/core/Popover";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import FormControl from "@material-ui/core/FormControl";
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -192,6 +197,25 @@ export const Home = () => {
       <div className='vertical-center center-outer'>
          <div className='center-inner'>
             welcome home
+            <input
+               type='text'
+               className='locBox'
+               id='location'
+               onChange={locChange}
+            />
+            <FormControl className={classes.margin}>
+               <InputLabel htmlFor='input-with-icon-adornment'>
+                  With a start adornment
+               </InputLabel>
+               <Input
+                  id='input-with-icon-adornment'
+                  startAdornment={
+                     <InputAdornment position='start'>
+                        <SearchIcon />
+                     </InputAdornment>
+                  }
+               />
+            </FormControl>
             <br />
             <a href='/login'>login</a>
             <br />
