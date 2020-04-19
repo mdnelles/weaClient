@@ -1,1 +1,1 @@
-[{"c":"Uvira","p":"Sud-Kivu","o":"CD"},{"c":"Uvinza","p":"Kigoma","o":"TZ"},{"c":"Uvalde","p":"Texas","o":"US"}]
+[{"c":"Uvira","p":"Sud-Kivu","o":"CD","n":"170391"},{"c":"Uvinza","p":"Kigoma","o":"TZ","n":"80350"},{"c":"Uvalde","p":"Texas","o":"US","n":"18747.0"}]

@@ -1,1 +1,1 @@
-[{"c":"Ugol’nyye Kopi","p":"Chukotskiy Avtonomnyy Okrug","o":"RU"},{"c":"Uglegorsk","p":"Sakhalinskaya Oblast’","o":"RU"},{"c":"Uglich","p":"Yaroslavskaya Oblast’","o":"RU"}]
+[{"c":"Ugol’nyye Kopi","p":"Chukotskiy Avtonomnyy Okrug","o":"RU","n":"3367"},{"c":"Uglegorsk","p":"Sakhalinskaya Oblast’","o":"RU","n":"12669"},{"c":"Uglich","p":"Yaroslavskaya Oblast’","o":"RU","n":"37732"}]

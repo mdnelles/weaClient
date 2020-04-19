@@ -1,1 +1,1 @@
-[{"c":"Zyryanovsk","p":"Shyghys Qazaqstan","o":"KZ"},{"c":"Zyryanka","p":"Sakha (Yakutiya)","o":"RU"}]
+[{"c":"Zyryanovsk","p":"Shyghys Qazaqstan","o":"KZ","n":"49658"},{"c":"Zyryanka","p":"Sakha (Yakutiya)","o":"RU","n":"3627"}]

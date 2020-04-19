@@ -1,1 +1,1 @@
-[{"c":"Nkongsamba","p":"Littoral","o":"CM"},{"c":"Nkawkaw","p":"","o":"GH"},{"c":"Nkhata Bay","p":"Nkhata Bay","o":"MW"},{"c":"Nkhotakota","p":"Nkhotakota","o":"MW"},{"c":"Nkurenkuru","p":"Kavango West","o":"NA"}]
+[{"c":"Nkongsamba","p":"Littoral","o":"CM","n":"117063"},{"c":"Nkawkaw","p":"","o":"GH","n":"62667"},{"c":"Nkhata Bay","p":"Nkhata Bay","o":"MW","n":"22108"},{"c":"Nkhotakota","p":"Nkhotakota","o":"MW","n":"59854"},{"c":"Nkurenkuru","p":"Kavango West","o":"NA","n":""}]

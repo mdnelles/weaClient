@@ -1,1 +1,1 @@
-[{"c":"Mpwapwa","p":"Dodoma","o":"TZ"},{"c":"Mpanda","p":"Katavi","o":"TZ"},{"c":"Mparo","p":"","o":"UG"},{"c":"Mpigi","p":"Mpigi","o":"UG"},{"c":"Mpika","p":"Muchinga","o":"ZM"}]
+[{"c":"Mpwapwa","p":"Dodoma","o":"TZ","n":"19806"},{"c":"Mpanda","p":"Katavi","o":"TZ","n":"73338"},{"c":"Mparo","p":"","o":"UG","n":""},{"c":"Mpigi","p":"Mpigi","o":"UG","n":"11082"},{"c":"Mpika","p":"Muchinga","o":"ZM","n":"28445"}]

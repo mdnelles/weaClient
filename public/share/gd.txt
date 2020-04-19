@@ -1,1 +1,1 @@
-[{"c":"Gdańsk","p":"Pomorskie","o":"PL"},{"c":"Gdynia","p":"Pomorskie","o":"PL"}]
+[{"c":"Gdańsk","p":"Pomorskie","o":"PL","n":"740000"},{"c":"Gdynia","p":"Pomorskie","o":"PL","n":"314664"}]

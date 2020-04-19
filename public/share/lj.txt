@@ -1,1 +1,1 @@
-[{"c":"Ljig","p":"Ljig","o":"RS"},{"c":"Ljubovija","p":"Ljubovija","o":"RS"},{"c":"Ljubljana","p":"Ljubljana","o":"SI"},{"c":"Ljubno","p":"Ljubno","o":"SI"},{"c":"Ljutomer","p":"Ljutomer","o":"SI"}]
+[{"c":"Ljig","p":"Ljig","o":"RS","n":""},{"c":"Ljubovija","p":"Ljubovija","o":"RS","n":""},{"c":"Ljubljana","p":"Ljubljana","o":"SI","n":"314807"},{"c":"Ljubno","p":"Ljubno","o":"SI","n":""},{"c":"Ljutomer","p":"Ljutomer","o":"SI","n":""}]

@@ -1,1 +1,1 @@
-[{"c":"Pýrgos","p":"Dytikí Elláda","o":"GR"},{"c":"Pyongyang","p":"P’yŏngyang","o":"KP"},{"c":"Pyapon","p":"Ayeyawady","o":"MM"},{"c":"Pyay","p":"Bago","o":"MM"},{"c":"Pyu","p":"Bago","o":"MM"},{"c":"Pyatigorsk","p":"Stavropol’skiy Kray","o":"RU"}]
+[{"c":"Pýrgos","p":"Dytikí Elláda","o":"GR","n":"22399"},{"c":"Pyongyang","p":"P’yŏngyang","o":"KP","n":"3300000"},{"c":"Pyapon","p":"Ayeyawady","o":"MM","n":"65601"},{"c":"Pyay","p":"Bago","o":"MM","n":"135308"},{"c":"Pyu","p":"Bago","o":"MM","n":"40386"},{"c":"Pyatigorsk","p":"Stavropol’skiy Kray","o":"RU","n":"142865"}]

@@ -1,1 +1,1 @@
-[{"c":"Zlín","p":"Zlínský Kraj","o":"CZ"},{"c":"Zlatoust","p":"Chelyabinskaya Oblast’","o":"RU"}]
+[{"c":"Zlín","p":"Zlínský Kraj","o":"CZ","n":"124610"},{"c":"Zlatoust","p":"Chelyabinskaya Oblast’","o":"RU","n":"191366"}]

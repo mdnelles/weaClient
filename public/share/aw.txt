@@ -1,1 +1,1 @@
-[{"c":"Āwasa","p":"YeDebub Bihēroch Bihēreseboch na Hizboch","o":"ET"},{"c":"Awjilah","p":"Al Wāḩāt","o":"LY"},{"c":"Awbārī","p":"Wādī al Ḩayāt","o":"LY"},{"c":"Awka","p":"Anambra","o":"NG"},{"c":"Aweil","p":"Northern Bahr el Ghazal","o":"SS"}]
+[{"c":"Āwasa","p":"YeDebub Bihēroch Bihēreseboch na Hizboch","o":"ET","n":"133097"},{"c":"Awjilah","p":"Al Wāḩāt","o":"LY","n":"6610"},{"c":"Awbārī","p":"Wādī al Ḩayāt","o":"LY","n":""},{"c":"Awka","p":"Anambra","o":"NG","n":"500000"},{"c":"Aweil","p":"Northern Bahr el Ghazal","o":"SS","n":"46705"}]

@@ -1,1 +1,1 @@
-[{"c":"Aarau","p":"Aargau","o":"CH"},{"c":"Aarhus","p":"Midtjylland","o":"DK"},{"c":"Aalborg","p":"Nordjylland","o":"DK"},{"c":"Aasiaat","p":"","o":"GL"}]
+[{"c":"Aarau","p":"Aargau","o":"CH","n":"15501"},{"c":"Aarhus","p":"Midtjylland","o":"DK","n":"237551"},{"c":"Aalborg","p":"Nordjylland","o":"DK","n":"122219"},{"c":"Aasiaat","p":"","o":"GL","n":""}]

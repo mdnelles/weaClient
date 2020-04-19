@@ -1,1 +1,1 @@
-[{"c":"Hvalba","p":"","o":"FO"},{"c":"Hvannasund","p":"","o":"FO"}]
+[{"c":"Hvalba","p":"","o":"FO","n":""},{"c":"Hvannasund","p":"","o":"FO","n":""}]

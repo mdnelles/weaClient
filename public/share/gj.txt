@@ -1,1 +1,1 @@
-[{"c":"Gjirokastër","p":"Gjirokastër","o":"AL"},{"c":"Gjoa Haven","p":"Nunavut","o":"CA"},{"c":"Gjøvik","p":"Oppland","o":"NO"},{"c":"Gjakovë","p":"Gjakovë","o":"XK"},{"c":"Gjilan","p":"Gjilan","o":"XK"}]
+[{"c":"Gjirokastër","p":"Gjirokastër","o":"AL","n":"23437"},{"c":"Gjoa Haven","p":"Nunavut","o":"CA","n":"1109"},{"c":"Gjøvik","p":"Oppland","o":"NO","n":"22719"},{"c":"Gjakovë","p":"Gjakovë","o":"XK","n":""},{"c":"Gjilan","p":"Gjilan","o":"XK","n":""}]
