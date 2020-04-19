@@ -1,44 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { login } from "./UserFunctions";
-import localForage from "localforage";
-import { CubeMsg } from "./3d/CubeMsg";
-import { cl, cubeMsgNext, obj } from "./_sharedFunctions";
 
-import { useSpring, animated as a } from "react-spring";
+import { cl } from "./_sharedFunctions";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
-import Avatar from "@material-ui/core/Avatar";
-import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
-import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import Collapse from "@material-ui/core/Collapse";
-import IconButton from "@material-ui/core/IconButton";
-import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from "@material-ui/core/ListItemText";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@material-ui/icons/Search";
 import Popover from "@material-ui/core/Popover";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 
 const Row = (props) => {
+   let iso2 = "CA";
+   if (props.country !== undefined) iso2 = props.country.toLowerCase();
    return (
       <div key={"i" + props.key}>
-         {props.city}, {props.province}, {props.country}
+         <ListItem button dense={true}>
+            <ListItemText dense={true}>
+               <img
+                  src={"./img/flags/" + iso2 + ".png"}
+                  style={{
+                     height: 20,
+                     width: 38,
+                     marginRight: 10,
+                     borderRadius: 3,
+                  }}
+               />
+               {props.city}, {props.province}, {props.country}
+            </ListItemText>
+         </ListItem>
       </div>
    );
 };
@@ -60,31 +58,33 @@ export const Home = () => {
       [country, setCountry] = useState("CA");
 
    const prune = (partialText, arr) => {
-      cl("in prune partial = " + partialText);
-      console.log(arr);
-      if (arr.length > 10) {
-         setSuggestData(
-            arr.filter(
-               (a) =>
-                  a.o === country &&
-                  a.c.toLowerCase().includes(partialText.toLowerCase())
-            )
-         );
-      } else {
-         cl("less than 10");
-         setSuggestData(
-            arr.filter((a) =>
-               a.c.toLowerCase().includes(partialText.toLowerCase())
-            )
-         );
-      }
+      let arrFinal, arr3;
+      // first do local country
+      //a.c = city, a.o = country, a.n = population
+      arrFinal = arr.filter(
+         (a) =>
+            a.o === country &&
+            a.c.toLowerCase().includes(partialText.toLowerCase())
+      );
+      arr3 = arr.filter(
+         (a) =>
+            a.o !== country &&
+            a.c.toLowerCase().includes(partialText.toLowerCase())
+      );
+      //sort population 'n' descending
+      arr3.sort(function (a, b) {
+         return b.n - a.n;
+      });
+
+      arr3.slice(0, 5);
+
+      arrFinal = arrFinal.concat(arr3);
+      setSuggestData(arrFinal);
    };
 
    const pullText = (partialText) => {
       let s = partialText.substring(0, 2).toLowerCase();
-      cl("partialText=" + partialText);
       if (s !== currentText) {
-         console.log("new pull");
          setCurrentText(s);
          fetch("./share/" + s + ".txt")
             .then((r) => r.text())
@@ -103,14 +103,11 @@ export const Home = () => {
    };
 
    const locChange = (event) => {
-      let s = event.target.value;
-      if (s !== undefined && s.length > 1) {
-         pullText(s);
+      if (event.target.value !== undefined && event.target.value.length > 1) {
+         pullText(event.target.value);
       }
    };
-   useEffect(() => {
-      cl("in useEffect");
-   }, [suggestData]);
+   useEffect(() => {}, [suggestData]);
 
    return (
       <div>
@@ -131,7 +128,13 @@ export const Home = () => {
                />
             </FormControl>
          </div>
-         <AllRows suggestData={suggestData}></AllRows>
+         <Paper
+            elevation={3}
+            style={{ zIndex: 5, marginLeft: 20, marginRight: 20 }}
+         >
+            <AllRows suggestData={suggestData}></AllRows>
+         </Paper>
+
          <br />
          <br />
          <br />
