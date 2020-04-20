@@ -30,7 +30,7 @@ const goHome = () => {
       if (loc.includes("/")) {
          temp = loc.split("/");
          if (temp[1] !== undefined && temp[1].toString().length > 1) {
-            window.location.href = "/login";
+            window.location.href = "/";
          }
       }
    }

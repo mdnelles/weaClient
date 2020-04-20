@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { cl } from "./_sharedFunctions";
+import { cl, countryISO } from "./_sharedFunctions";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -18,12 +18,29 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 
+const getPage = (id) => {
+   let loc = "./forcast/" + id.replace(/--/g, "/");
+   setTimeout(() => {
+      window.location.href = loc;
+   }, 300);
+};
+
 const Row = (props) => {
+   let countryFull = countryISO.filter((c) => c.iso === props.country);
+
    let iso2 = "CA";
    if (props.country !== undefined) iso2 = props.country.toLowerCase();
+   let thisID =
+      props.city.replace(" ", "_") + "--" + props.province.replace(" ", "_");
+   if (props.country !== "CA" && props.country !== "US")
+      thisID =
+         props.city.replace(" ", "_") +
+         "--" +
+         countryFull[0].cou.replace(" ", "_");
+
    return (
       <div key={"i" + props.city + props.province}>
-         <ListItem button dense={true}>
+         <ListItem button dense={true} onClick={() => getPage(thisID)}>
             <ListItemText>
                <img
                   src={"./img/flags/" + iso2 + ".png"}

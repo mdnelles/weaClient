@@ -10,7 +10,7 @@ import "./App.css";
 
 // AppWrapper protects Admin Panel from non sessioned access
 import { AppWrapper } from "./AppWrapper";
-import { City } from "./components/City";
+import { Forcast } from "./components/Forcast";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Loading } from "./components/Loading";
@@ -36,7 +36,7 @@ const App = () => {
                <Switch>
                   <Route exact path='/login' component={LoginContainer} />
                   <Route exact path='/home' component={Home} />
-                  <Route exact path='/city/:qry' component={City} />
+                  <Route exact path='/forcast/:qry/:qry' component={Forcast} />
                   <Route exact path='/' component={Home} />
                   <Route exact path='/loading' component={Loading} />
                   <Route path='/' component={AppWrapper} />
