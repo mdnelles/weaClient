@@ -1,1 +1,1 @@
-[{"c":"Zrnovci","p":"Zrnovci","o":"MK","n":""},{"c":"Zrenjanin","p":"Zrenjanin","o":"RS","n":"64053"},{"c":"Zreče","p":"Zreče","o":"SI","n":""}]
+[{"c":"Zrnovci","p":"Zrnovci","o":"MK","n":""},{"c":"Zrenjanin","p":"Zrenjanin","o":"RS","n":"64053"},{"c":"Zrece","p":"Zrece","o":"SI","n":""}]

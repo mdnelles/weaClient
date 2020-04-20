@@ -1,1 +1,1 @@
-[{"c":"Ukmergė","p":"Ukmergė","o":"LT","n":""},{"c":"Ukhta","p":"Komi","o":"RU","n":"102187"},{"c":"Ukiah","p":"California","o":"US","n":"29637.0"}]
+[{"c":"Ukmerge","p":"Ukmerge","o":"LT","n":""},{"c":"Ukhta","p":"Komi","o":"RU","n":"102187"},{"c":"Ukiah","p":"California","o":"US","n":"29637.0"}]

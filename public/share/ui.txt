@@ -1,1 +1,1 @@
-[{"c":"Uíge","p":"Uíge","o":"AO","n":"60008"},{"c":"Uitenhage","p":"Eastern Cape","o":"ZA","n":"228912"}]
+[{"c":"Uige","p":"Uige","o":"AO","n":"60008"},{"c":"Uitenhage","p":"Eastern Cape","o":"ZA","n":"228912"}]

@@ -1,1 +1,1 @@
-[{"c":"Izamal","p":"Yucatán","o":"MX","n":"14954"},{"c":"Izhevsk","p":"Udmurtiya","o":"RU","n":"631038"},{"c":"Izola","p":"Izola","o":"SI","n":""},{"c":"İzmir","p":"İzmir","o":"TR","n":"2587000"},{"c":"Izmayil","p":"Odes’ka Oblast’","o":"UA","n":"83194"}]
+[{"c":"Izamal","p":"Yucatan","o":"MX","n":"14954"},{"c":"Izhevsk","p":"Udmurtiya","o":"RU","n":"631038"},{"c":"Izola","p":"Izola","o":"SI","n":""},{"c":"Izmir","p":"Izmir","o":"TR","n":"2587000"},{"c":"Izmayil","p":"Odes’ka Oblast’","o":"UA","n":"83194"}]

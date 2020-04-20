@@ -1,1 +1,1 @@
-[{"c":"Xocalı","p":"Xocalı","o":"AZ","n":""},{"c":"Xocavənd","p":"Xocavənd","o":"AZ","n":""},{"c":"Xo‘jayli Shahri","p":"Qoraqalpog‘iston","o":"UZ","n":"60401"}]
+[{"c":"Xocali","p":"Xocalı","o":"AZ","n":""},{"c":"Xocavand","p":"Xocavənd","o":"AZ","n":""},{"c":"Xo`jayli Shahri","p":"Qoraqalpog‘iston","o":"UZ","n":"60401"}]

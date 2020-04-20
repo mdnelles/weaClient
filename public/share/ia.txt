@@ -1,1 +1,1 @@
-[{"c":"Ialoveni","p":"Ialoveni","o":"MD","n":""},{"c":"Iaşi","p":"Iaşi","o":"RO","n":"325914"}]
+[{"c":"Ialoveni","p":"Ialoveni","o":"MD","n":""},{"c":"Iasi","p":"Iasi","o":"RO","n":"325914"}]

@@ -1,1 +1,1 @@
-[{"c":"Dyat’kovo","p":"Bryanskaya Oblast’","o":"RU","n":"33527"},{"c":"Dyer","p":"Indiana","o":"US","n":"15941"},{"c":"Dyersburg","p":"Tennessee","o":"US","n":"21043.0"}]
+[{"c":"Dyat'kovo","p":"Bryanskaya Oblast’","o":"RU","n":"33527"},{"c":"Dyer","p":"Indiana","o":"US","n":"15941"},{"c":"Dyersburg","p":"Tennessee","o":"US","n":"21043.0"}]

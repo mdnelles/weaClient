@@ -1,1 +1,1 @@
-[{"c":"Jyväskylä","p":"Keski-Suomi","o":"FI","n":"98136"}]
+[{"c":"Jyvaskyla","p":"Keski-Suomi","o":"FI","n":"98136"}]

@@ -22,9 +22,9 @@ const Row = (props) => {
    let iso2 = "CA";
    if (props.country !== undefined) iso2 = props.country.toLowerCase();
    return (
-      <div key={"i" + props.key}>
+      <div key={"i" + props.city + props.province}>
          <ListItem button dense={true}>
-            <ListItemText dense={true}>
+            <ListItemText>
                <img
                   src={"./img/flags/" + iso2 + ".png"}
                   style={{
@@ -44,7 +44,7 @@ const Row = (props) => {
 const AllRows = (props) => {
    if (props.suggestData !== undefined) {
       return props.suggestData.map((a, i) => (
-         <Row key={i} city={a.c} province={a.p} country={a.o} />
+         <Row key={a.c + a.p} city={a.c} province={a.p} country={a.o} />
       ));
    } else {
       return <div></div>;

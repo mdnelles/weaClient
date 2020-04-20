@@ -1,1 +1,1 @@
-[{"c":"Bjelovar","p":"Bjelovarsko-Bilogorska Županija","o":"HR","n":""}]
+[{"c":"Bjelovar","p":"Bjelovarsko-Bilogorska Zupanija","o":"HR","n":""}]

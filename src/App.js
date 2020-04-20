@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/blue';
-import lightBlue from '@material-ui/core/colors/lightBlue';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from "@material-ui/core/styles";
+import blue from "@material-ui/core/colors/blue";
+import lightBlue from "@material-ui/core/colors/lightBlue";
+import { ThemeProvider } from "@material-ui/core/styles";
 
-import './App.css';
+import "./App.css";
 
 // AppWrapper protects Admin Panel from non sessioned access
-import { AppWrapper } from './AppWrapper';
-import { Home } from './components/Home';
-import { Login } from './components/Login';
-import { Loading } from './components/Loading';
+import { AppWrapper } from "./AppWrapper";
+import { City } from "./components/City";
+import { Home } from "./components/Home";
+import { Login } from "./components/Login";
+import { Loading } from "./components/Loading";
 
 const theme = createMuiTheme({
    palette: {
@@ -35,6 +36,7 @@ const App = () => {
                <Switch>
                   <Route exact path='/login' component={LoginContainer} />
                   <Route exact path='/home' component={Home} />
+                  <Route exact path='/city/:qry' component={City} />
                   <Route exact path='/' component={Home} />
                   <Route exact path='/loading' component={Loading} />
                   <Route path='/' component={AppWrapper} />

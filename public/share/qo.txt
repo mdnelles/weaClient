@@ -1,1 +1,1 @@
-[{"c":"Qobustan","p":"Qobustan","o":"AZ","n":""},{"c":"Qom","p":"Qom","o":"IR","n":"973000"},{"c":"Qostanay","p":"Qostanay","o":"KZ","n":"236901"},{"c":"Qormi","p":"Qormi","o":"MT","n":""},{"c":"Qo‘qon","p":"Farg‘ona","o":"UZ","n":"350000"}]
+[{"c":"Qobustan","p":"Qobustan","o":"AZ","n":""},{"c":"Qom","p":"Qom","o":"IR","n":"973000"},{"c":"Qostanay","p":"Qostanay","o":"KZ","n":"236901"},{"c":"Qormi","p":"Qormi","o":"MT","n":""},{"c":"Qo`qon","p":"Farg‘ona","o":"UZ","n":"350000"}]

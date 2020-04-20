@@ -1,1 +1,1 @@
-[{"c":"Užice","p":"Užice","o":"RS","n":""},{"c":"Uzhur","p":"Krasnoyarskiy Kray","o":"RU","n":"19212"},{"c":"Uzhhorod","p":"Zakarpats’ka Oblast’","o":"UA","n":"150832"}]
+[{"c":"Uzice","p":"Uzice","o":"RS","n":""},{"c":"Uzhur","p":"Krasnoyarskiy Kray","o":"RU","n":"19212"},{"c":"Uzhhorod","p":"Zakarpats’ka Oblast’","o":"UA","n":"150832"}]

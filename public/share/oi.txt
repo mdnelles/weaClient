@@ -1,1 +1,1 @@
-[{"c":"Ōita","p":"Ōita","o":"JP","n":"448907"},{"c":"Oildale","p":"California","o":"US","n":"34496"},{"c":"Oil City","p":"Pennsylvania","o":"US","n":"14290.0"}]
+[{"c":"Oita","p":"Oita","o":"JP","n":"448907"},{"c":"Oildale","p":"California","o":"US","n":"34496"},{"c":"Oil City","p":"Pennsylvania","o":"US","n":"14290.0"}]

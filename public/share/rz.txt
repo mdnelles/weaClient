@@ -1,1 +1,1 @@
-[{"c":"Rzeszów","p":"Podkarpackie","o":"PL","n":"245686"},{"c":"Rzhev","p":"Tverskaya Oblast’","o":"RU","n":"63414"}]
+[{"c":"Rzeszow","p":"Podkarpackie","o":"PL","n":"245686"},{"c":"Rzhev","p":"Tverskaya Oblast’","o":"RU","n":"63414"}]

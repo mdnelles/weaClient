@@ -1,1 +1,1 @@
-[{"c":"Fyzābād","p":"Uttar Pradesh","o":"IN","n":"153047"}]
+[{"c":"Fyzabad","p":"Uttar Pradesh","o":"IN","n":"153047"}]
