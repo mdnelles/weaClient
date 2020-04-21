@@ -75,3 +75,20 @@ export const editCity = async (theToken, data) => {
       return false;
    }
 };
+export const getAPIData = async (theToken, data) => {
+   try {
+      const res = await axios.post(serverPath + "/city/get_api", {
+         token: theToken,
+         data,
+         caller: "cityFunctions.getAPIData",
+      });
+      if (res.data.stringified !== undefined) {
+         //console.log(JSON.parse(res.data.stringified));
+      }
+      console.log(res.data);
+      return res.data;
+   } catch (err) {
+      cl("ClientSide Error @ cityFunctions.getAPIData" + err);
+      return false;
+   }
+};

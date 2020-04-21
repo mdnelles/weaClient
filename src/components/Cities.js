@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCities, addCity, editCity } from "./CityFunctions";
+import { getAPIData, getCities, addCity, editCity } from "./CityFunctions";
 import localForage from "localforage";
 import _ from "lodash";
 
@@ -9,6 +9,12 @@ import { CubeMsg } from "./3d/CubeMsg";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
 import { lighten, makeStyles } from "@material-ui/core/styles";
 import MaterialTable from "material-table";
 import TableCell from "@material-ui/core/TableCell";
@@ -214,14 +220,36 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-export const Cities = () => {
-   const classes = useStyles();
+const Transition = React.forwardRef(function Transition(props, ref) {
+   return <Slide direction='up' ref={ref} {...props} />;
+});
 
+export const Cities = () => {
    const [state, setState] = React.useState({}),
+      [dialogueCircular, setDialogueCircular] = useState("displayNone"),
       [msgArr, setMsgArr] = useState(obj),
+      [apiInfo, setApiInfo] = useState(""),
+      [open, setOpen] = React.useState(false),
       [token, setToken] = useState("na"),
       [gotCities, setGotCities] = useState(false),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
+
+   const getJSONInfo = (rowData) => {
+      setOpen(true);
+      setApiInfo("");
+      console.log(rowData);
+      getAPIData(token, rowData).then((data) => {
+         console.log(data);
+         setDialogueCircular("displayNone");
+         setApiInfo("check JSON");
+      });
+
+      setDialogueCircular("displayBlock");
+   };
+   const handleClose = () => {
+      setOpen(false);
+      setDialogueCircular("displayNone");
+   };
 
    useEffect(() => {
       setMsgArr(cubeMsgNext("Loading Cities", "info", msgArr));
@@ -282,6 +310,15 @@ export const Cities = () => {
             <CircularProgress />
          ) : (
             <MaterialTable
+               actions={[
+                  {
+                     icon: "info",
+                     tooltip: "Show Weather",
+                     onClick: (event, rowData) => {
+                        getJSONInfo(rowData);
+                     },
+                  },
+               ]}
                title='Open Weather App Cities'
                columns={state.columns}
                data={state.data}
@@ -363,6 +400,26 @@ export const Cities = () => {
                }}
             />
          )}
+         <Dialog
+            open={open}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClose}
+            aria-labelledby='alert-dialog-slide-title'
+            aria-describedby='alert-dialog-slide-description'
+         >
+            <DialogTitle id='alert-dialog-slide-title'>
+               {"API Weather Info"}
+            </DialogTitle>
+            <DialogContent>
+               <div className={dialogueCircular}>
+                  <CircularProgress />
+                  <br />
+                  Loading
+               </div>
+               {apiInfo}
+            </DialogContent>
+         </Dialog>
       </div>
    );
 };
