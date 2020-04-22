@@ -1,1 +1,1 @@
-[{"id":1516438,"c":"Zyryanovsk","p":"15","o":"KZ"},{"id":752967,"c":"Zyrardow","p":"78","o":"PL"},{"id":3079855,"c":"Zywiec","p":"83","o":"PL"},{"id":461835,"c":"Zyablikovo","p":"48","o":"RU"},{"id":461740,"c":"Zyuzino","p":"48","o":"RU"}]
+[{"id":1516438,"c":"Zyryanovsk","p":"East Kazakhstan","o":"KZ"},{"id":752967,"c":"Zyrardow","p":"Masovian Voivodeship","o":"PL"},{"id":3079855,"c":"Zywiec","p":"Silesian Voivodeship","o":"PL"},{"id":461835,"c":"Zyablikovo","p":"Moscow","o":"RU"},{"id":461740,"c":"Zyuzino","p":"Moscow","o":"RU"}]

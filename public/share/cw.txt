@@ -1,1 +1,1 @@
-[{"id":2651654,"c":"Cwmbran","p":"WLS","o":"GB"}]
+[{"id":2651654,"c":"Cwmbran","p":"Wales","o":"GB"}]

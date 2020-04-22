@@ -1,1 +1,1 @@
-[{"id":2747063,"c":"Sneek","p":"02","o":"NL"},{"id":1536289,"c":"Snezhinsk","p":"13","o":"RU"},{"id":723559,"c":"Snina","p":"05","o":"SK"},{"id":693381,"c":"Snizhne","p":"05","o":"UA"},{"id":4223413,"c":"Snellville","p":"GA","o":"US"}]
+[{"id":2747063,"c":"Sneek","p":"Provincie Friesland","o":"NL"},{"id":1536289,"c":"Snezhinsk","p":"Tsjeljabinsk","o":"RU"},{"id":723559,"c":"Snina","p":"Presovsky","o":"SK"},{"id":693381,"c":"Snizhne","p":null,"o":"UA"},{"id":4223413,"c":"Snellville","p":"Georgia","o":"US"}]

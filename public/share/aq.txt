@@ -1,1 +1,1 @@
-[{"id":3407407,"c":"Aquiraz","p":"06","o":"BR"},{"id":3471896,"c":"Aquidauana","p":"11","o":"BR"},{"id":250774,"c":"Aqaba","p":"21","o":"JO"},{"id":610611,"c":"Aqtobe","p":"04","o":"KZ"},{"id":610613,"c":"Aqsay","p":"07","o":"KZ"}]
+[{"id":3407407,"c":"Aquiraz","p":"Ceara","o":"BR"},{"id":3471896,"c":"Aquidauana","p":"Mato Grosso do Sul","o":"BR"},{"id":250774,"c":"Aqaba","p":"Aqaba","o":"JO"},{"id":610611,"c":"Aqtobe","p":"Aqtobe","o":"KZ"},{"id":610613,"c":"Aqsay","p":"Batys Qazaqstan","o":"KZ"}]

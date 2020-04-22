@@ -1,1 +1,1 @@
-[{"id":2633485,"c":"Wrexham","p":"WLS","o":"GB"},{"id":3081368,"c":"Wrocław","p":"72","o":"PL"},{"id":3081324,"c":"Wrzesnia","p":"86","o":"PL"},{"id":4178775,"c":"Wright","p":"FL","o":"US"}]
+[{"id":2633485,"c":"Wrexham","p":"Wales","o":"GB"},{"id":3081324,"c":"Wrzesnia","p":"Greater Poland Voivodeship","o":"PL"},{"id":3081368,"c":"Wrocław","p":"Lower Silesian Voivodeship","o":"PL"},{"id":4178775,"c":"Wright","p":"Florida","o":"US"}]

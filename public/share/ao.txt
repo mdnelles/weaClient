@@ -1,1 +1,1 @@
-[{"id":2506795,"c":"Aoulef","p":"34","o":"DZ"},{"id":1278498,"c":"Aonla","p":"36","o":"IN"},{"id":3182997,"c":"Aosta","p":"19","o":"IT"},{"id":2130658,"c":"Aomorishi","p":"03","o":"JP"},{"id":2045311,"c":"Aoji-ri","p":"17","o":"KP"}]
+[{"id":2506795,"c":"Aoulef","p":"Adrar","o":"DZ"},{"id":1278498,"c":"Aonla","p":"Uttar Pradesh","o":"IN"},{"id":3182997,"c":"Aosta","p":"Aosta Valley","o":"IT"},{"id":2130658,"c":"Aomorishi","p":"Aomori","o":"JP"},{"id":2045311,"c":"Aoji-ri","p":"Hamgyong-bukto","o":"KP"}]

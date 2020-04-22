@@ -1,1 +1,1 @@
-[{"id":616629,"c":"Hrazdan","p":"05","o":"AM"},{"id":627904,"c":"Hrodna","p":"03","o":"BY"},{"id":3074967,"c":"Hradec Kralove","p":"82","o":"CZ"},{"id":3074893,"c":"Hranice","p":"84","o":"CZ"},{"id":770966,"c":"Hrubieszow","p":"75","o":"PL"}]
+[{"id":616629,"c":"Hrazdan","p":"Kotaykʼ","o":"AM"},{"id":627904,"c":"Hrodna","p":"Hrodzyenskaya Voblastsʼ","o":"BY"},{"id":3074967,"c":"Hradec Kralove","p":"Kralovehradecky Kraj","o":"CZ"},{"id":3074893,"c":"Hranice","p":"Olomoucky Kraj","o":"CZ"},{"id":770966,"c":"Hrubieszow","p":"Lublin Voivodeship","o":"PL"}]

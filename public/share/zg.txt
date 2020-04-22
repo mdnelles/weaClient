@@ -1,1 +1,1 @@
-[{"id":3080231,"c":"Zgorzelec","p":"72","o":"PL"},{"id":3080251,"c":"Zgierz","p":"74","o":"PL"}]
+[{"id":3080251,"c":"Zgierz","p":"Łodz Voivodeship","o":"PL"},{"id":3080231,"c":"Zgorzelec","p":"Lower Silesian Voivodeship","o":"PL"}]

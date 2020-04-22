@@ -1,1 +1,1 @@
-[{"id":783814,"c":"Zrenjanin","p":"VO","o":"RS"}]
+[{"id":783814,"c":"Zrenjanin","p":null,"o":"RS"}]

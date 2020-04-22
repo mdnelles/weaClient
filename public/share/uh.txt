@@ -1,1 +1,1 @@
-[{"id":3063739,"c":"Uherske Hradiste","p":"90","o":"CZ"},{"id":3063736,"c":"Uhersky Brod","p":"90","o":"CZ"}]
+[{"id":3063739,"c":"Uherske Hradiste","p":"Zlinsky Kraj","o":"CZ"},{"id":3063736,"c":"Uhersky Brod","p":"Zlinsky Kraj","o":"CZ"}]

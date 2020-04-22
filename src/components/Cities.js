@@ -267,7 +267,7 @@ export const Cities = () => {
                         { title: "ID", field: "city_id" },
                         { title: "City", field: "city_name" },
                         { title: "City (ASCII)", field: "city_ascii" },
-                        { title: "P/SCode", field: "state_code" },
+                        { title: "P/S", field: "state_name_ascii" },
                         { title: "Country", field: "country_full" },
                         { title: "Lat", field: "lat" },
                         { title: "Lon", field: "lon" },

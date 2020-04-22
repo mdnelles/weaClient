@@ -1,1 +1,1 @@
-[{"id":2247813,"c":"Ndibene Dahra","p":"13","o":"SN"},{"id":901344,"c":"Ndola","p":"08","o":"ZM"}]
+[{"id":2247813,"c":"Ndibene Dahra","p":"Louga","o":"SN"},{"id":901344,"c":"Ndola","p":"Luapula","o":"ZM"}]

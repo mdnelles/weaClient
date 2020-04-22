@@ -1,1 +1,1 @@
-[{"id":359576,"c":"Awsim","p":"08","o":"EG"},{"id":2219235,"c":"Awbari","p":"84","o":"LY"},{"id":2348773,"c":"Awka","p":"25","o":"NG"},{"id":2348783,"c":"Awgu","p":"47","o":"NG"},{"id":364367,"c":"Aweil","p":"05","o":"SS"}]
+[{"id":359576,"c":"Awsim","p":"Al Jizah","o":"EG"},{"id":2219235,"c":"Awbari","p":null,"o":"LY"},{"id":2348773,"c":"Awka","p":"Anambra","o":"NG"},{"id":2348783,"c":"Awgu","p":"Enugu","o":"NG"},{"id":364367,"c":"Aweil","p":null,"o":"SS"}]

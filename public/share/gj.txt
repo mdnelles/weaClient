@@ -1,1 +1,1 @@
-[{"id":783148,"c":"Gjirokaster","p":"45","o":"AL"},{"id":791149,"c":"Gjorce Petro","p":"00","o":"MK"},{"id":3155573,"c":"Gjøvik","p":"11","o":"NO"},{"id":791646,"c":"Gjakove","p":"10096859","o":"XK"},{"id":790674,"c":"Gjilan","p":"10097357","o":"XK"}]
+[{"id":783148,"c":"Gjirokaster","p":"Gjirokaster","o":"AL"},{"id":791149,"c":"Gjorce Petro","p":null,"o":"MK"},{"id":3155573,"c":"Gjøvik","p":"Oppland","o":"NO"},{"id":791646,"c":"Gjakove","p":null,"o":"XK"},{"id":790674,"c":"Gjilan","p":null,"o":"XK"}]

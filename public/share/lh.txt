@@ -1,1 +1,1 @@
-[{"id":1280737,"c":"Lhasa","p":"14","o":"CN"},{"id":1214658,"c":"Lhokseumawe","p":"01","o":"ID"}]
+[{"id":1280737,"c":"Lhasa","p":"Xizang","o":"CN"},{"id":1214658,"c":"Lhokseumawe","p":"Aceh","o":"ID"}]

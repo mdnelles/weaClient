@@ -1,1 +1,1 @@
-[{"id":261779,"c":"Ioannina","p":"ESYE21","o":"GR"},{"id":4159805,"c":"Iona","p":"FL","o":"US"},{"id":4862034,"c":"Iowa City","p":"IA","o":"US"}]
+[{"id":261779,"c":"Ioannina","p":null,"o":"GR"},{"id":4159805,"c":"Iona","p":"Florida","o":"US"},{"id":4862034,"c":"Iowa City","p":"Iowa","o":"US"}]

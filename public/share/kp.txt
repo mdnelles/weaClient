@@ -1,1 +1,1 @@
-[{"id":2299233,"c":"Kpandu","p":"08","o":"GH"},{"id":2365560,"c":"Kpalime","p":"25","o":"TG"}]
+[{"id":2299233,"c":"Kpandu","p":"Volta","o":"GH"},{"id":2365560,"c":"Kpalime","p":"Plateaux","o":"TG"}]
