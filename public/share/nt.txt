@@ -1,1 +1,1 @@
-[{"c":"Ntcheu","p":"Ntcheu","o":"MW","n":"10445"},{"c":"Ntchisi","p":"Ntchisi","o":"MW","n":""},{"c":"Ntoroko","p":"Ntoroko","o":"UG","n":""},{"c":"Ntungamo","p":"Ntungamo","o":"UG","n":"16400"}]
+[{"id":227592,"c":"Ntungamo","p":"W","o":"UG"},{"id":227593,"c":"Ntungamo","p":"W","o":"UG"}]

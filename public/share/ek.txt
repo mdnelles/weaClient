@@ -1,1 +1,1 @@
-[{"c":"Ekibastuz","p":"Pavlodar","o":"KZ","n":"127868"}]
+[{"id":1524325,"c":"Ekibastuz","p":"11","o":"KZ"},{"id":2343720,"c":"Eket","p":"21","o":"NG"},{"id":2343641,"c":"Ekpoma","p":"37","o":"NG"},{"id":563551,"c":"Ekazhevo","p":"19","o":"RU"},{"id":1105726,"c":"Ekangala","p":"06","o":"ZA"}]

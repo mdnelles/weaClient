@@ -1,1 +1,1 @@
-[{"c":"Uyuni","p":"Potosi","o":"BO","n":"12939"},{"c":"Uyo","p":"Akwa Ibom","o":"NG","n":"554906"},{"c":"Uyar","p":"Krasnoyarskiy Kray","o":"RU","n":"13167"}]
+[{"id":2319480,"c":"Uyo","p":"21","o":"NG"},{"id":149027,"c":"Uyovu","p":"28","o":"TZ"},{"id":1512449,"c":"Uychi","p":"06","o":"UZ"}]

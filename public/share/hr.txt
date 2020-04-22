@@ -1,1 +1,1 @@
-[{"c":"Hrazdan","p":"Kotayk’","o":"AM","n":""},{"c":"Hrodna","p":"Hrodzyenskaya Voblasts’","o":"BY","n":"317365"},{"c":"Hradec Kralove","p":"Kralovehradecky Kraj","o":"CZ","n":"95195"},{"c":"Hrastnik","p":"Hrastnik","o":"SI","n":""},{"c":"Hrib-Loski Potok","p":"Loski Potok","o":"SI","n":""}]
+[{"id":616629,"c":"Hrazdan","p":"05","o":"AM"},{"id":627904,"c":"Hrodna","p":"03","o":"BY"},{"id":3074967,"c":"Hradec Kralove","p":"82","o":"CZ"},{"id":3074893,"c":"Hranice","p":"84","o":"CZ"},{"id":770966,"c":"Hrubieszow","p":"75","o":"PL"}]

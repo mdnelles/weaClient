@@ -1,1 +1,1 @@
-[{"c":"Uummannaq","p":"Qaasuitsup","o":"GL","n":"1299"}]
+[{"id":633221,"c":"Uusikaupunki","p":"02","o":"FI"}]

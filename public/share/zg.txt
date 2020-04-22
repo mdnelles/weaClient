@@ -1,1 +1,1 @@
-[{"c":"Zgornje Gorje","p":"Gorje","o":"SI","n":""},{"c":"Zgornje Jezersko","p":"Jezersko","o":"SI","n":""},{"c":"Zgornja Kungota","p":"Kungota","o":"SI","n":""}]
+[{"id":3080231,"c":"Zgorzelec","p":"72","o":"PL"},{"id":3080251,"c":"Zgierz","p":"74","o":"PL"}]

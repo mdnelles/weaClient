@@ -1,1 +1,1 @@
-[{"c":"Pskov","p":"Pskovskaya Oblast’","o":"RU","n":"201990"}]
+[{"id":3087705,"c":"Pszczyna","p":"83","o":"PL"},{"id":504341,"c":"Pskov","p":"60","o":"RU"}]

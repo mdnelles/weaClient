@@ -10,7 +10,7 @@ if (thisServer.includes("3000")) serverPath = global.config.devPath;
 export const getCities = async (theToken) => {
    cl("getCitys");
    try {
-      const res = await axios.post(serverPath + "/city/get_cities", {
+      const res = await axios.post(serverPath + "/citywb/get_cities", {
          token: theToken,
          caller: "CityFunctions.getCitys",
       });
@@ -23,64 +23,67 @@ export const getCities = async (theToken) => {
 
 export const getCitysCount = async (theToken, code) => {
    try {
-      const res = await axios.post(serverPath + "/city/get_citycount", {
+      const res = await axios.post(serverPath + "/citywb/get_statecount", {
          token: theToken,
          code,
-         caller: "cityFunctions.getCitysCount",
+         caller: "stateFunctions.getCitysCount",
       });
       return res.data;
    } catch (err) {
-      cl("ClientSide Error @ cityFunctions.getCitysCount" + err);
+      cl("ClientSide Error @ stateFunctions.getCitysCount" + err);
       return false;
    }
 };
 
 export const getCitysByCountry = async (theToken, country) => {
    try {
-      const res = await axios.post(serverPath + "/city/get_cities_by_country", {
-         token: theToken,
-         country,
-         caller: "cityFunctions.getCitysCount",
-      });
+      const res = await axios.post(
+         serverPath + "/citywb/get_cities_by_country",
+         {
+            token: theToken,
+            country,
+            caller: "stateFunctions.getCitysCount",
+         }
+      );
       return res.data;
    } catch (err) {
-      cl("ClientSide Error @ cityFunctions.getCitysByCountry" + err);
+      cl("ClientSide Error @ stateFunctions.getCitysByCountry" + err);
       return false;
    }
 };
 export const addCity = async (theToken, data) => {
    try {
-      const res = await axios.post(serverPath + "/city/add_city", {
+      const res = await axios.post(serverPath + "/citywb/add_state", {
          token: theToken,
          data,
-         caller: "cityFunctions.addCity",
+         caller: "stateFunctions.addCity",
       });
       return res.data;
    } catch (err) {
-      cl("ClientSide Error @ cityFunctions.addCity" + err);
+      cl("ClientSide Error @ stateFunctions.addCity" + err);
       return false;
    }
 };
 
 export const editCity = async (theToken, data) => {
    try {
-      const res = await axios.post(serverPath + "/city/edit_city", {
+      const res = await axios.post(serverPath + "/citywb/edit_state", {
          token: theToken,
          data,
-         caller: "cityFunctions.editCity",
+         caller: "stateFunctions.editCity",
       });
       return res.data;
    } catch (err) {
-      cl("ClientSide Error @ cityFunctions.editCity" + err);
+      cl("ClientSide Error @ stateFunctions.editCity" + err);
       return false;
    }
 };
 export const getAPIData = async (theToken, data) => {
    try {
-      const res = await axios.post(serverPath + "/city/get_api", {
+      const res = await axios.post(serverPath + "/citywb/get_api", {
          token: theToken,
          data,
-         caller: "cityFunctions.getAPIData",
+         caller: "stateFunctions.getAPIData",
       });
       if (res.data.stringified !== undefined) {
          //console.log(JSON.parse(res.data.stringified));
@@ -88,7 +91,7 @@ export const getAPIData = async (theToken, data) => {
       console.log(res.data);
       return res.data;
    } catch (err) {
-      cl("ClientSide Error @ cityFunctions.getAPIData" + err);
+      cl("ClientSide Error @ stateFunctions.getAPIData" + err);
       return false;
    }
 };

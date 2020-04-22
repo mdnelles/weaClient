@@ -1,1 +1,1 @@
-[{"c":"Zyryanovsk","p":"Shyghys Qazaqstan","o":"KZ","n":"49658"},{"c":"Zyryanka","p":"Sakha (Yakutiya)","o":"RU","n":"3627"}]
+[{"id":1516438,"c":"Zyryanovsk","p":"15","o":"KZ"},{"id":752967,"c":"Zyrardow","p":"78","o":"PL"},{"id":3079855,"c":"Zywiec","p":"83","o":"PL"},{"id":461835,"c":"Zyablikovo","p":"48","o":"RU"},{"id":461740,"c":"Zyuzino","p":"48","o":"RU"}]

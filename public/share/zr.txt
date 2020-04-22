@@ -1,1 +1,1 @@
-[{"c":"Zrnovci","p":"Zrnovci","o":"MK","n":""},{"c":"Zrenjanin","p":"Zrenjanin","o":"RS","n":"64053"},{"c":"Zrece","p":"Zrece","o":"SI","n":""}]
+[{"id":783814,"c":"Zrenjanin","p":"VO","o":"RS"}]

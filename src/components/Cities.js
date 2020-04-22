@@ -264,14 +264,13 @@ export const Cities = () => {
                getCities(startToken).then((data) => {
                   setState({
                      columns: [
-                        { title: "ID", field: "id" },
-                        { title: "City", field: "city" },
-                        { title: "State/Prov", field: "admin_name" },
-                        { title: "Country", field: "country" },
-                        { title: "Population", field: "population" },
+                        { title: "ID", field: "city_id" },
+                        { title: "City", field: "city_name" },
+                        { title: "City (ASCII)", field: "city_ascii" },
+                        { title: "P/SCode", field: "state_code" },
+                        { title: "Country", field: "country_full" },
                         { title: "Lat", field: "lat" },
-                        { title: "Lon", field: "lng" },
-                        { title: "ISO3", field: "iso3" },
+                        { title: "Lon", field: "lon" },
                      ],
                      data: data,
                   });

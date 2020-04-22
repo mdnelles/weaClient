@@ -1,1 +1,1 @@
-[{"c":"Uzice","p":"Uzice","o":"RS","n":""},{"c":"Uzhur","p":"Krasnoyarskiy Kray","o":"RU","n":"19212"},{"c":"Uzhhorod","p":"Zakarpats’ka Oblast’","o":"UA","n":"150832"}]
+[{"id":1527513,"c":"Uzgen","p":"08","o":"KG"},{"id":3188434,"c":"Uzice","p":"SE","o":"RS"},{"id":477494,"c":"Uzlovaya","p":"76","o":"RU"},{"id":1487882,"c":"Uzhur","p":"91","o":"RU"},{"id":738251,"c":"Uzunkopru","p":"22","o":"TR"},{"id":690548,"c":"Uzhhorod","p":"25","o":"UA"}]

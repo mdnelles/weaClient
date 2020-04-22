@@ -12,6 +12,7 @@ import { Statistics } from "./components/Statistics";
 import { Admin } from "./components/Admin";
 import { Countries } from "./components/Countries";
 import { Cities } from "./components/Cities";
+import { States } from "./components/States";
 import { Users } from "./components/Users";
 import { Utils } from "./components/Utils";
 
@@ -84,6 +85,7 @@ export const AppWrapper = () => {
             <div className='appHolder' style={{ marginLeft: 65 }}>
                <Route exact path='/admin' component={Admin} />
                <Route exact path='/cities' component={Cities} />
+               <Route exact path='/states' component={States} />
                <Route exact path='/countries' component={Countries} />
                <Route exact path='/logs' component={LogView} />
                <Route exact path='/utils' component={Utils} />

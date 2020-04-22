@@ -1,1 +1,1 @@
-[{"c":"Ptuj","p":"Ptuj","o":"SI","n":""}]
+[{"id":734426,"c":"Ptolemaida","p":"ESYE13","o":"GR"},{"id":3192241,"c":"Ptuj","p":"K7","o":"SI"}]

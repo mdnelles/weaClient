@@ -1,1 +1,1 @@
-[{"c":"Tvoroyri","p":"","o":"FO","n":""},{"c":"Tver'","p":"Tverskaya Oblast’","o":"RU","n":"400212"}]
+[{"id":480060,"c":"Tver","p":"77","o":"RU"}]

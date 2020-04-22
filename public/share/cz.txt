@@ -1,1 +1,1 @@
-[]
+[{"id":3101076,"c":"Czechowice-Dziedzice","p":"83","o":"PL"},{"id":3101057,"c":"Czeladz","p":"83","o":"PL"},{"id":3100974,"c":"Czerwionka-Leszczyny","p":"83","o":"PL"},{"id":3100946,"c":"Czestochowa","p":"83","o":"PL"}]

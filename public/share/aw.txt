@@ -1,1 +1,1 @@
-[{"c":"Awasa","p":"YeDebub Biheroch Bihereseboch na Hizboch","o":"ET","n":"133097"},{"c":"Awjilah","p":"Al Wahat","o":"LY","n":"6610"},{"c":"Awbari","p":"Wadi al Hayat","o":"LY","n":""},{"c":"Awka","p":"Anambra","o":"NG","n":"500000"},{"c":"Aweil","p":"Northern Bahr el Ghazal","o":"SS","n":"46705"}]
+[{"id":359576,"c":"Awsim","p":"08","o":"EG"},{"id":2219235,"c":"Awbari","p":"84","o":"LY"},{"id":2348773,"c":"Awka","p":"25","o":"NG"},{"id":2348783,"c":"Awgu","p":"47","o":"NG"},{"id":364367,"c":"Aweil","p":"05","o":"SS"}]

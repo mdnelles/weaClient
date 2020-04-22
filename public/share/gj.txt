@@ -1,1 +1,1 @@
-[{"c":"Gjirokaster","p":"Gjirokaster","o":"AL","n":"23437"},{"c":"Gjoa Haven","p":"Nunavut","o":"CA","n":"1109"},{"c":"Gjovik","p":"Oppland","o":"NO","n":"22719"},{"c":"Gjakove","p":"Gjakove","o":"XK","n":""},{"c":"Gjilan","p":"Gjilan","o":"XK","n":""}]
+[{"id":783148,"c":"Gjirokaster","p":"45","o":"AL"},{"id":791149,"c":"Gjorce Petro","p":"00","o":"MK"},{"id":3155573,"c":"Gjøvik","p":"11","o":"NO"},{"id":791646,"c":"Gjakove","p":"10096859","o":"XK"},{"id":790674,"c":"Gjilan","p":"10097357","o":"XK"}]

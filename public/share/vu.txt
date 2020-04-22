@@ -1,1 +1,1 @@
-[{"c":"Vukovar","p":"Vukovarsko-Srijemska Zupanija","o":"HR","n":""},{"c":"Vuzenica","p":"Vuzenica","o":"SI","n":""},{"c":"Vung Tau","p":"Ba Ria-Vung Tau","o":"VN","n":"248767"},{"c":"Vushtrri","p":"Vushtrri","o":"XK","n":""}]
+[{"id":3187047,"c":"Vukovar","p":"18","o":"HR"},{"id":1253077,"c":"Vuyyuru","p":"02","o":"IN"},{"id":2745154,"c":"Vught","p":"06","o":"NL"},{"id":662432,"c":"Vulcan","p":"21","o":"RO"},{"id":1562414,"c":"Vung Tau","p":"45","o":"VN"},{"id":784097,"c":"Vushtrri","p":"10097358","o":"XK"}]
