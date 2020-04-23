@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { getCountries } from "./CountryFunctions";
-import { getCitysByCountry } from "./CityFunctions";
+import { getAPIData } from "./ApiDataFunctions";
 import localForage from "localforage";
 import uuid from "uuid";
 
 import { cubeMsgNext, obj } from "./_sharedFunctions";
 import { CubeMsg } from "./3d/CubeMsg";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { JSONReader } from "./widgets/JSONReader";
 
+import CircularProgress from "@material-ui/core/CircularProgress";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { lighten, makeStyles } from "@material-ui/core/styles";
@@ -18,10 +18,6 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -228,6 +224,7 @@ export const ApiData = () => {
       [msgArr, setMsgArr] = useState(obj),
       [page, setPage] = React.useState(0),
       [token, setToken] = useState("na"),
+      [dataid, setDataid] = useState(""),
       [open, setOpen] = React.useState(false),
       [dialogProgress, setDialogProgress] = useState("displayNone"),
       [dialogTitle, setDialogTitle] = useState(""),
@@ -235,38 +232,12 @@ export const ApiData = () => {
       [rowsPerPage, setRowsPerPage] = React.useState(10),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
-   const startGetCitysByCountry = (event) => {
-      event.preventDefault();
-      let country = event.target.id.toString().split("-");
-      setDialogProgress("displayBlock");
-      setOpen(true);
-      let countryReadable = country[1].replace(/__/g, " ");
-      setDialogTitle("Cities in " + countryReadable);
-      getCitysByCountry(token, country[1]).then((data) => {
-         console.log(data);
-         var displayCities;
-         data.forEach((e) => {
-            if (e.city !== undefined && e.city !== "undefined")
-               displayCities += e.city + ", " + e.admin_name + "\n";
-         });
-         displayCities = displayCities.replace(/undefined/g, "");
-         displayCities = displayCities.replace(/admin_name/g, "");
-         setDialogContent(displayCities);
-         setDialogProgress("displayNone");
-      });
+   const placeholder = (ev) => {
+      // this does nothing
    };
 
    const handleClose = () => {
       setOpen(false);
-   };
-   const demoMsg = (msg, severity) => {
-      console.log("msg = " + msg);
-      setMsgArr(
-         cubeMsgNext("Can not " + msg + " Api Data as demo ", severity, msgArr)
-      );
-      setCubeWrapperAnim(
-         msgArr[msgArr.findIndex((el) => el.current === true)].anim
-      );
    };
 
    const handleChangePage = (event, newPage) => {
@@ -278,8 +249,15 @@ export const ApiData = () => {
       setPage(0);
    };
 
+   const loadJSON = (id, city) => {
+      setOpen(true);
+      setDialogProgress("displayBlock");
+      setDialogTitle("JSON weather data for " + city);
+      setDataid(id);
+   };
+
    useEffect(() => {
-      setMsgArr(cubeMsgNext("loading countries database", "info", msgArr));
+      setMsgArr(cubeMsgNext("loading Api Data", "info", msgArr));
       setCubeWrapperAnim(
          msgArr[msgArr.findIndex((el) => el.current === true)].anim
       );
@@ -288,8 +266,8 @@ export const ApiData = () => {
             .getItem("token")
             .then(function (startToken) {
                setToken(startToken);
-               getCountries(startToken).then((data) => {
-                  setRows(data);
+               getAPIData(startToken).then((data) => {
+                  setRows(data[0]);
                   setIsLoaded(true);
                   setMsgArr(cubeMsgNext("Countries loaded", "success", msgArr));
                   setCubeWrapperAnim(
@@ -305,10 +283,6 @@ export const ApiData = () => {
             });
       }
    }, [isLoaded]);
-
-   const addDefaultSrc = (ev) => {
-      ev.target.src = "/img/flags/_noimg.png";
-   };
 
    return (
       <div id='main' className='body'>
@@ -334,8 +308,9 @@ export const ApiData = () => {
                      <TableHead>
                         <TableRow>
                            <TableCell>ID</TableCell>
-                           <TableCell>Data</TableCell>
-                           <TableCell>Details</TableCell>
+                           <TableCell>location</TableCell>
+                           <TableCell>tdate</TableCell>
+                           <TableCell>Commands</TableCell>
                         </TableRow>
                      </TableHead>
                      <TableBody>
@@ -348,10 +323,12 @@ export const ApiData = () => {
                               return (
                                  <TableRow key={uuid()}>
                                     <TableCell component='th' scope='row'>
-                                       flag was here
+                                       {row.cid}
                                     </TableCell>
-                                    <TableCell>tdate</TableCell>
-                                    <TableCell>details</TableCell>
+                                    <TableCell>
+                                       {row.ci + "," + row.ps + "," + row.co}
+                                    </TableCell>
+                                    <TableCell>{row.date}</TableCell>
                                     <TableCell>
                                        <ButtonGroup
                                           size='small'
@@ -361,29 +338,18 @@ export const ApiData = () => {
                                        >
                                           <Button>
                                              <span
-                                                onClick={(event) =>
-                                                   startGetCitysByCountry(event)
+                                                onClick={() =>
+                                                   loadJSON(row.cid, row.ci)
                                                 }
-                                                id={
-                                                   "c-" +
-                                                   row.country_name
-                                                      .toString()
-                                                      .replace(/ /g, "__")
-                                                }
+                                                id={row.city_id}
                                              >
                                                 View
                                              </span>
                                           </Button>
+
                                           <Button
-                                             onClick={() =>
-                                                demoMsg("Add", "warning")
-                                             }
-                                          >
-                                             Add
-                                          </Button>
-                                          <Button
-                                             onClick={() =>
-                                                demoMsg("Delete", "error")
+                                             onClick={(event) =>
+                                                placeholder(event)
                                              }
                                           >
                                              Delete
@@ -411,6 +377,7 @@ export const ApiData = () => {
             open={open}
             onClose={handleClose}
             aria-labelledby='alert-dialog-title'
+            maxWidth='lg'
             aria-describedby='alert-dialog-description'
          >
             <DialogTitle id='alert-dialog-title'>{dialogTitle}</DialogTitle>
@@ -418,8 +385,11 @@ export const ApiData = () => {
                <span className={dialogProgress}>
                   <CircularProgress />
                </span>
-
-               <pre>{dialogContent}</pre>
+               <JSONReader
+                  dataid={dataid}
+                  token={token}
+                  setDialogProgress={setDialogProgress}
+               />
             </DialogContent>
          </Dialog>
       </div>

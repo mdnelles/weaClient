@@ -204,7 +204,7 @@ export default function MiniDrawer() {
                         style={{ fontSize: fs, fill: icolor }}
                      />
                   </ListItemAvatar>
-                  <ListItemText primary='SPI Data' />
+                  <ListItemText primary='API Data' />
                </ListItem>
 
                <Divider />
