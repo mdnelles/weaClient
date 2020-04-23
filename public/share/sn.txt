@@ -1,1 +1,0 @@
-[{"id":2747063,"c":"Sneek","p":"Provincie Friesland","o":"NL"},{"id":1536289,"c":"Snezhinsk","p":"Tsjeljabinsk","o":"RU"},{"id":723559,"c":"Snina","p":"Presovsky","o":"SK"},{"id":693381,"c":"Snizhne","p":null,"o":"UA"},{"id":4223413,"c":"Snellville","p":"Georgia","o":"US"}]

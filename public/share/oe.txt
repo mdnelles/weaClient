@@ -1,1 +1,0 @@
-[{"id":3393764,"c":"Oeiras","p":"Piaui","o":"BR"},{"id":2857943,"c":"Oelde","p":"North Rhine-Westphalia","o":"DE"},{"id":2857904,"c":"Oer-Erkenschwick","p":"North Rhine-Westphalia","o":"DE"},{"id":2857900,"c":"Oerlinghausen","p":"North Rhine-Westphalia","o":"DE"},{"id":2749723,"c":"Oegstgeest","p":"South Holland","o":"NL"}]

@@ -1,1 +1,0 @@
-[{"id":3187047,"c":"Vukovar","p":"Vukovarsko-Srijemska","o":"HR"},{"id":1253077,"c":"Vuyyuru","p":"Andhra Pradesh","o":"IN"},{"id":2745154,"c":"Vught","p":"North Brabant","o":"NL"},{"id":662432,"c":"Vulcan","p":"Hunedoara","o":"RO"},{"id":1562414,"c":"Vung Tau","p":"Ba Ria-Vung Tau","o":"VN"},{"id":784097,"c":"Vushtrri","p":null,"o":"XK"}]

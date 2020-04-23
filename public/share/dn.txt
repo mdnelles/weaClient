@@ -1,1 +1,0 @@
-[{"id":709930,"c":"Dnipro","p":null,"o":"UA"},{"id":709932,"c":"Dniprodzerzhyns’k","p":null,"o":"UA"},{"id":709960,"c":"Dniprorudne","p":null,"o":"UA"}]

@@ -1,1 +1,0 @@
-[{"id":3061344,"c":"Znojmo","p":"South Moravian Region","o":"CZ"},{"id":831130,"c":"Znamensk","p":"Astrakhan","o":"RU"},{"id":686919,"c":"Znomenka","p":null,"o":"UA"}]

@@ -1,1 +1,0 @@
-[{"id":524640,"c":"Mtsensk","p":"Orjol","o":"RU"},{"id":152718,"c":"Mtwango","p":null,"o":"TZ"},{"id":152743,"c":"Mto wa Mbu","p":"Arusha","o":"TZ"},{"id":877747,"c":"Mtwara","p":"Mtwara","o":"TZ"},{"id":152781,"c":"Mtinko","p":"Singida","o":"TZ"},{"id":946058,"c":"Mthatha","p":"Eastern Cape","o":"ZA"}]

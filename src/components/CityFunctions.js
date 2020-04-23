@@ -20,7 +20,6 @@ export const getCities = async (theToken) => {
       return false;
    }
 };
-
 export const getCitysCount = async (theToken, code) => {
    try {
       const res = await axios.post(serverPath + "/citywb/get_statecount", {
@@ -34,7 +33,6 @@ export const getCitysCount = async (theToken, code) => {
       return false;
    }
 };
-
 export const getCitysByCountry = async (theToken, country) => {
    try {
       const res = await axios.post(
@@ -78,11 +76,24 @@ export const editCity = async (theToken, data) => {
       return false;
    }
 };
-export const getAPIData = async (theToken, data) => {
+export const getAPIData = async (
+   theToken,
+   city_id,
+   lat,
+   lon,
+   city,
+   province,
+   country
+) => {
    try {
       const res = await axios.post(serverPath + "/citywb/get_api", {
          token: theToken,
-         data,
+         city_id,
+         lat,
+         lon,
+         city,
+         province,
+         country,
          caller: "stateFunctions.getAPIData",
       });
       if (res.data.stringified !== undefined) {

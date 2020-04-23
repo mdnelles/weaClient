@@ -1,1 +1,0 @@
-[{"id":2857798,"c":"Offenburg","p":"Baden-Wurttemberg","o":"DE"},{"id":2857807,"c":"Offenbach","p":"Hesse","o":"DE"},{"id":293992,"c":"Ofaqim","p":"HaDarom","o":"IL"},{"id":2111530,"c":"Ofunato","p":"Iwate","o":"JP"},{"id":2327879,"c":"Offa","p":"Kwara","o":"NG"},{"id":741240,"c":"Of","p":"Trabzon Province","o":"TR"}]

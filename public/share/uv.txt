@@ -1,1 +1,0 @@
-[{"id":204405,"c":"Uvira","p":"Sud-Kivu","o":"CD"},{"id":477626,"c":"Uvarovo","p":"Tambov","o":"RU"},{"id":477656,"c":"Uva","p":"Udmurtiya","o":"RU"},{"id":149050,"c":"Uvinza","p":"Kigoma","o":"TZ"},{"id":4738721,"c":"Uvalde","p":"Texas","o":"US"}]

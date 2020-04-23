@@ -1,1 +1,0 @@
-[{"id":3400567,"c":"Extremoz","p":"Rio Grande do Norte","o":"BR"},{"id":2649808,"c":"Exeter","p":"England","o":"GB"},{"id":2649800,"c":"Exmouth","p":"England","o":"GB"}]

@@ -1,1 +1,0 @@
-[{"id":759734,"c":"Rzeszow","p":"Subcarpathian Voivodeship","o":"PL"},{"id":499717,"c":"Rzhev","p":"Tverskaya Oblast’","o":"RU"}]

@@ -17,38 +17,34 @@ import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
+import uuid from "uuid";
 
-const getPage = (id) => {
-   let loc = "./forcast/" + id.replace(/--/g, "/");
+const getPage = (id, ci, ps, co) => {
+   let loc = "./forcast/" + ci + "_" + ps + "_" + co + "/" + id;
    setTimeout(() => {
       window.location.href = loc;
    }, 300);
 };
 
 const Row = (props) => {
-   let countryFull = countryISO.filter((c) => c.iso === props.country);
-
-   let iso2 = "CA";
-   if (props.country !== undefined) iso2 = props.country.toLowerCase();
-   let thisID =
-      props.city.replace(" ", "_") + "--" + props.province.replace(" ", "_");
-   if (props.country !== "CA" && props.country !== "US")
-      thisID =
-         props.city.replace(" ", "_") +
-         "--" +
-         countryFull[0].cou.replace(" ", "_");
-
    return (
-      <div key={"i" + props.city + props.province}>
-         <ListItem button dense={true} onClick={() => getPage(thisID)}>
-            <ListItemText>
+      <div key={uuid()}>
+         <ListItem
+            button
+            dense={true}
+            onClick={() =>
+               getPage(props.id, props.city, props.province, props.country)
+            }
+            style={{ padding: 0 }}
+         >
+            <ListItemText style={{ padding: 0 }}>
                <img
-                  src={"./img/flags/" + iso2 + ".png"}
+                  src={"./img/flags/" + props.country + ".png"}
                   style={{
-                     height: 20,
-                     width: 38,
+                     height: 17,
+                     width: 35,
                      marginRight: 10,
-                     borderRadius: 3,
+                     paddingLeft: 10,
                   }}
                />
                {props.city}, {props.province}, {props.country}
@@ -61,7 +57,13 @@ const Row = (props) => {
 const AllRows = (props) => {
    if (props.suggestData !== undefined) {
       return props.suggestData.map((a, i) => (
-         <Row key={a.c + a.p} city={a.c} province={a.p} country={a.o} />
+         <Row
+            key={uuid()}
+            city={a.ci}
+            province={a.ps}
+            country={a.co}
+            id={a.id}
+         />
       ));
    } else {
       return <div></div>;
@@ -75,27 +77,14 @@ export const Home = () => {
       [country, setCountry] = useState("CA");
 
    const prune = (partialText, arr) => {
-      let arrFinal, arr3;
+      let arrFinal = [];
+      // SAMPLE: "id":3429902,"c":"Pontevedra","p":"Buenos Aires","o":"AR"}
       // first do local country
-      //a.c = city, a.o = country, a.n = population
-      arrFinal = arr.filter(
-         (a) =>
-            a.o === country &&
-            a.c.toLowerCase().includes(partialText.toLowerCase())
+      //a.ci = city, a.ps = prov/state, a.co = country
+      arrFinal = arr.filter((a) =>
+         a.ci.toLowerCase().includes(partialText.toLowerCase())
       );
-      arr3 = arr.filter(
-         (a) =>
-            a.o !== country &&
-            a.c.toLowerCase().includes(partialText.toLowerCase())
-      );
-      //sort population 'n' descending
-      arr3.sort(function (a, b) {
-         return b.n - a.n;
-      });
 
-      arr3.slice(0, 5);
-
-      arrFinal = arrFinal.concat(arr3);
       setSuggestData(arrFinal);
    };
 
@@ -103,10 +92,10 @@ export const Home = () => {
       let s = partialText.substring(0, 2).toLowerCase();
       if (s !== currentText) {
          setCurrentText(s);
-         fetch("./share/" + s + ".txt")
+         fetch("./share/" + s + ".json")
             .then((r) => r.text())
             .then((text) => {
-               if (text !== undefined && text.length > 2) {
+               if (text !== undefined && text.length > 3) {
                   var arr = JSON.parse(text);
                   setCurrentTextData(arr);
                   console.log(arr.length + " - " + s);
@@ -121,6 +110,7 @@ export const Home = () => {
 
    const locChange = (event) => {
       if (event.target.value !== undefined && event.target.value.length > 1) {
+         console.log("locChange value=" + event.target.value);
          pullText(event.target.value);
       }
    };
@@ -149,7 +139,7 @@ export const Home = () => {
             elevation={3}
             style={{ zIndex: 5, marginLeft: 20, marginRight: 20 }}
          >
-            <AllRows suggestData={suggestData}></AllRows>
+            <AllRows key={uuid} suggestData={suggestData}></AllRows>
          </Paper>
 
          <br />

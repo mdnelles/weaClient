@@ -1,1 +1,0 @@
-[{"id":925498,"c":"Mzimba","p":null,"o":"MW"},{"id":925475,"c":"Mzuzu","p":null,"o":"MW"}]

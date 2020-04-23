@@ -1,1 +1,0 @@
-[{"id":3061695,"c":"Zdar nad Sazavou","p":"Vysocina","o":"CZ"},{"id":3061692,"c":"Zdar nad Sazavou Druhy","p":"Vysocina","o":"CZ"},{"id":3080414,"c":"Zdunska Wola","p":"Łodz Voivodeship","o":"PL"},{"id":687432,"c":"Zdolbuniv","p":null,"o":"UA"}]

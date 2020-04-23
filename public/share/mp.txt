@@ -1,1 +1,0 @@
-[{"id":153176,"c":"Mpanda","p":null,"o":"TZ"},{"id":153094,"c":"Mpwapwa","p":"Dodoma","o":"TZ"},{"id":973139,"c":"Mpophomeni","p":"KwaZulu-Natal","o":"ZA"},{"id":973111,"c":"Mpumalanga","p":"KwaZulu-Natal","o":"ZA"},{"id":905846,"c":"Mpika","p":null,"o":"ZM"}]

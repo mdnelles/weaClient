@@ -1,1 +1,0 @@
-[{"id":1527513,"c":"Uzgen","p":"Osh","o":"KG"},{"id":3188434,"c":"Uzice","p":null,"o":"RS"},{"id":1487882,"c":"Uzhur","p":null,"o":"RU"},{"id":477494,"c":"Uzlovaya","p":"Tula","o":"RU"},{"id":738251,"c":"Uzunkopru","p":"Edirne Province","o":"TR"},{"id":690548,"c":"Uzhhorod","p":null,"o":"UA"}]

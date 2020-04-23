@@ -1,19 +1,17 @@
 import React from "react";
 import axios from "axios";
 export const Forcast = () => {
-   const [city, setCity] = React.useState("");
-   const [geo2, setGeo2] = React.useState("");
+   const [rest1, setRest1] = React.useState(""),
+      [rest2, setRest2] = React.useState("");
    React.useEffect(() => {
       let temp = window.location.href.toString().split("/");
-      let rest1 = temp[temp.length - 1].toString();
-      let rest2 = temp[temp.length - 2].toString();
-      setCity(rest2.replace("_", " "));
-      setGeo2(rest1.replace("_", " "));
+      setRest1(temp[temp.length - 1].toString());
+      setRest2(temp[temp.length - 2].toString().replace(/_/g, ", "));
    });
 
    return (
       <div>
-         Weather for {city},{geo2}
+         Weather for {rest2},{rest1}
       </div>
    );
 };

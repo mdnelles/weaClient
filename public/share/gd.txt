@@ -1,1 +1,0 @@
-[{"id":3099434,"c":"Gdansk","p":"Pomeranian Voivodeship","o":"PL"},{"id":3099424,"c":"Gdynia","p":"Pomeranian Voivodeship","o":"PL"}]

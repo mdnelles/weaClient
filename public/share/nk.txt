@@ -1,1 +1,0 @@
-[{"id":2223734,"c":"Nkoteng","p":"Centre","o":"CM"},{"id":2223763,"c":"Nkongsamba","p":"Littoral","o":"CM"},{"id":2297313,"c":"Nkawkaw","p":"Eastern","o":"GH"},{"id":924705,"c":"Nkhotakota","p":null,"o":"MW"},{"id":2328811,"c":"Nkpor","p":"Anambra","o":"NG"},{"id":2328790,"c":"Nkwerre","p":"Imo","o":"NG"},{"id":970341,"c":"Nkowakowa","p":"Limpopo","o":"ZA"}]

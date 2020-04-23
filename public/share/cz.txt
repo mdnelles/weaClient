@@ -1,1 +1,0 @@
-[{"id":3101076,"c":"Czechowice-Dziedzice","p":"Silesian Voivodeship","o":"PL"},{"id":3101057,"c":"Czeladz","p":"Silesian Voivodeship","o":"PL"},{"id":3100974,"c":"Czerwionka-Leszczyny","p":"Silesian Voivodeship","o":"PL"},{"id":3100946,"c":"Czestochowa","p":"Silesian Voivodeship","o":"PL"}]

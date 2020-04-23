@@ -10,9 +10,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
 import { lighten, makeStyles } from "@material-ui/core/styles";
@@ -230,6 +228,9 @@ export const Cities = () => {
       [msgArr, setMsgArr] = useState(obj),
       [apiInfo, setApiInfo] = useState(""),
       [open, setOpen] = React.useState(false),
+      [apiCity, setApiCity] = React.useState(""),
+      [apiProvince, setApiProvince] = React.useState(""),
+      [apiCountry, setApiCountry] = React.useState(""),
       [token, setToken] = useState("na"),
       [gotCities, setGotCities] = useState(false),
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
@@ -238,7 +239,15 @@ export const Cities = () => {
       setOpen(true);
       setApiInfo("");
       console.log(rowData);
-      getAPIData(token, rowData).then((data) => {
+      getAPIData(
+         token,
+         rowData.city_id,
+         rowData.lat,
+         rowData.lon,
+         apiCity,
+         apiProvince,
+         apiCountry
+      ).then((data) => {
          console.log(data);
          setDialogueCircular("displayNone");
          setApiInfo("check JSON");
@@ -311,8 +320,8 @@ export const Cities = () => {
             <MaterialTable
                actions={[
                   {
-                     icon: "info",
-                     tooltip: "Show Weather",
+                     icon: "save_alt",
+                     tooltip: "Fetch Weather",
                      onClick: (event, rowData) => {
                         getJSONInfo(rowData);
                      },

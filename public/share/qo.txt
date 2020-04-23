@@ -1,1 +1,0 @@
-[{"id":119161,"c":"Qorveh","p":"Kordestan","o":"IR"},{"id":119208,"c":"Qom","p":"Qom","o":"IR"},{"id":2562629,"c":"Qormi","p":null,"o":"MT"},{"id":52867,"c":"Qoryooley","p":"Shabeellaha Hoose","o":"SO"},{"id":1513364,"c":"Qo‘rg‘ontepa","p":"Andijon","o":"UZ"},{"id":1512979,"c":"Qo‘qon","p":"Farg ona","o":"UZ"}]

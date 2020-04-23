@@ -1,1 +1,0 @@
-[{"id":2297141,"c":"Nsawam","p":"Eastern","o":"GH"},{"id":924572,"c":"Nsanje","p":null,"o":"MW"},{"id":2328684,"c":"Nsukka","p":"Enugu","o":"NG"},{"id":151373,"c":"Nshamba","p":"Kagera","o":"TZ"},{"id":151363,"c":"Nsunga","p":"Kagera","o":"TZ"}]

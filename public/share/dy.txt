@@ -1,1 +1,0 @@
-[{"id":563719,"c":"Dyurtyuli","p":"Bashkortostan","o":"RU"},{"id":563822,"c":"Dyat’kovo","p":"Brjansk","o":"RU"},{"id":710035,"c":"Dymytrov","p":null,"o":"UA"},{"id":4919820,"c":"Dyer","p":"Indiana","o":"US"},{"id":4619800,"c":"Dyersburg","p":"Tennessee","o":"US"}]

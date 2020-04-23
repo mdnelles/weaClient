@@ -1,1 +1,0 @@
-[{"id":2657941,"c":"Yverdon-les-Bains","p":"Vaud","o":"CH"}]

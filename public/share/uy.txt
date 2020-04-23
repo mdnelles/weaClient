@@ -1,1 +1,0 @@
-[{"id":2319480,"c":"Uyo","p":"Akwa Ibom","o":"NG"},{"id":149027,"c":"Uyovu","p":null,"o":"TZ"},{"id":1512449,"c":"Uychi","p":"Namangan","o":"UZ"}]

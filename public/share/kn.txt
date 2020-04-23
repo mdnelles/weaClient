@@ -1,1 +1,0 @@
-[{"id":2794210,"c":"Knokke-Heist","p":"Flanders","o":"BE"},{"id":3095971,"c":"Knurow","p":"Silesian Voivodeship","o":"PL"},{"id":6619277,"c":"Knjazevac","p":null,"o":"RS"},{"id":4634946,"c":"Knoxville","p":"Tennessee","o":"US"},{"id":988698,"c":"Knysna","p":"Western Cape","o":"ZA"}]

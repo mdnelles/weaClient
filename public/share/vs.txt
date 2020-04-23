@@ -1,1 +1,0 @@
-[{"id":3062339,"c":"Vsetin","p":"Zlinsky Kraj","o":"CZ"},{"id":471101,"c":"Vsevolozhsk","p":"Leningrad","o":"RU"}]
