@@ -14,6 +14,7 @@ import { logout } from "../UserFunctions";
 
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import BuildIcon from "@material-ui/icons/Build";
+import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -196,6 +197,14 @@ export default function MiniDrawer() {
                      <MapIcon style={{ fontSize: fs, fill: icolor }} />
                   </ListItemAvatar>
                   <ListItemText primary='Countries' />
+               </ListItem>
+               <ListItem button onClick={() => bClick("apidata")}>
+                  <ListItemAvatar>
+                     <PlaylistAddCheckIcon
+                        style={{ fontSize: fs, fill: icolor }}
+                     />
+                  </ListItemAvatar>
+                  <ListItemText primary='SPI Data' />
                </ListItem>
 
                <Divider />

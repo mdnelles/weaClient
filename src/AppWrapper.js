@@ -9,6 +9,7 @@ import "./App.css";
 import { LogView } from "./components/LogView";
 import MiniDrawer from "./components/widgets/MiniDrawer";
 import { Statistics } from "./components/Statistics";
+import { ApiData } from "./components/ApiData";
 import { Admin } from "./components/Admin";
 import { Countries } from "./components/Countries";
 import { Cities } from "./components/Cities";
@@ -91,6 +92,7 @@ export const AppWrapper = () => {
                <Route exact path='/utils' component={Utils} />
                <Route exact path='/stats' component={Statistics} />
                <Route exact path='/users' component={Users} />
+               <Route exact path='/apidata' component={ApiData} />
             </div>
          </div>
       );
