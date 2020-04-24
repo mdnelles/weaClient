@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { getAPIData, getCities, addCity, editCity } from "./CityFunctions";
+import {
+   getAPIData,
+   getAPIData2,
+   getCities,
+   addCity,
+   editCity,
+} from "./CityFunctions";
 import localForage from "localforage";
 import _ from "lodash";
 
@@ -252,7 +258,25 @@ export const Cities = () => {
          setDialogueCircular("displayNone");
          setApiInfo("check JSON");
       });
-
+      setDialogueCircular("displayBlock");
+   };
+   const getJSONInfo2 = (rowData) => {
+      setOpen(true);
+      setApiInfo("");
+      console.log(rowData);
+      getAPIData(
+         token,
+         rowData.city_id,
+         rowData.lat,
+         rowData.lon,
+         apiCity,
+         apiProvince,
+         apiCountry
+      ).then((data) => {
+         console.log(data);
+         setDialogueCircular("displayNone");
+         setApiInfo("check JSON");
+      });
       setDialogueCircular("displayBlock");
    };
    const handleClose = () => {
@@ -321,9 +345,16 @@ export const Cities = () => {
                actions={[
                   {
                      icon: "save_alt",
-                     tooltip: "Fetch Weather",
+                     tooltip: "Fetch Weather Rapid API",
                      onClick: (event, rowData) => {
                         getJSONInfo(rowData);
+                     },
+                  },
+                  {
+                     icon: "save_alt",
+                     tooltip: "Fetch Weather from WeatherBit",
+                     onClick: (event, rowData) => {
+                        getJSONInfo2(rowData);
                      },
                   },
                ]}

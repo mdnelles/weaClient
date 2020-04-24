@@ -86,16 +86,19 @@ export const getAPIData = async (
    country
 ) => {
    try {
-      const res = await axios.post(serverPath + "/citywb/get_api", {
-         token: theToken,
-         city_id,
-         lat,
-         lon,
-         city,
-         province,
-         country,
-         caller: "stateFunctions.getAPIData",
-      });
+      const res = await axios.post(
+         serverPath + "/citywb/get_data_from_rapidapi",
+         {
+            token: theToken,
+            city_id,
+            lat,
+            lon,
+            city,
+            province,
+            country,
+            caller: "stateFunctions.getAPIData",
+         }
+      );
       if (res.data.stringified !== undefined) {
          //console.log(JSON.parse(res.data.stringified));
       }

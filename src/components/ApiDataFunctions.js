@@ -8,10 +8,27 @@ if (thisServer.includes("3000")) serverPath = global.config.devPath;
 //export const utilIsLoggedIn = token => {
 export const getAPIData = async (token) => {
    try {
-      const res = await axios.post(serverPath + "/api/get_from_db", {
+      const res = await axios.post(serverPath + "/api/get_data_from_rapidapi", {
          token: token,
          caller: "ApiDataFunctions.getApiData",
       });
+      console.log(res.data);
+      return res.data;
+   } catch (err) {
+      console.log("Err (catch) ApiDataFunctions.getApiData: " + err);
+      return "ERR:" + err;
+   }
+};
+
+export const getAPIData2 = async (token) => {
+   try {
+      const res = await axios.post(
+         serverPath + "/api/get_data_from_weatherbit",
+         {
+            token: token,
+            caller: "ApiDataFunctions.getApiData",
+         }
+      );
       console.log(res.data);
       return res.data;
    } catch (err) {
