@@ -298,10 +298,10 @@ export const Cities = () => {
                   setState({
                      columns: [
                         { title: "ID", field: "city_id" },
-                        { title: "City", field: "city_name" },
-                        { title: "City (ASCII)", field: "city_ascii" },
+                        { title: "City", field: "city_ascii" },
                         { title: "P/S", field: "state_name_ascii" },
                         { title: "Country", field: "country_full" },
+                        { title: "Pop", field: "population" },
                         { title: "Lat", field: "lat" },
                         { title: "Lon", field: "lon" },
                      ],
