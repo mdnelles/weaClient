@@ -8,7 +8,7 @@ if (thisServer.includes("3000")) serverPath = global.config.devPath;
 //export const utilIsLoggedIn = token => {
 export const getAPIData = async (token) => {
    try {
-      const res = await axios.post(serverPath + "/api/get_data_from_rapidapi", {
+      const res = await axios.post(serverPath + "/api/get_from_db", {
          token: token,
          caller: "ApiDataFunctions.getApiData",
       });
@@ -37,14 +37,17 @@ export const getAPIData2 = async (token) => {
    }
 };
 
-export const getCityJSON = async (token, id) => {
+export const getJSON = async (token, lon, lat, tdate) => {
    console.log("in ApiDataFunctions.getCity");
    try {
-      const res = await axios.post(serverPath + "/api/get_city_json", {
+      const res = await axios.post(serverPath + "/api/get_json", {
          token: token,
-         id: id,
+         lon,
+         lat,
+         tdate,
          caller: "ApiDataFunctions.getApiData",
       });
+      console.log(res.data);
       return res.data;
    } catch (err) {
       console.log("Err (catch) ApiDataFunctions.getApiData: " + err);

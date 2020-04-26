@@ -224,7 +224,9 @@ export const ApiData = () => {
       [msgArr, setMsgArr] = useState(obj),
       [page, setPage] = React.useState(0),
       [token, setToken] = useState("na"),
-      [dataid, setDataid] = useState(""),
+      [jsonLon, setJsonLon] = useState(""),
+      [jsonLat, setJsonLat] = useState(""),
+      [jsonTdate, setJsonTdate] = useState(""),
       [open, setOpen] = React.useState(false),
       [dialogProgress, setDialogProgress] = useState("displayNone"),
       [dialogTitle, setDialogTitle] = useState(""),
@@ -249,11 +251,14 @@ export const ApiData = () => {
       setPage(0);
    };
 
-   const loadJSON = (id, city) => {
+   const loadJSON = (city, lon, lat, tdate) => {
       setOpen(true);
       setDialogProgress("displayBlock");
       setDialogTitle("JSON weather data for " + city);
-      setDataid(id);
+      setJsonLon(lon);
+      setJsonLat(lat);
+      setJsonTdate(tdate);
+      console.log("/////////" + tdate);
    };
 
    useEffect(() => {
@@ -307,9 +312,10 @@ export const ApiData = () => {
                   <Table className={classes.table} aria-label='simple table'>
                      <TableHead>
                         <TableRow>
-                           <TableCell>ID</TableCell>
                            <TableCell>location</TableCell>
-                           <TableCell>tdate</TableCell>
+                           <TableCell>Date</TableCell>
+                           <TableCell>Lon</TableCell>
+                           <TableCell>Lat</TableCell>
                            <TableCell>Commands</TableCell>
                         </TableRow>
                      </TableHead>
@@ -322,13 +328,12 @@ export const ApiData = () => {
                            .map((row) => {
                               return (
                                  <TableRow key={uuid()}>
-                                    <TableCell component='th' scope='row'>
-                                       {row.cid}
-                                    </TableCell>
                                     <TableCell>
                                        {row.ci + "," + row.ps + "," + row.co}
                                     </TableCell>
                                     <TableCell>{row.date}</TableCell>
+                                    <TableCell>{row.lon}</TableCell>
+                                    <TableCell>{row.lat}</TableCell>
                                     <TableCell>
                                        <ButtonGroup
                                           size='small'
@@ -339,9 +344,14 @@ export const ApiData = () => {
                                           <Button>
                                              <span
                                                 onClick={() =>
-                                                   loadJSON(row.cid, row.ci)
+                                                   loadJSON(
+                                                      row.ci,
+                                                      row.lon,
+                                                      row.lat,
+                                                      row.date
+                                                   )
                                                 }
-                                                id={row.city_id}
+                                                id={row.tdate}
                                              >
                                                 View
                                              </span>
@@ -386,7 +396,9 @@ export const ApiData = () => {
                   <CircularProgress />
                </span>
                <JSONReader
-                  dataid={dataid}
+                  lon={jsonLon}
+                  lat={jsonLat}
+                  tdate={jsonTdate}
                   token={token}
                   setDialogProgress={setDialogProgress}
                />

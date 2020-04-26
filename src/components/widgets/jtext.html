@@ -1,90 +1,89 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Boiler Plate</title>
+      <title></title>
 
       <meta charset="utf-8" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script
-         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-         crossorigin="anonymous"
-      ></script>
-      <script
-         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-         crossorigin="anonymous"
-      ></script>
-      <link
-         rel="stylesheet"
-         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-         crossorigin="anonymous"
-      />
-      <style>
-         @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-         body {
-            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-               "Lucida Sans", Arial, sans-serif;
-         }
-      </style>
-      <script>
-         var o = {
-            data: [
-               {
-                  rh: 63,
-                  pod: "n",
-                  lon: -118.24368,
-                  pres: 999.4,
-                  timezone: "America\/Los_Angeles",
-                  ob_time: "2020-04-24 13:40",
-                  country_code: "US",
-                  clouds: 0,
-                  ts: 1587735600,
-                  solar_rad: 110.9,
-                  state_code: "CA",
-                  city_name: "Los Angeles",
-                  wind_spd: 1.54,
-                  last_ob_time: "2020-04-24T13:40:00",
-                  wind_cdir_full: "east",
-                  wind_cdir: "E",
-                  slp: 1027.1,
-                  vis: 5,
-                  h_angle: -77.1,
-                  sunset: "02:32",
-                  dni: 443.39,
-                  dewpt: 12.2,
-                  snow: 0,
-                  uv: 2.84731,
-                  precip: 0,
-                  wind_dir: 100,
-                  sunrise: "13:09",
-                  ghi: 110.92,
-                  dhi: 49.41,
-                  aqi: 61,
-                  lat: 34.05223,
-                  weather: {
-                     icon: "c01n",
-                     code: "800",
-                     description: "Clear sky",
-                  },
-                  datetime: "2020-04-24:14",
-                  temp: 19.4,
-                  station: "1481P",
-                  elev_angle: 9.09,
-                  app_temp: 19.1,
-               },
-            ],
-            count: 1,
-         };
+      <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+      <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 
-         console.log(o.data[0].datetime);
-         console.log(o.data[0].ts);
-         console.log(o.data);
+      <script>
+         var obj = [
+            {
+               rh: 83,
+               pod: "1",
+               lon: -43.21,
+               pres: 1017.6,
+               timezone: "2",
+               ob_time: "3",
+               country_code: "4",
+               clouds: 0,
+               ts: 1587852000,
+               solar_rad: 0,
+               state_code: "5",
+               city_name: "6",
+               wind_spd: 3.6,
+               last_ob_time: "7",
+               wind_cdir_full: "8",
+               wind_cdir: "9",
+               slp: 1018,
+               vis: 5,
+               h_angle: -90,
+               sunset: "10",
+               dni: 0,
+               dewpt: 20.9,
+               snow: 0,
+               uv: 0,
+               precip: 0,
+               wind_dir: 190,
+               sunrise: "11",
+               ghi: 0,
+               dhi: 0,
+               aqi: 35,
+               lat: -22.9,
+               weather: "12",
+               datetime: "13",
+               temp: 24,
+               station: "14",
+               elev_angle: -34.81,
+               app_temp: 24.7,
+            },
+            "n",
+            "America/Sao_Paulo",
+            "2020-04-25 22:00",
+            "BR",
+            "21",
+            "Rio de Janeiro",
+            "2020-04-25T22:00:00",
+            "south",
+            "S",
+            "20:30",
+            "09:10",
+            { icon: "15", code: "16", description: "17" },
+            "2020-04-25:22",
+            "SBRJ",
+            "c01n",
+            "800",
+            "Clear sky",
+         ];
+
+         const iter = () => {
+            //console.log(obj[0]);
+            //console.log(obj[2]);
+            console.log(obj[0]["pres"]);
+            console.log(obj[12]["icon"]);
+            console.log();
+            obj.forEach((e, i) => {
+               //console.log("i: " + i);
+               //console.log(e);
+            });
+         };
       </script>
+
+      <style></style>
    </head>
    <body>
-      <br />
-      <div class="container"></div>
+      <button onclick="iter()">do it</button>
    </body>
 </html>

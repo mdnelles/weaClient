@@ -1,5 +1,5 @@
 import React from "react";
-import { getCityJSON } from "../ApiDataFunctions";
+import { getJSON } from "../ApiDataFunctions";
 import ReactJson from "react-json-view";
 
 export const JSONReader = (props) => {
@@ -8,13 +8,15 @@ export const JSONReader = (props) => {
    React.useEffect(() => {
       //fetch specific data
       if (JSONString === "") {
-         getCityJSON(props.token, props.dataid).then((data) => {
-            setJSONString(data.stringified);
-            //console.log(data.stringified);
-            setArr(JSON.parse(data.stringified));
-            props.setDialogProgress("displayNone");
-            console.log(arr);
-         });
+         getJSON(props.token, props.lon, props.lat, props.tdate).then(
+            (data) => {
+               setJSONString(data.stringified);
+               //console.log(data.stringified);
+               setArr(JSON.parse(data.stringified));
+               props.setDialogProgress("displayNone");
+               console.log(arr);
+            }
+         );
       }
    }, []);
 

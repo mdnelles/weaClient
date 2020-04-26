@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactJson from "react-json-view";
 import {
    getAPIData,
    getAPIData2,
@@ -232,7 +233,7 @@ export const Cities = () => {
    const [state, setState] = React.useState({}),
       [dialogueCircular, setDialogueCircular] = useState("displayNone"),
       [msgArr, setMsgArr] = useState(obj),
-      [apiInfo, setApiInfo] = useState(""),
+      [apiInfo, setApiInfo] = useState([]),
       [open, setOpen] = React.useState(false),
       [apiCity, setApiCity] = React.useState(""),
       [apiProvince, setApiProvince] = React.useState(""),
@@ -244,6 +245,7 @@ export const Cities = () => {
    const getJSONInfo = (rowData) => {
       setOpen(true);
       setApiInfo("");
+      console.log("rowData1");
       console.log(rowData);
       getAPIData(
          token,
@@ -256,13 +258,14 @@ export const Cities = () => {
       ).then((data) => {
          console.log(data);
          setDialogueCircular("displayNone");
-         setApiInfo("check JSON");
+         setApiInfo(data);
       });
       setDialogueCircular("displayBlock");
    };
    const getJSONInfo2 = (rowData) => {
       setOpen(true);
       setApiInfo("");
+      console.log("rowData2");
       console.log(rowData);
       getAPIData(
          token,
@@ -275,7 +278,7 @@ export const Cities = () => {
       ).then((data) => {
          console.log(data);
          setDialogueCircular("displayNone");
-         setApiInfo("check JSON");
+         setApiInfo(data);
       });
       setDialogueCircular("displayBlock");
    };
@@ -448,7 +451,7 @@ export const Cities = () => {
             aria-describedby='alert-dialog-slide-description'
          >
             <DialogTitle id='alert-dialog-slide-title'>
-               {"API Weather Info"}
+               API Weather Info
             </DialogTitle>
             <DialogContent>
                <div className={dialogueCircular}>
@@ -456,7 +459,7 @@ export const Cities = () => {
                   <br />
                   Loading
                </div>
-               {apiInfo}
+               <ReactJson src={apiInfo} />
             </DialogContent>
          </Dialog>
       </div>
