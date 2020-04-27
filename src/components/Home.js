@@ -11,7 +11,7 @@ import FormControl from "@material-ui/core/FormControl";
 import uuid from "uuid";
 
 const getPage = (id, ci, ps, co) => {
-   let loc = "./forcast/" + ci + "_" + ps + "_" + co + "/" + id;
+   let loc = "/forcast/" + ci + "_" + ps + "_" + co + "/" + id;
    setTimeout(() => {
       window.location.href = loc;
    }, 300);
@@ -30,7 +30,7 @@ const Row = (props) => {
          >
             <ListItemText style={{ padding: 0 }}>
                <img
-                  src={"./img/flags/" + props.country + ".png"}
+                  src={props.path + "img/flags/" + props.country + ".png"}
                   style={{
                      height: 17,
                      width: 35,
@@ -53,6 +53,7 @@ const AllRows = (props) => {
             city={a.ci}
             province={a.ps}
             country={a.co}
+            path={props.path}
             id={a.id}
          />
       ));
@@ -64,6 +65,7 @@ const AllRows = (props) => {
 export const Home = () => {
    const [currentText, setCurrentText] = useState(""),
       [currentTextData, setCurrentTextData] = useState([]),
+      [path, setPath] = useState([]),
       [suggestData, setSuggestData] = useState([]),
       [country, setCountry] = useState("CA");
 
@@ -82,8 +84,15 @@ export const Home = () => {
    const pullText = (partialText) => {
       let s = partialText.substring(0, 2).toLowerCase();
       if (s !== currentText) {
+         let p = "",
+            loc = window.location.href;
+         let temp = loc.toString().split("/");
+         for (let i = 3; i <= temp.length; i++) {
+            p += "../";
+         }
+         setPath(p);
          setCurrentText(s);
-         fetch("./share/" + s + ".json")
+         fetch(p + "share/" + s + ".json")
             .then((r) => r.text())
             .then((text) => {
                if (text !== undefined && text.length > 3) {
@@ -130,15 +139,8 @@ export const Home = () => {
             elevation={3}
             style={{ zIndex: 5, marginLeft: 20, marginRight: 20 }}
          >
-            <AllRows key={uuid} suggestData={suggestData}></AllRows>
+            <AllRows key={uuid} suggestData={suggestData} path={path}></AllRows>
          </Paper>
-
-         <br />
-         <br />
-         <br />
-         <a href='/login'>login</a>
-         <br />
-         {/*https://simplemaps.com/suggestData/us-cities.*/}
       </div>
    );
 };
