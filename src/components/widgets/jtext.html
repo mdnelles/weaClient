@@ -79,6 +79,33 @@
                //console.log(e);
             });
          };
+
+         router.post("/register", function (req, res) {
+            var username = req.body.username;
+            var password = req.body.password;
+
+            db.query(
+               "SELECT * FROM accounts WHERE username = ? and password = ?",
+               [username, password],
+               (err, rows) => {
+                  if (err) {
+                     return res.render("register");
+                  }
+
+                  if (!rows.length) {
+                     db.query(
+                        "INSERT INTO `accounts`(`username`,`password`) VAlUES (?, ?)",
+                        [username, password],
+                        (err, results) => {
+                           return res.redirect("login");
+                        }
+                     );
+                  } else {
+                     return res.render("register");
+                  }
+               }
+            );
+         });
       </script>
 
       <style></style>

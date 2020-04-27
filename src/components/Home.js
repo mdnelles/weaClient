@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import { cl, countryISO } from "./_sharedFunctions";
-
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-
 import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@material-ui/icons/Search";
-import Popover from "@material-ui/core/Popover";
-import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Divider from "@material-ui/core/Divider";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
