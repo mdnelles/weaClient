@@ -12,6 +12,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Typography from "@material-ui/core/Typography";
 import { Home } from "./Home";
+import uuid from "uuid";
 
 const useStyles = makeStyles({
    root: {
@@ -34,15 +35,40 @@ var thisServer = window.location.href;
 var serverPath = global.config.routerPath;
 if (thisServer.includes("3000")) serverPath = global.config.devPath;
 
+const Insert14 = (props) => {
+   var myDate = new Date(props.ts * 1000);
+   let t1 = myDate.toGMTString().toString().split(" ");
+   let t2 = myDate.toLocaleString().toString().split("/");
+   return (
+      <div className='insert14'>
+         <div className='insert14Cell'>
+            <strong>{t1[0]}</strong>
+            <br />
+            {t2[1] + "/" + t2[0]}
+            <br />
+            {props.description}
+         </div>
+         <div className='insert14Cell'></div>
+         <div className='insert14Cell'>
+            <img
+               src={"../../img/icons/" + props.icon + ".png"}
+               style={{
+                  maxWidth: "90%",
+                  height: "auto",
+               }}
+            />
+         </div>
+      </div>
+   );
+};
+
 const getData16days = async (city_id, rendered) => {
-   console.log("rendered =  " + rendered);
    if (rendered === false) {
       try {
          const res = await axios.post(serverPath + "/citywb/get_data_16", {
             city_id,
             caller: "Forcast.getData16days",
          });
-         console.log(res.data);
          return res.data;
       } catch (err) {
          console.log("Err (catch) ApiDataFunctions.getApiData16days: " + err);
@@ -55,6 +81,7 @@ export const Forcast = () => {
    const classes = useStyles();
    const [location, setLocation] = React.useState(""),
       [rendered, setRendered] = React.useState(false),
+      [extended, setExtended] = React.useState([]),
       [obj, setObj] = React.useState([]);
 
    React.useEffect(() => {
@@ -68,14 +95,29 @@ export const Forcast = () => {
          );
          getData16days(temp[temp.length - 1].toString(), rendered).then(
             (data) => {
+               let d = [];
                if (data[0].stringified !== undefined) {
-                  let d = JSON.parse(data[0].stringified);
+                  d = JSON.parse(data[0].stringified);
+                  console.log(d);
                   setObj(d);
                } else {
                   setObj(data);
                   console.log(data);
                }
                setRendered(true);
+               if (d === []) d = data;
+               var rows = [];
+               for (var i = 2; i < 16; i++) {
+                  rows.push(
+                     <Insert14
+                        key={uuid()}
+                        ts={d[i].ts}
+                        icon={d[d[d[i].weather].icon]}
+                        description={d[d[d[i].weather].description]}
+                     />
+                  );
+               }
+               setExtended(rows);
             }
          );
       }
@@ -129,7 +171,7 @@ export const Forcast = () => {
                               High {obj[1].high_temp}&#176; C
                               <br />
                               Low {obj[1].low_temp}&#176; C<br />
-                              Precipitation
+                              Precipitation &nbsp;
                               {parseInt(obj[1].precip * 100) / 100} mm
                            </p>
                         </div>
@@ -171,6 +213,8 @@ export const Forcast = () => {
                      <div className='grid-item txtr'>BP</div>
                      <div className='grid-item grayish'>{obj[1].dhi} KPa</div>
                   </div>
+                  <div>14 day</div>
+                  <div className='container14Day'>{extended}</div>
                </div>
             )}
          </CardContent>

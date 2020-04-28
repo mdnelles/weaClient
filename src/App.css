@@ -13,6 +13,24 @@ body {
    grid-template-columns: auto auto;
    padding: 10px;
 }
+.insert14 {
+   max-width: 300px;
+   min-height: 300px;
+   border: 1px solid #900;
+   display: inline-block;
+   white-space: nowrap;
+}
+.insert14Cell {
+   text-align: center;
+   padding: 12px;
+}
+.container14Day {
+   overflow-x: scroll;
+   margin: 5px;
+   border: 1px solid #dddddd;
+   width: 100%;
+   white-space: nowrap;
+}
 .grid-item {
    padding: 5px;
 }
