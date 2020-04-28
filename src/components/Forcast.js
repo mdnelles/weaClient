@@ -34,18 +34,18 @@ var thisServer = window.location.href;
 var serverPath = global.config.routerPath;
 if (thisServer.includes("3000")) serverPath = global.config.devPath;
 
-const getDataLive = async (city_id, rendered) => {
+const getData16days = async (city_id, rendered) => {
    console.log("rendered =  " + rendered);
    if (rendered === false) {
       try {
-         const res = await axios.post(serverPath + "/citywb/get_data_live", {
+         const res = await axios.post(serverPath + "/citywb/get_data_16", {
             city_id,
-            caller: "Forcast.getDataLive",
+            caller: "Forcast.getData16days",
          });
          console.log(res.data);
          return res.data;
       } catch (err) {
-         console.log("Err (catch) ApiDataFunctions.getApiData: " + err);
+         console.log("Err (catch) ApiDataFunctions.getApiData16days: " + err);
          return "ERR:" + err;
       }
    }
@@ -55,8 +55,7 @@ export const Forcast = () => {
    const classes = useStyles();
    const [location, setLocation] = React.useState(""),
       [rendered, setRendered] = React.useState(false),
-      [obj, setObj] = React.useState([]),
-      [objBase, setObjBase] = React.useState([]);
+      [obj, setObj] = React.useState([]);
 
    React.useEffect(() => {
       if (rendered === false) {
@@ -67,11 +66,15 @@ export const Forcast = () => {
                .replace(/_/g, ", ")
                .replace(/%20/g, " ")
          );
-         getDataLive(temp[temp.length - 1].toString(), rendered).then(
+         getData16days(temp[temp.length - 1].toString(), rendered).then(
             (data) => {
-               setObj(data);
-               console.log(data);
-               setObjBase(data[0]);
+               if (data[0].stringified !== undefined) {
+                  let d = JSON.parse(data[0].stringified);
+                  setObj(d);
+               } else {
+                  setObj(data);
+                  console.log(data);
+               }
                setRendered(true);
             }
          );
@@ -81,7 +84,7 @@ export const Forcast = () => {
    return (
       <Card className={classes.root} variant='outlined' style={{ margin: 10 }}>
          <CardContent>
-            {obj === [] ? (
+            {rendered === false ? (
                <div>
                   <CircularProgress />
                   <br />
@@ -90,99 +93,84 @@ export const Forcast = () => {
             ) : (
                <div>
                   <Home />
-                  <Typography variant='h5' component='h2'>
-                     <span style={{ fontSize: "3vw" }}>
-                        Weather forcast for {location}
-                     </span>
-                  </Typography>
 
-                  <TableContainer>
-                     <Table aria-label='simple table'>
-                        <TableHead>
-                           <TableRow>
-                              <TableCell>
-                                 <div className='center-inner'>
-                                    <img
-                                       src={
-                                          rendered === true
-                                             ? "../../img/icons/" +
-                                               obj[15] +
-                                               ".png"
-                                             : null
-                                       }
-                                       style={{
-                                          maxWidth: "100%",
-                                          height: "auto",
-                                       }}
-                                    />
-                                 </div>
-                              </TableCell>
-                              <TableCell align='center'>
-                                 {" "}
-                                 <div className='center-inner'>
-                                    <span style={{ fontSize: "5vw" }}>
-                                       {objBase.temp} &#176; C
-                                    </span>
-                                    <br />
-                                    <span style={{ color: "#037bfc" }}>
-                                       {obj[17]}
-                                    </span>
-                                    <br />
-                                    Feels like: {objBase.app_temp}
-                                 </div>
-                              </TableCell>
-                           </TableRow>
-                        </TableHead>
-                     </Table>
-                  </TableContainer>
+                  <span
+                     style={{
+                        fontSize: "3vw",
+                        textAlign: "center",
+                        paddingLeft: 20,
+                     }}
+                  >
+                     Weather forcast for {location}
+                  </span>
 
-                  <TableContainer>
-                     <Table style={{ fontSize: "5vw" }}>
-                        <TableRow>
-                           <TableCell align='right'>Cloud Cover</TableCell>
-                           <TableCell align='left'>
-                              ~{objBase.clouds} %
-                           </TableCell>
-                        </TableRow>
-                        <TableRow>
-                           <TableCell align='right'>Wind</TableCell>
-                           <TableCell align='left'>
-                              {obj[8] +
-                                 " " +
-                                 parseInt(objBase.wind_spd) +
-                                 "km/h"}
-                           </TableCell>
-                        </TableRow>
-                        <TableRow>
-                           <TableCell align='right'>UV</TableCell>
-                           <TableCell align='left'>{objBase.uv}</TableCell>
-                        </TableRow>
-                        <TableRow>
-                           <TableCell align='right'>Dewpoint</TableCell>
-                           <TableCell align='left'>{objBase.dewpt}</TableCell>
-                        </TableRow>
-                        <TableRow>
-                           <TableCell align='right'>Radiation</TableCell>
-                           <TableCell align='left'>
-                              {objBase.solar_rad} (W/m<sup>2</sup>).
-                           </TableCell>
-                        </TableRow>
-                        <TableRow>
-                           <TableCell align='right'>Pressure</TableCell>
-                           <TableCell align='left'>{objBase.dhi} mb</TableCell>
-                        </TableRow>
-                        <TableRow>
-                           <TableCell align='right'>
-                              Relative humidity
-                           </TableCell>
-                           <TableCell align='left'>{objBase.rh} %</TableCell>
-                        </TableRow>
-                        <TableRow>
-                           <TableCell align='right'>BP</TableCell>
-                           <TableCell align='left'>{objBase.dhi} KPa</TableCell>
-                        </TableRow>
-                     </Table>
-                  </TableContainer>
+                  <div className='grid-container-3col'>
+                     <div className='grid-item txtr'>
+                        <div className='center-inner'>
+                           <img
+                              src={
+                                 rendered === true
+                                    ? "../../img/icons/" +
+                                      obj[obj[obj[1].weather].icon] +
+                                      ".png"
+                                    : null
+                              }
+                              style={{
+                                 maxWidth: "100%",
+                                 height: "auto",
+                              }}
+                           />
+                        </div>
+                     </div>
+
+                     <div className='grid-item' style={{ fontSize: "2.5vw" }}>
+                        <div className='center-inner'>
+                           <p align='center'>
+                              High {obj[1].high_temp}&#176; C
+                              <br />
+                              Low {obj[1].low_temp}&#176; C<br />
+                              Precipitation
+                              {parseInt(obj[1].precip * 100) / 100} mm
+                           </p>
+                        </div>
+                     </div>
+                     <div className='grid-item'>
+                        <div className='center-inner'>
+                           <span style={{ fontSize: "5vw" }}>
+                              {obj[1].high_temp} &#176; C
+                           </span>
+                           <br />
+                           <span style={{ color: "#037bfc" }}>
+                              {obj[obj[obj[1].weather].description]}
+                           </span>
+                           <br />
+                           Feels like: {obj[1].app_max_temp} &#176; C
+                        </div>
+                     </div>
+                  </div>
+                  <div className='grid-container-2col'>
+                     <div className='grid-item txtr'>Cloud Cover</div>
+                     <div className='grid-item grayish'>~{obj[1].clouds} %</div>
+                     <div className='grid-item txtr'>Wind</div>
+                     <div className='grid-item grayish'>
+                        {obj[obj[1].wind_cdir_full] +
+                           " " +
+                           parseInt(obj[1].wind_spd * 10) / 10 +
+                           "km/h"}
+                     </div>
+                     <div className='grid-item txtr'>UV</div>
+                     <div className='grid-item grayish'>
+                        {parseInt(obj[1].uv * 10) / 10}
+                     </div>
+                     <div className='grid-item txtr'>Dewpoint</div>
+                     <div className='grid-item grayish'>{obj[1].dewpt}</div>
+                     <div className='grid-item txtr'>Pressure</div>
+                     <div className='grid-item grayish'>{obj[1].dhi} mb</div>
+                     <div className='grid-item txtr'>Relative humidity</div>
+                     <div className='grid-item grayish'>{obj[1].rh} %</div>
+                     <div className='grid-item txtr'>BP</div>
+                     <div className='grid-item grayish'>{obj[1].dhi} KPa</div>
+                  </div>
                </div>
             )}
          </CardContent>

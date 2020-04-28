@@ -3,6 +3,25 @@ body {
    font-family: Ubuntu, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
 }
+.grid-container-3col {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   padding: 10px;
+}
+.grid-container-2col {
+   display: grid;
+   grid-template-columns: auto auto;
+   padding: 10px;
+}
+.grid-item {
+   padding: 5px;
+}
+.grayish {
+   color: #888888;
+}
+.txtr {
+   text-align: right;
+}
 .header {
    background-color: #fff;
    padding-left: 20px;
