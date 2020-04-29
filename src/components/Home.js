@@ -30,7 +30,12 @@ const Row = (props) => {
          >
             <ListItemText style={{ padding: 0 }}>
                <img
-                  src={props.path + "img/flags/" + props.country + ".png"}
+                  src={
+                     props.path +
+                     "img/flags/" +
+                     props.country.toLowerCase() +
+                     ".png"
+                  }
                   style={{
                      height: 17,
                      width: 35,
@@ -46,7 +51,9 @@ const Row = (props) => {
 };
 
 const AllRows = (props) => {
-   if (props.suggestData !== undefined) {
+   if (props.suggestedData === []) {
+      return <div></div>;
+   } else if (props.suggestData !== undefined) {
       return props.suggestData.map((a, i) => (
          <Row
             key={uuid()}
@@ -62,12 +69,11 @@ const AllRows = (props) => {
    }
 };
 
-export const Home = () => {
+export const Home = (props) => {
    const [currentText, setCurrentText] = useState(""),
       [currentTextData, setCurrentTextData] = useState([]),
       [path, setPath] = useState([]),
-      [suggestData, setSuggestData] = useState([]),
-      [country, setCountry] = useState("CA");
+      [suggestData, setSuggestData] = useState([]);
 
    const prune = (partialText, arr) => {
       let arrFinal = [];
@@ -86,9 +92,14 @@ export const Home = () => {
       if (s !== currentText) {
          let p = "",
             loc = window.location.href;
-         let temp = loc.toString().split("/");
-         for (let i = 3; i <= temp.length; i++) {
-            p += "../";
+         if (loc !== undefined && !loc.toString().includes("localhost")) {
+            setPath("/");
+            p = "/";
+         } else {
+            let temp = loc.toString().split("/");
+            for (let i = 3; i <= temp.length; i++) {
+               p += "../";
+            }
          }
          setPath(p);
          setCurrentText(s);
@@ -108,16 +119,34 @@ export const Home = () => {
       }
    };
 
+   function isAlphaOrParen(str) {
+      return /^[a-zA-Z()]+$/.test(str);
+   }
+
    const locChange = (event) => {
       if (event.target.value !== undefined && event.target.value.length > 1) {
-         console.log("locChange value=" + event.target.value);
-         pullText(event.target.value);
+         if (isAlphaOrParen(event.target.value)) {
+            pullText(event.target.value);
+         } else {
+            setSuggestData([]);
+         }
+      } else {
+         setSuggestData([]);
       }
    };
-   useEffect(() => {}, [suggestData]);
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [suggestData]);
 
    return (
-      <div>
+      <div
+         style={{
+            position: "absolute",
+            top: props.top,
+            width: props.width,
+            zIndex: 80,
+         }}
+      >
          <div className='header'>
             <FormControl fullWidth={true}>
                <InputLabel htmlFor='input-with-icon-adornment'>

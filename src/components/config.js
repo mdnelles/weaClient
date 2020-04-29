@@ -1,6 +1,6 @@
 module.export = global.config = {
-   routerPath: '/es',
-   devPath: 'http://localhost:5008',
-   devDomain: 'http://localhost.com:3000',
-   productionDomain: 'https://',
+   routerPath: "/ow",
+   devPath: "http://localhost:5008",
+   devDomain: "http://localhost.com:3000",
+   productionDomain: "https://",
 };

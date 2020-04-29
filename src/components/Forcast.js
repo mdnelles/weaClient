@@ -103,6 +103,8 @@ export const Forcast = () => {
    const classes = useStyles();
    const [location, setLocation] = React.useState(""),
       [rendered, setRendered] = React.useState(false),
+      [homeChange, setHomeChange] = React.useState(false),
+      [top, setTop] = React.useState("10px"),
       [extended, setExtended] = React.useState([]),
       [obj, setObj] = React.useState([]);
 
@@ -161,7 +163,7 @@ export const Forcast = () => {
 
    return (
       <Card className={classes.root} variant='outlined' style={{ margin: 10 }}>
-         <CardContent>
+         <CardContent style={{ marginTop: 40 }}>
             {rendered === false ? (
                <div>
                   <CircularProgress />
@@ -170,13 +172,18 @@ export const Forcast = () => {
                </div>
             ) : (
                <div>
-                  <Home />
+                  <Home
+                     setHomeChange={setHomeChange}
+                     homeChange={homeChange}
+                     top={"15px"}
+                     width={"80%"}
+                  />
 
                   <span
                      style={{
                         fontSize: "3vw",
                         textAlign: "center",
-                        paddingLeft: 20,
+                        paddingLeft: 40,
                      }}
                   >
                      Weather forcast for {location}

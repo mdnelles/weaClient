@@ -8,7 +8,7 @@ const Img = () => {
 export const Index = () => {
    return (
       <div>
-         <div className='vertical-center center-outer'>
+         <div className='vertical-center center-outer' id='top'>
             <div
                className='center-inner'
                style={{
@@ -18,7 +18,7 @@ export const Index = () => {
                }}
             >
                <Img />
-               <Home />
+               <Home width={"435px"} top={"50%"} />
                <div style={{ textAlign: "center", fontSize: ".8em" }}>
                   OPEN Source Weather App by{" "}
                   <a href='https://github.com/mdnelles' target='_blank'>
