@@ -14,6 +14,7 @@ import { Forcast } from "./components/Forcast";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Loading } from "./components/Loading";
+import { Index } from "./components/Index";
 
 const theme = createMuiTheme({
    palette: {
@@ -37,9 +38,8 @@ const App = () => {
                   <Route exact path='/login' component={LoginContainer} />
                   <Route exact path='/home' component={Home} />
                   <Route exact path='/forcast/:qry/:qry' component={Forcast} />
-                  <Route exact path='/' component={Home} />
+                  <Route exact path='/' component={Index} />
                   <Route exact path='/loading' component={Loading} />
-                  <Route path='/' component={AppWrapper} />
                </Switch>
             </Router>
          </ThemeProvider>
