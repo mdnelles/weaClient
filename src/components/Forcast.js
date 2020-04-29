@@ -4,13 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import CardContent from "@material-ui/core/CardContent";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Typography from "@material-ui/core/Typography";
 import { Home } from "./Home";
 import uuid from "uuid";
 
@@ -39,6 +32,13 @@ const Insert14 = (props) => {
    var myDate = new Date(props.ts * 1000);
    let t1 = myDate.toGMTString().toString().split(" ");
    let t2 = myDate.toLocaleString().toString().split("/");
+   let description = props.description;
+   if (description !== undefined)
+      description = description
+         .toString()
+         .replace("Thunder", "T/")
+         .replace("with", "&");
+
    return (
       <div className='insert14'>
          <div className='insert14Cell'>
@@ -46,17 +46,39 @@ const Insert14 = (props) => {
             <br />
             {t2[1] + "/" + t2[0]}
             <br />
-            {props.description}
+            <div style={{ paddingTop: 10, width: "100%" }}>{description}</div>
          </div>
-         <div className='insert14Cell'></div>
+
          <div className='insert14Cell'>
             <img
                src={"../../img/icons/" + props.icon + ".png"}
                style={{
-                  maxWidth: "90%",
+                  maxWidth: "70%",
                   height: "auto",
                }}
             />
+         </div>
+         <div
+            className='insert14Cell'
+            style={{
+               borderTop: "1px solid #dddddd",
+               backgroundColor: "#efefef",
+            }}
+         >
+            {parseInt(props.high_temp)} &#176;
+         </div>
+         <div className='insert14Cell'>{parseInt(props.low_temp)} &#176;</div>
+         <div className='insert14Cell'>
+            <span style={{ fonSize: "2.2em" }}>{parseInt(props.pop)}</span>{" "}
+            <span style={{ fonSize: ".8em" }}>%</span>
+         </div>
+         <div className='insert14Cell'>
+            {parseInt(props.wind_speed)}{" "}
+            <span style={{ fontSize: ".8em" }}>{props.wind_direction}</span>
+         </div>
+         <div className='insert14Cell'>
+            {parseInt(props.precip)}{" "}
+            <span style={{ fontSize: ".8em" }}>mm</span>
          </div>
       </div>
    );
@@ -93,6 +115,7 @@ export const Forcast = () => {
                .replace(/_/g, ", ")
                .replace(/%20/g, " ")
          );
+
          getData16days(temp[temp.length - 1].toString(), rendered).then(
             (data) => {
                let d = [];
@@ -102,21 +125,34 @@ export const Forcast = () => {
                   setObj(d);
                } else {
                   setObj(data);
+                  d = data;
                   console.log(data);
                }
                setRendered(true);
-               if (d === []) d = data;
-               var rows = [];
-               for (var i = 2; i < 16; i++) {
-                  rows.push(
-                     <Insert14
-                        key={uuid()}
-                        ts={d[i].ts}
-                        icon={d[d[d[i].weather].icon]}
-                        description={d[d[d[i].weather].description]}
-                     />
-                  );
+               if (d !== undefined && d.length > 2) {
+                  var rows = [];
+                  // push virticle nave for 14 day
+
+                  for (var i = 2; i < 16; i++) {
+                     rows.push(
+                        <Insert14
+                           key={uuid()}
+                           ts={d[i].ts}
+                           icon={d[d[d[i].weather].icon]}
+                           description={d[d[d[i].weather].description]}
+                           high_temp={d[i].high_temp}
+                           low_temp={d[i].low_temp}
+                           real_feel={d[i].app_max_temp}
+                           pop={d[i].pop}
+                           wind_speed={d[i].wind_spd}
+                           wind_direction={d[d[i].wind_cdir]}
+                           snow={d[i].snow}
+                           precip={d[i].precip}
+                        />
+                     );
+                  }
                }
+
                setExtended(rows);
             }
          );
@@ -213,8 +249,18 @@ export const Forcast = () => {
                      <div className='grid-item txtr'>BP</div>
                      <div className='grid-item grayish'>{obj[1].dhi} KPa</div>
                   </div>
-                  <div>14 day</div>
-                  <div className='container14Day'>{extended}</div>
+
+                  <div className='wrapper14'>
+                     <div className='nav14day'>
+                        <div style={{ height: 180 }}></div>
+                        <div className='insert14Cell'>Day</div>
+                        <div className='insert14Cell'>Night</div>
+                        <div className='insert14Cell'>Pop</div>
+                        <div className='insert14Cell'>Wind</div>
+                        <div className='insert14Cell'>Prec.</div>
+                     </div>
+                     <div className='container14Day'>{extended}</div>
+                  </div>
                </div>
             )}
          </CardContent>

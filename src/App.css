@@ -14,22 +14,54 @@ body {
    padding: 10px;
 }
 .insert14 {
-   max-width: 300px;
+   width: 120px;
    min-height: 300px;
-   border: 1px solid #900;
+   font-size: 0.8em;
+   border-top: 1px solid #efefef;
+   border-left: 1px solid #efefef;
+   border-bottom: 1px solid #dddddd;
+   border-right: 1px solid #dddddd;
    display: inline-block;
-   white-space: nowrap;
 }
-.insert14Cell {
-   text-align: center;
-   padding: 12px;
+.wrapper14 {
+   overflow: hidden;
+   z-index: 1;
+   display: grid;
+   grid-template-columns: auto auto;
+}
+.nav14day {
+   float: left;
+   background-color: #777;
+   border-radius: 5px;
+   z-index: 50;
+   color: #fff;
+   width: 80px;
+   position: relative;
+   min-height: 410px;
+   margin-bottom: 15px;
+   -webkit-box-shadow: 8px 5px 12px 0px rgba(199, 199, 199, 1);
+   -moz-box-shadow: 8px 5px 12px 0px rgba(199, 199, 199, 1);
+   box-shadow: 8px 5px 12px 0px rgba(199, 199, 199, 1);
 }
 .container14Day {
+   float: right;
    overflow-x: scroll;
-   margin: 5px;
-   border: 1px solid #dddddd;
-   width: 100%;
+   margin-left: -5px;
    white-space: nowrap;
+   width: 100%;
+   z-index: 5px;
+}
+.insert14Cell {
+   width: 100%px;
+   min-height: 30px;
+   text-align: center;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   white-space: pre-wrap; /* css-3 */
+   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+   white-space: -pre-wrap; /* Opera 4-6 */
+   white-space: -o-pre-wrap; /* Opera 7 */
+   word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 .grid-item {
    padding: 5px;
