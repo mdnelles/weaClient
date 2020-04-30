@@ -353,13 +353,6 @@ export const Cities = () => {
                         getJSONInfo(rowData);
                      },
                   },
-                  {
-                     icon: "save_alt",
-                     tooltip: "Fetch Weather from WeatherBit",
-                     onClick: (event, rowData) => {
-                        getJSONInfo2(rowData);
-                     },
-                  },
                ]}
                title='Open Weather App Cities'
                columns={state.columns}

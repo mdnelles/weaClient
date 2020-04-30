@@ -40,6 +40,15 @@ const App = () => {
                   <Route exact path='/forcast/:qry/:qry' component={Forcast} />
                   <Route exact path='/' component={Index} />
                   <Route exact path='/loading' component={Loading} />
+                  <Route exact path='/admin' component={AppWrapper} />
+                  <Route exact path='/cities' component={AppWrapper} />
+                  <Route exact path='/states' component={AppWrapper} />
+                  <Route exact path='/countries' component={AppWrapper} />
+                  <Route exact path='/logs' component={AppWrapper} />
+                  <Route exact path='/utils' component={AppWrapper} />
+                  <Route exact path='/stats' component={AppWrapper} />
+                  <Route exact path='/users' component={AppWrapper} />
+                  <Route exact path='/apidata' component={AppWrapper} />
                </Switch>
             </Router>
          </ThemeProvider>
