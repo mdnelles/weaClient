@@ -275,7 +275,9 @@ export const States = () => {
                                  }}
                                  src={
                                     "/img/flags/" +
-                                    rowData.country_code +
+                                    rowData.country_code
+                                       .toString()
+                                       .toLowerCase() +
                                     ".png"
                                  }
                               />

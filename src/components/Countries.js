@@ -236,6 +236,11 @@ export const Countries = () => {
       [cubeWrapperAnim, setCubeWrapperAnim] = useState([]);
 
    const startGetCitysByCountry = (event) => {
+      setMsgArr(cubeMsgNext("Feature not available as demo ", "info", msgArr));
+      setCubeWrapperAnim(
+         msgArr[msgArr.findIndex((el) => el.current === true)].anim
+      );
+      /*
       event.preventDefault();
       let country = event.target.id.toString().split("-");
       setDialogProgress("displayBlock");
@@ -253,7 +258,7 @@ export const Countries = () => {
          displayCities = displayCities.replace(/admin_name/g, "");
          setDialogContent(displayCities);
          setDialogProgress("displayNone");
-      });
+      });*/
    };
 
    const handleClose = () => {

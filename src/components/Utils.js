@@ -151,26 +151,34 @@ export const Utils = () => {
          <div style={{ padding: 15, display: "block" }}></div>
          <Paper>
             <List component='nav' aria-label='main mailbox folders'>
-               <ListItem button onClick={() => startGenJSON()}>
+               <ListItem button onClick={() => startGenJSON()} disabled={true}>
                   <ListItemIcon>
                      <InsertDriveFileIcon />
                   </ListItemIcon>
                   <ListItemText primary='Generate Single Cities File' />
                </ListItem>
-               <ListItem button onClick={() => startGenJSON2()}>
+               <ListItem button onClick={() => startGenJSON2()} disabled={true}>
                   <ListItemIcon>
                      <FileCopyIcon />
                   </ListItemIcon>
                   <ListItemText primary='Generate Alpha City Files' />
                </ListItem>
-               <ListItem button onClick={() => displayCityJson()}>
+               <ListItem
+                  button
+                  onClick={() => displayCityJson()}
+                  disabled={true}
+               >
                   <ListItemIcon>
                      <VisibilityIcon />
                   </ListItemIcon>
                   <ListItemText primary='Display All Weather City JSON File' />
                </ListItem>
 
-               <ListItem button onClick={() => downloadCityJson()}>
+               <ListItem
+                  button
+                  onClick={() => downloadCityJson()}
+                  disabled={true}
+               >
                   <ListItemIcon>
                      <CloudDownloadIcon />
                   </ListItemIcon>
