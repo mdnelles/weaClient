@@ -113,3 +113,17 @@ export const logout = () => {
       window.location.href = "/";
    });
 };
+
+export const getCaptchaKey = async () => {
+   try {
+      console.log("genCaptcha");
+      const res = await axios.post(serverPath + "/captcha/get_key", {
+         caller: "UserFunctions.genCaptch",
+      });
+      console.log(res.data);
+      return res.data;
+   } catch (err) {
+      //document.location.href = "/";
+      return false;
+   }
+};

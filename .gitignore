@@ -9,6 +9,9 @@
 
 #proprietary
 /src/components/3d
+
+#proprietary
+/src/components/config.js
 # production
 /build
 
