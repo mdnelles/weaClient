@@ -293,6 +293,7 @@ export const Countries = () => {
             .getItem("token")
             .then(function (startToken) {
                setToken(startToken);
+               console.log("token being used:" + startToken);
                getCountries(startToken).then((data) => {
                   setRows(data);
                   setIsLoaded(true);

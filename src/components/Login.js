@@ -125,12 +125,12 @@ export const Login = () => {
          }, 500);
          // find number of next up slide and then update state of Cube Wrapper to trigger roll
       } else {
-         localForage.setItem("token", false); // clear old token if exists
+         //localForage.removeItem("token").then(() => {
          login(user)
             .then((res) => {
                if (parseInt(res) !== null) {
                   localForage.setItem("token", res);
-
+                  console.log("setting token: " + res);
                   setTimeout(() => {
                      window.location.href = "/countries";
                   }, 350);
@@ -158,6 +158,7 @@ export const Login = () => {
                );
                console.log("+++ error in file: " + __filename + "err=" + err);
             });
+         //});
       }
    }
 
@@ -233,27 +234,32 @@ export const Login = () => {
                <Card className={classes.root}>
                   <CardContent>
                      <form>
-                        <div className='center-inner' style={{ padding: 10 }}>
-                           <TextField
-                              label='email / username'
-                              ariant='outlined'
-                              defaultValue={email}
-                              onChange={(event) => setEmail(event.target.value)}
-                           />
-                           <TextField
-                              label='Password'
-                              ariant='outlined'
-                              defaultValue={password}
-                              onChange={(event) =>
-                                 setPassword(event.target.value)
-                              }
-                           />
-                           <br />
+                        <div
+                           className={"center-inner" + submitClass}
+                           style={{ padding: 10 }}
+                        >
                            <br />
                            {captchaPlace}
-
-                           <br />
+                           <br /> <br />
                            <div className={submitClass}>
+                              <TextField
+                                 label='email / username'
+                                 ariant='outlined'
+                                 defaultValue={email}
+                                 onChange={(event) =>
+                                    setEmail(event.target.value)
+                                 }
+                              />
+                              <TextField
+                                 label='Password'
+                                 ariant='outlined'
+                                 defaultValue={password}
+                                 onChange={(event) =>
+                                    setPassword(event.target.value)
+                                 }
+                              />
+                              <br />
+                              <br />
                               <Button
                                  variant='contained'
                                  color='secondary'
