@@ -182,7 +182,7 @@ export const Login = () => {
       );
       getCaptchaKey().then((data) => {
          console.log(data);
-         if (data !== undefined && data.length > 10) {
+         if (!!data && data.length > 10) {
             setCaptchaKey(data);
          } else {
             console.log("Err: not authorized for captch key");
@@ -201,7 +201,7 @@ export const Login = () => {
       delay: 100,
    });
    let captchaPlace = "";
-   if (captchaKey !== undefined && captchaKey !== "") {
+   if (!!captchaKey && captchaKey !== "") {
       captchaPlace = (
          <Recaptcha
             sitekey={captchaKey}

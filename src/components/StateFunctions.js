@@ -85,7 +85,7 @@ export const getAPIData = async (theToken, data) => {
          data,
          caller: "stateFunctions.getAPIData",
       });
-      if (res.data.stringified !== undefined) {
+      if (res.data.stringified) {
          //console.log(JSON.parse(res.data.stringified));
       }
       console.log(res.data);
