@@ -372,7 +372,7 @@ export const Countries = () => {
                                     <TableCell component='th' scope='row'>
                                        <TheFlag
                                           cc={
-                                             row.cc_iso !== undefined
+                                             !!row.cc_iso
                                                 ? row.cc_iso
                                                      .toString()
                                                      .toLowerCase()

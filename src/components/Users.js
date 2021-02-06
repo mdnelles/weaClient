@@ -89,7 +89,7 @@ export const Users = () => {
    // this is to remove the ADD button because in some cases we don't want to add a value
    const removeAdd = () => {
       var node = document.querySelector('[title="Add"]');
-      if (typeof node && node !== null && node !== undefined) {
+      if (typeof node && node !== null && !!node) {
          //node.remove();
       }
    };

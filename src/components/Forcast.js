@@ -33,7 +33,7 @@ const Insert14 = (props) => {
    let t1 = myDate.toGMTString().toString().split(" ");
    let t2 = myDate.toLocaleString().toString().split("/");
    let description = props.description;
-   if (description !== undefined)
+   if (!!description)
       description = description
          .toString()
          .replace("Thunder", "T/")

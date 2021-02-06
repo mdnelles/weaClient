@@ -23,7 +23,7 @@ const goHome = () => {
       loc = window.location.href.toString();
    if (loc.includes(3000)) {
       temp = loc.split("3000");
-      if (temp[1] !== undefined && temp[1].toString().length > 1) {
+      if (!!temp[1] && temp[1].toString().length > 1) {
          window.location.href = "/login";
       }
    } else {
@@ -31,7 +31,7 @@ const goHome = () => {
       loc = loc.replace("https://", "").replace("http://", "");
       if (loc.includes("/")) {
          temp = loc.split("/");
-         if (temp[1] !== undefined && temp[1].toString().length > 1) {
+         if (!!temp[1] && temp[1].toString().length > 1) {
             window.location.href = "/";
          }
       }
