@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAPIData, getStates, addState, editState } from "./StateFunctions";
+import { getStates, addState, editState } from "./StateFunctions";
 import localForage from "localforage";
 import _ from "lodash";
 
@@ -10,9 +10,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
 import { lighten, makeStyles } from "@material-ui/core/styles";
@@ -28,16 +26,6 @@ import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
 import FilterListIcon from "@material-ui/icons/FilterList";
-
-function descendingComparator(a, b, orderBy) {
-   if (b[orderBy] < a[orderBy]) {
-      return -1;
-   }
-   if (b[orderBy] > a[orderBy]) {
-      return 1;
-   }
-   return 0;
-}
 
 const headCells = [
    { id: "id", numeric: true, disablePadding: true, label: "ID" },
