@@ -140,7 +140,7 @@ export const Statistics = () => {
                />
             </div>
          </div>
-         <div style={{ display: "block", padding: 20 }}></div>
+         <div style={{ display: "block", padding: 15 }}></div>
          <div className='displayBlock'></div>
          <div style={{ display: "block", padding: 20 }}></div>
          <TableContainer component={Paper}>

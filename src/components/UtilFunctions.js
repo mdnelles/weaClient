@@ -9,7 +9,6 @@ if (thisServer.includes("3000")) serverPath = global.config.devPath;
 //export const utilIsLoggedIn = token => {
 export const genJSON = async (token) => {
    try {
-      console.log("genJSON");
       const res = await axios.post(serverPath + "/utils/gen_json", {
          token: token,
          caller: "UtilFunctions.genJSON",
