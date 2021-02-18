@@ -131,7 +131,7 @@ export const Forcast = () => {
                   console.log(data);
                }
                setRendered(true);
-               if (d !== undefined && d.length > 2) {
+               if (!!d && d.length > 2) {
                   var rows = [];
                   // push virticle nave for 14 day
 

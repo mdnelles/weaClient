@@ -92,7 +92,7 @@ export const Home = (props) => {
       if (s !== currentText) {
          let p = "",
             loc = window.location.href;
-         if (loc !== undefined && !loc.toString().includes("localhost")) {
+         if (!!loc && !loc.toString().includes("localhost")) {
             setPath("/");
             p = "/";
          } else {
@@ -106,7 +106,7 @@ export const Home = (props) => {
          fetch(p + "share/" + s + ".json")
             .then((r) => r.text())
             .then((text) => {
-               if (text !== undefined && text.length > 3) {
+               if (!!text && text.length > 3) {
                   var arr = JSON.parse(text);
                   setCurrentTextData(arr);
                   console.log(arr.length + " - " + s);

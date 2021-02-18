@@ -102,14 +102,7 @@ export const Login = () => {
          password: password,
       };
 
-      if (
-         email === null ||
-         email === undefined ||
-         email === "" ||
-         password === null ||
-         password === undefined ||
-         password === ""
-      ) {
+      if (!email || !password) {
          setTimeout(() => {
             setSpinnerClass("displayNone");
             setMsgArr(
