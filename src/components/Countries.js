@@ -240,25 +240,6 @@ export const Countries = () => {
       setCubeWrapperAnim(
          msgArr[msgArr.findIndex((el) => el.current === true)].anim
       );
-      /*
-      event.preventDefault();
-      let country = event.target.id.toString().split("-");
-      setDialogProgress("displayBlock");
-      setOpen(true);
-      let countryReadable = country[1].replace(/__/g, " ");
-      setDialogTitle("Cities in " + countryReadable);
-      getCitysByCountry(token, country[1]).then((data) => {
-         console.log(data);
-         var displayCities;
-         data.forEach((e) => {
-            if (e.city !== undefined && e.city !== "undefined")
-               displayCities += e.city + ", " + e.admin_name + "\n";
-         });
-         displayCities = displayCities.replace(/undefined/g, "");
-         displayCities = displayCities.replace(/admin_name/g, "");
-         setDialogContent(displayCities);
-         setDialogProgress("displayNone");
-      });*/
    };
 
    const handleClose = () => {
