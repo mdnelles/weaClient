@@ -53,7 +53,7 @@ const Row = (props) => {
 const AllRows = (props) => {
    if (props.suggestedData === []) {
       return <div></div>;
-   } else if (props.suggestData !== undefined) {
+   } else if (!!props.suggestData) {
       return props.suggestData.map((a, i) => (
          <Row
             key={uuid()}

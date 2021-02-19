@@ -38,7 +38,7 @@ export const Users = () => {
    };
 
    const clearUndefined = (str) => {
-      if (str === undefined || str === "") {
+      if (!str) {
          str = "NA";
          return str;
       }
